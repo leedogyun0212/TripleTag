@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 
@@ -16,6 +17,9 @@ using UnityEngine;
 public abstract class ManagerBase : MonoBehaviour
 {
     GameManager _connectedManager;
+
+    //프로퍼티에도 virtual을 쓸 수 있다!
+    public virtual int LoadCount => 1;
 
     //Connect를 자유롭게 하기 위해서 Virtual을 써줄건데!
     //virtual을 쓰려고 하는 순간 생각해야 하는 것!
