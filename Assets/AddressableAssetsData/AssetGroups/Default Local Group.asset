@@ -16,9 +16,17 @@ MonoBehaviour:
   m_GUID: 14c10f4a4f67f3a438afaebf89a7bbd4
   m_SerializeEntries:
   - m_GUID: 63a8cf457a910264480ec7be437dedd9
-    m_Address: Assets/1.Datas/Origin
+    m_Address: Origin
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Origin
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a9d192fdeffe9844be12864b9d5ee07
+    m_Address: Origin/Prefabs/Globals
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Global
+    - Origin
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5619875ba4e17d34b8ffa149e071d245, type: 2}
