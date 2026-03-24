@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         UIBase loadingUI = UIManager.ClaimOpenUI(UIType.Loading);//UI System이 돌아가기 시작했으니까 기능을 실행해보기
         IProgress<int> loadingprogress = loadingUI as IProgress<int>;
 
-        loadingprogress?.Set(0, totalLoadCount);
+        loadingprogress?.Set(0, totalLoadCount-1);
         yield return _data.Connect(this);
         loadingprogress?.AddCurrent(1);
         yield return _save.Connect(this);

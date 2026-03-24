@@ -1,15 +1,129 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+//이벤트!
+//"마우스가 클릭되는 이벤트"라는 상황이 발생했다고 해봅시다!
+//마우스가 클릭되었다고 하는 것은 어떤 정보가 필요할까요?
+//플레이어가 받을 정보는 무엇일까?
+//어디가 눌렸는지?
+//      대리자 => 너에게 내 기술을 전수해주마.
+//                        기능의 모양은 정해져 있습니다!
+//플레이어가 할 일 대리 뛰어주고, 열려있는 창이 있다면 그 친구의 기능도 수행해주고
+//내가 신호 주면 연결되어 있는 모든 애들이 한 번에 뛰쳐나와서 일을 수행하고 간다!
+public delegate void MouseDownEvent(Vector3 position);
+public delegate void MouseUpEvent(Vector3 position);
+public delegate void MouseMoveEvent(Vector2 screenPosition, Vector3 worldPosition);
+
+//인풋 매니저는 PlayerInput없이 일을 할 수 있을까?
+//할 수 없습니다.
+//특정한 클래스는 특정한 컴포넌트와 함께 사용해야 한다!
+//특정 클래스가 다른 클래스를 Dependence 의존하는 경우!
+//다른 클래스가 필요해요! Require
+//대상 변수나 클래스 위쪽에다가 [이렇게] 내용을 넣는 것을 Attribute : 속성
+[RequireComponent(typeof(PlayerInput))]
 public class InputManager : ManagerBase
 {
+    //그냥 대리자는 누구나 등록하고 시전할 수 있지만
+    //event 대리자는 누구나 등록하고 나만 시전할 수 있음!
+    public static event MouseDownEvent OnMouseLeftDown;
+    public static event MouseDownEvent OnMouseRightDown;
+    public static event MouseUpEvent OnMouseLeftUp;
+    public static event MouseUpEvent OnMouseRightUp;
+    public static event MouseMoveEvent OnMouseMove;
+
+    PlayerInput targetInput;
+    Dictionary<string, InputAction> actionDictionary = new();
+
+    public bool is2D = true;
+
+    Vector2 test;
+
     protected override IEnumerator OnConnected(GameManager newManager)
     {
+        //나랑 함께 있는 (무조건 죽을 때까지) 함께 있는 PlayerInput을 가져오고 싶다.
+        targetInput = GetComponent<PlayerInput>();
+        
+        LoadAllActions();
+        InitializeAllActions();
+        
+        //여러분들이 저번에 게임 만들 때에 "앞으로"가는 키가 뭐였죠?
+        //"Forward" -> [D]키로 만들었습니다. : D키로 이동하고 싶지 않으면요?
+        //키 변경이 가능하던가요?
+        //유저가 키 변경을 할 수 있게 하려면? "Forward"가 뭔지는 알아야
+        //=> Forward의 버튼을 알 수 있음
+        //OnMouseLeftButtonDown이라는 함수를 만들면 됐었는데
+        //그걸 안 쓰는 이유는 뭘까? => 직접 연결하기 위해!
+        //OnMouseLeftButtonDown이라는 이름의 액션을 만들었죠
+        //유니티는 OnMouseLeftButtonDown이라고 하는 이름의 함수를
+        //제 스크립트에서 "찾아서" 실시간으로 "실행할 수 있는 기능"을 불러와야 합니다
+        //유니티보고 찾으라는 게 아니라 내가 직접 꽃아줄 거
+
         yield return null;
     }
 
     protected override void OnDisconnect()
     {
 
+    }
+
+    void LoadAllActions()
+    {
+        foreach (InputAction currentAction in targetInput.actions)
+        {
+            actionDictionary.TryAdd(currentAction.name, currentAction);
+        }
+    }
+
+    void InitializeAllActions()
+    {
+        if (actionDictionary == null || actionDictionary.Count == 0) return;
+
+        if(actionDictionary.TryGetValue("CursorPositionChanged", out InputAction cursorPositionChanged))
+        {
+            //커서위치변경액션의 발동에다가 CursorPositionChanged함수를 추가
+            //이것도 같이 해줘
+            cursorPositionChanged.performed += CursorPositionChanged;
+        }
+        if(actionDictionary.TryGetValue("MouseLeftButtonDown", out InputAction mouseLeftButtonDown))
+        {
+            mouseLeftButtonDown.performed += MouseLeftButtonDown;
+        }
+    }
+
+    void CursorPositionChanged(InputAction.CallbackContext context)
+    {
+        //마우스의 화면상 실제 픽셀 위치
+        Vector2 screenPosition = context.ReadValue<Vector2>();
+        test = context.ReadValue<Vector2>();
+        //화면상 x축으로 1픽셀 움직이면
+        //유니티에서 1칸은 1m
+        //화면 => 세상
+        //필요한 것이 무엇일까? => 기준점이 되는 좌표
+        //화면의 왼쪽 끝은 세상의 어디일까?
+        //카메라가 필요하다
+        //카메라를 기준으로 세상을 본다
+        //절두체
+        Vector3 worldPosition;
+
+        if(is2D)
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+            worldPosition.z = 0;
+        }
+        else
+        {
+            worldPosition = Vector3.zero;
+        }
+        //대리자는 모든 스킬을 한 번에 사용할 수 있는 친구 => 사기캐
+        //....배운 스킬이 없으면?
+        OnMouseMove?.Invoke(screenPosition, worldPosition);
+    }
+
+    void MouseLeftButtonDown(InputAction.CallbackContext context)
+    {
+        Vector3 position = test;
+        Debug.Log($"생성{position}");
     }
 }

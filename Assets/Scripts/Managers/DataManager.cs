@@ -5,6 +5,7 @@
 //근데 앞에다가 이걸 원래 써야 해요!
 //NameSpace기 때문에
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -13,6 +14,9 @@ using UnityEngine.AddressableAssets;
 
 public class DataManager : ManagerBase
 {
+    //전체 데이터를 저장하는 딕셔너리
+    static Dictionary<System.Type,Dictionary<string, Object>> dataDictionary = new();
+
     // 프로퍼티는 변수모양이지만 함수
     //         int GetLoadCount();
     public override int LoadCount
@@ -56,14 +60,13 @@ public class DataManager : ManagerBase
         System.Action ProgressOnLoad = () => 
         {
             loaded++;
-            progressUI.AddCurrent(1);
-            StatusUI.SetCurrentStatus($"인원 모으는 중 {loaded}/{total}");
+            progressUI?.AddCurrent(1);
+            StatusUI?.SetCurrentStatus($"인원 모으는 중 {loaded}/{total}");
         };
 
 
 
         LoadAllFromAssetBundle<GameObject>("Global", ProgressOnLoad);
-
 
         //그냥 함수를 실행하는 것이 아니라, 이 작업을 시작할 인원을 모집해야 한다! -> 해당 스레드한테 시켜야 한다!
         //LoadFileFromAssetBundle<GameObject>("Origin/Prefabs/Square.prefab");
@@ -132,7 +135,7 @@ public class DataManager : ManagerBase
     //                유니티에서도 코드를 바꾼 다음에 유니티 클릭하면 컴파일 하면서 로딩창 나옴!
     //Python, JavaScript, Java
     //Interpreter : 통역사, 번역기 => 그 때 그 때 확인을 해서 목적코드를 한 줄씩 생성해서 실행
-    
+
     //나랑 같이 작업할래?
     //나는 이런 일을 해!
 
@@ -147,10 +150,57 @@ public class DataManager : ManagerBase
     //할 일을 이야기한다! => 매개변수로 "할 일"을 넣는 방법이 있을까?
     //컴퓨터에서 "할 일"은 "기능" => "Function" => 함수
     //함수를 매개변수로 넘겨줄 수 있다.
-    public void SaveDataFile<T>(T target) where T : Object
+    //
+    //저장을 한다는 것은 무엇을 암시할까?
+    //불러와야 합니다
+    //저장을 할 때 가장 중요한 건 불러와야 합니다
+    //냉장고 정리
+    //신선칸 => 채소
+    //냉장고 앞 문 쪽문 => 마실 것
+    //데이터는 그러면 어떻게 저장하는게 편할까?
+    //프리팹(게임오브젝트)
+    //그림(스프라이트)
+    //손님이 왔음. 프리팹을 주시오! => 어떤 프리팹을 원하시나요?
+    //                               제품명을 좀 알려주세요
+    //1. 종류로 저장한다
+    //2. 세부 분류를 저장한다!
+    //3. 이름으로 저장한다
+    //종류로 내용물을 찾음 => Dictionary
+    //GameObject Square17
+    //Type                    => String => GameObject
+    //                 Dictionary<String, GameObject>
+    //Dictionary<Type,                               > 
+    public static void SaveDataFile<T>(T target) where T : Object
     {
         if (target == null) return;
-        Debug.Log(target);
+        Dictionary<string, Object> innerDictionary;
+
+        //지금까지 이런 Object는 없었다. 처음보는 Type이다
+        //innerDictionary가 존재하지 않을 것이기 때문에!
+        if (!dataDictionary.TryGetValue(typeof(T), out innerDictionary))
+        {
+            //만들어야한다! 
+            innerDictionary = new();
+            //만들어서 해당 타입으로 등록해주기!
+            dataDictionary.Add(typeof(T), innerDictionary);
+        }
+
+        //이 밑에서 부터는 무조건 innerDictionary가 있다!
+        innerDictionary.TryAdd(target.name, target);
+    }
+
+    public static T LoadDataFile<T>(string fileName) where T : Object
+    {
+        if(dataDictionary.TryGetValue(typeof(T), out Dictionary<string, Object> innerDictionary))
+        {
+            if(innerDictionary.TryGetValue(fileName, out Object result))
+            {
+                return result as T;
+            }
+        }
+
+        //else는 안 적어야 위에 있는 두겹의 if를 모두 처리 가능!
+        return null;
     }
 
     //LoadAssets로 넘어오는 순간 생긴 문제!
@@ -176,6 +226,7 @@ public class DataManager : ManagerBase
             actionForEachLoad(); // 할 일 있다고 하니까 해줘야지
         });
         await finder.Task;
+        finder.Release();
     }
 
     public async void LoadFileFromAssetBundle<T>(string address) where T : Object
@@ -184,6 +235,7 @@ public class DataManager : ManagerBase
         var finder = Addressables.LoadAssetAsync<T>(address);
         await finder.Task; //Start / Run에 해당하는 부분!
         SaveDataFile(finder.Result);
+        finder.Release();
 
         //A의 뜻이 뭘까?
         //An-
