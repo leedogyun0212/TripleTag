@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 //이벤트!
 //"마우스가 클릭되는 이벤트"라는 상황이 발생했다고 해봅시다!
@@ -12,8 +16,8 @@ using UnityEngine.InputSystem;
 //                        기능의 모양은 정해져 있습니다!
 //플레이어가 할 일 대리 뛰어주고, 열려있는 창이 있다면 그 친구의 기능도 수행해주고
 //내가 신호 주면 연결되어 있는 모든 애들이 한 번에 뛰쳐나와서 일을 수행하고 간다!
-public delegate void MouseDownEvent(Vector3 position);
-public delegate void MouseUpEvent(Vector3 position);
+public delegate void MouseDownEvent(Vector2 screenPosition, Vector3 worldPosition);
+public delegate void MouseUpEvent(Vector2 screenPosition, Vector3 worldPosition);
 public delegate void MouseMoveEvent(Vector2 screenPosition, Vector3 worldPosition);
 
 //인풋 매니저는 PlayerInput없이 일을 할 수 있을까?
@@ -35,19 +39,23 @@ public class InputManager : ManagerBase
 
     PlayerInput targetInput;
     Dictionary<string, InputAction> actionDictionary = new();
+    List<RaycastResult> cursorHitList = new();
+
+    Vector2 cursorScreenPosition;
+    Vector3 cursorWorldPosition;
+
 
     public bool is2D = true;
 
-    Vector2 test;
-
     protected override IEnumerator OnConnected(GameManager newManager)
     {
+
         //나랑 함께 있는 (무조건 죽을 때까지) 함께 있는 PlayerInput을 가져오고 싶다.
         targetInput = GetComponent<PlayerInput>();
         
         LoadAllActions();
         InitializeAllActions();
-        
+
         //여러분들이 저번에 게임 만들 때에 "앞으로"가는 키가 뭐였죠?
         //"Forward" -> [D]키로 만들었습니다. : D키로 이동하고 싶지 않으면요?
         //키 변경이 가능하던가요?
@@ -59,13 +67,31 @@ public class InputManager : ManagerBase
         //유니티는 OnMouseLeftButtonDown이라고 하는 이름의 함수를
         //제 스크립트에서 "찾아서" 실시간으로 "실행할 수 있는 기능"을 불러와야 합니다
         //유니티보고 찾으라는 게 아니라 내가 직접 꽃아줄 거
-
+        //                                            원래 있었으면 빼고 아니면 말고니까
+        //                                            추가할 때마다 빼고 넣으면
+        //                                            무조건 개수는 한 개가된다.
+        GameManager.OnUpdateManager -= UpdateEvent; //뺄 건데, 없으면 말고
+        GameManager.OnUpdateManager += UpdateEvent;
         yield return null;
     }
 
     protected override void OnDisconnect()
     {
+        GameManager.OnUpdateManager -= UpdateEvent;
+    }
 
+    public void UpdateEvent(float deltaTime)
+    {
+        GameManager.Instance.Camera.GetRaycastResult2D(cursorScreenPosition, cursorHitList);
+    }
+
+    public GameObject GetGameObjectUnderCursor()
+    {
+        Debug.Log($"{cursorScreenPosition}/{cursorHitList.Count}");
+        //마우스의 닿은것의 개수가 0이라면 => 없으니까 돌아가라
+        if(cursorHitList.Count == 0) return null;
+        
+        return cursorHitList[0].gameObject; // 일단 지금은 임시로 첫 번째 오브젝트 돌려주기!
     }
 
     void LoadAllActions()
@@ -80,23 +106,29 @@ public class InputManager : ManagerBase
     {
         if (actionDictionary == null || actionDictionary.Count == 0) return;
 
-        if(actionDictionary.TryGetValue("CursorPositionChanged", out InputAction cursorPositionChanged))
+        InitializeAction("CursorPositionChanged", CursorPositionChanged);
+        InitializeAction("MouseLeftButtonDown",  (context) => OnMouseLeftDown?.Invoke(cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseRightButtonDown", (context) => OnMouseRightDown?.Invoke(cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseLeftButtonUp",    (context) => OnMouseLeftUp?.Invoke(cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseRightButtonUp",   (context) => OnMouseRightUp?.Invoke(cursorScreenPosition, cursorWorldPosition));
+    }
+
+    void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod)
+    {
+        if (actionDictionary == null) return;
+        if (actionDictionary.TryGetValue(actionName, out InputAction cursorPositionChanged))
         {
             //커서위치변경액션의 발동에다가 CursorPositionChanged함수를 추가
             //이것도 같이 해줘
-            cursorPositionChanged.performed += CursorPositionChanged;
-        }
-        if(actionDictionary.TryGetValue("MouseLeftButtonDown", out InputAction mouseLeftButtonDown))
-        {
-            mouseLeftButtonDown.performed += MouseLeftButtonDown;
+            cursorPositionChanged.performed += actionMethod;
         }
     }
 
     void CursorPositionChanged(InputAction.CallbackContext context)
     {
+
         //마우스의 화면상 실제 픽셀 위치
         Vector2 screenPosition = context.ReadValue<Vector2>();
-        test = context.ReadValue<Vector2>();
         //화면상 x축으로 1픽셀 움직이면
         //유니티에서 1칸은 1m
         //화면 => 세상
@@ -116,14 +148,13 @@ public class InputManager : ManagerBase
         {
             worldPosition = Vector3.zero;
         }
+
+        //위치 내놔
+        cursorScreenPosition = screenPosition;
+        cursorWorldPosition = worldPosition;
+
         //대리자는 모든 스킬을 한 번에 사용할 수 있는 친구 => 사기캐
         //....배운 스킬이 없으면?
         OnMouseMove?.Invoke(screenPosition, worldPosition);
-    }
-
-    void MouseLeftButtonDown(InputAction.CallbackContext context)
-    {
-        Vector3 position = test;
-        Debug.Log($"생성{position}");
     }
 }
