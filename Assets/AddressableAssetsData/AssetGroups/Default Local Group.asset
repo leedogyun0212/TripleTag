@@ -28,6 +28,13 @@ MonoBehaviour:
     - Global
     - Origin
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cdc660a4c164f8043a236eed4c071e72
+    m_Address: Origin/ScriptableObjects/Giobals
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Global
+    - Origin
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5619875ba4e17d34b8ffa149e071d245, type: 2}
   m_SchemaSet:

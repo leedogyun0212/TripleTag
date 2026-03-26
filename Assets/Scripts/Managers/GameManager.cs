@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
     
     DataManager      _data;
     public DataManager      Data => _data;
-    
+
+    ObjectManager    _objectM;
+    public ObjectManager    ObjectM => _objectM;
+
     SaveManager      _save;
     public SaveManager      Save => _save;
     
@@ -148,6 +151,7 @@ public class GameManager : MonoBehaviour
         int totalLoadCount = 0;
         totalLoadCount += CreateManager(ref _ui).LoadCount;
         totalLoadCount += CreateManager(ref _data).LoadCount;
+        totalLoadCount += CreateManager(ref _objectM).LoadCount;
         totalLoadCount += CreateManager(ref _save).LoadCount;
         totalLoadCount += CreateManager(ref _setting).LoadCount;
         totalLoadCount += CreateManager(ref _language).LoadCount;
@@ -160,8 +164,10 @@ public class GameManager : MonoBehaviour
         UIBase loadingUI = UIManager.ClaimOpenUI(UIType.Loading);//UI System이 돌아가기 시작했으니까 기능을 실행해보기
         IProgress<int> loadingprogress = loadingUI as IProgress<int>;
 
-        loadingprogress?.Set(0, totalLoadCount-1);
+        loadingprogress?.Set(0, totalLoadCount);
         yield return _data.Connect(this);
+        loadingprogress?.AddCurrent(1);
+        yield return _objectM.Connect(this);
         loadingprogress?.AddCurrent(1);
         yield return _save.Connect(this);
         loadingprogress?.AddCurrent(1);
@@ -175,6 +181,7 @@ public class GameManager : MonoBehaviour
         loadingprogress?.AddCurrent(1);
         yield return _input.Connect(this);
         loadingprogress?.AddCurrent(1);
+        loadingprogress?.AddCurrent(1);
         yield return new WaitForSeconds(1.0f);
         UIManager.ClaimCloseUI(UIType.Loading);
         isLoading = false;
@@ -184,6 +191,8 @@ public class GameManager : MonoBehaviour
     {
         //유저입력  InputManager
         Input?.Disconnect();
+        //오브젝트  ObjectManager
+        ObjectM?.Disconnect();
         //오디오    AudioManager
         Audio?.Disconnect();
         //언어      LanguageManager
