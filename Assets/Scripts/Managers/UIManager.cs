@@ -4,12 +4,16 @@ using UnityEngine;
 
 public enum UIType
 {
-    None, Loading, Title,
+    None, Loading, Title, Movable,
     _Length
 }
 
+public delegate void PopUpEvent(string title, string context, string confirm);
+
 public class UIManager : ManagerBase
 {
+    public static event PopUpEvent OnpopUp;
+
     Canvas _mainCanvas;
     public Canvas MainCanvas => _mainCanvas;
 
@@ -17,11 +21,18 @@ public class UIManager : ManagerBase
     //         이 타입 어떤 오브젝트!
     Dictionary<UIType, UIBase> uiDictionary = new();
 
-    protected override IEnumerator OnConnected(GameManager newManager)
+    public IEnumerator Initialize(GameManager newManager)
     {
         _mainCanvas = GetComponentInChildren<Canvas>();
         //GameObject.FindGameObjectWithTag("MainCanvas");
         SetUI(UIType.Loading, GetComponentInChildren<UI_LoadingScreen>());
+        yield return null;
+    }
+
+    protected override IEnumerator OnConnected(GameManager newManager)
+    {
+        UIBase movableUI = CreateUI(UIType.Movable, "MovableScreen");
+        movableUI.SetChild(ObjectManager.CreateObject("PopUp"));
         yield return null;
     }
 
@@ -30,6 +41,12 @@ public class UIManager : ManagerBase
 
     }
 
+    protected UIBase CreateUI(UIType wantType, string wantName)
+    {
+        GameObject instance = ObjectManager.CreateObject("MovableScreen", _mainCanvas.transform);
+        UIBase result = instance?.GetComponent<UIBase>();
+        return SetUI(wantType, result);
+    }
     protected UIBase SetUI(UIType wantType, UIBase wantUI)
     {
         //Set UI를 하려고 하는데 문제가 무엇일까!
@@ -71,7 +88,7 @@ public class UIManager : ManagerBase
         //if (opener != null) opener.Open();
         return result;
     }
-    public static UIBase ClaimOpenUI(UIType wantType)               => GameManager.Instance?.UI?.OpenUI(wantType);
+    public static UIBase ClaimOpenUI(UIType wantType)   => GameManager.Instance?.UI?.OpenUI(wantType);
 
     protected UIBase CloseUI(UIType wantType)
     {
@@ -81,7 +98,7 @@ public class UIManager : ManagerBase
 
         return result;
     }
-    public static UIBase ClaimCloseUI(UIType wantType)              => GameManager.Instance?.UI?.CloseUI(wantType);
+    public static UIBase ClaimCloseUI(UIType wantType)  => GameManager.Instance?.UI?.CloseUI(wantType);
 
     protected UIBase ToggleUI(UIType wantType)
     {
@@ -89,5 +106,15 @@ public class UIManager : ManagerBase
         if (result is IOpenable asOpenable) asOpenable.Toggle();
         return result;
     }
-    public static UIBase ClaimToggleUI(UIType wantType)             => GameManager.Instance?.UI?.ToggleUI(wantType);
+    public static UIBase ClaimToggleUI(UIType wantType) => GameManager.Instance?.UI?.ToggleUI(wantType);
+    
+    public static void ClaimPopUp(string title, string context, string confirm)
+    {
+        OnpopUp?.Invoke(title, context, confirm);
+    }
+
+    public static void ClaimErrorMessage(string context)
+    {
+        OnpopUp?.Invoke("Error", context, "confirm");
+    }
 }

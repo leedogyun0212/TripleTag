@@ -56,6 +56,9 @@ public class ObjectManager : ManagerBase
     {
         GameObject result = null;
 
+        //이름 대소문자 신경쓰지 않고 싶다
+        wantName = wantName.ToLower();
+
         //이름으로 풀링이 등록되어 있대요!
         if (poolDictionary.TryGetValue(wantName, out ObjectPoolModule pool))
         {
@@ -317,14 +320,18 @@ public class ObjectManager : ManagerBase
 
     public void RegistrationPool(string poolName)
     {
+        poolName = poolName.ToLower();
+
         //명령!
         PoolRequest currentRequest = DataManager.LoadDataFile<PoolRequest>(poolName);
         if (currentRequest == null) return;
+        if (currentRequest.settings == null) return;
+
         loadedPoolRequest.Add(currentRequest);
 
         foreach (PoolSetting currentSetting in currentRequest.settings)
         {
-            string currentName = currentSetting.poolName;
+            string currentName = currentSetting.poolName.ToLower();
             GameObject currentPrefab = currentSetting.target;
             if (currentPrefab == null) continue;
             //문제가 생길 여지가 하나 더 있다!

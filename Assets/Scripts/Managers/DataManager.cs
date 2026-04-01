@@ -192,11 +192,13 @@ public class DataManager : ManagerBase
         }
 
         //이 밑에서 부터는 무조건 innerDictionary가 있다!
-        innerDictionary.TryAdd(target.name, target);
+        innerDictionary.TryAdd(target.name.ToLower(), target);
     }
 
     public static T LoadDataFile<T>(string fileName) where T : Object
     {
+        fileName = fileName.ToLower();
+
         if(dataDictionary.TryGetValue(typeof(T), out Dictionary<string, Object> innerDictionary))
         {
             if(innerDictionary.TryGetValue(fileName, out Object result))
