@@ -159,7 +159,6 @@ public class ObjectPoolModule
                 bool stretchY = asRectTransform.anchorMin.y != asRectTransform.anchorMax.y;
                 if(stretchX || stretchY)
                 {
-                    Debug.Log(originRectTransform.offsetMin);
                     asRectTransform.offsetMax = originRectTransform.offsetMax;
                     asRectTransform.offsetMin = originRectTransform.offsetMin;
                     //if (stretchX)
@@ -180,9 +179,6 @@ public class ObjectPoolModule
                     //4. UI의 "사이즈 값"을 가져온다
                     asRectTransform.sizeDelta = originRectTransform.sizeDelta;
                 }
-                Debug.Log(asRectTransform.anchoredPosition3D);
-                Debug.Log(asRectTransform.anchoredPosition+"KI");
-                Debug.Log(originRectTransform);
             }
             else
             {

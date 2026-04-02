@@ -68,12 +68,13 @@ public class ObjectManager : ManagerBase
         {
             //풀에 등록되지 않은 야생의 오브젝트를 만드는 방법
             //데이터에는 있는지 확인
-            GameObject prefab = DataManager.LoadDataFile<GameObject>(wantName);
-            if (prefab)
+            if(DataManager.TryLoadDataFile<GameObject>(wantName, out GameObject prefab))
             {
-                result = Instantiate(prefab, parent);
+                if (prefab) result = Instantiate(prefab, parent);
             }
         }
+
+        if (!result) UIManager.ClaimErrorMessage(SystemMessage.ObjectNameNotFound(wantName));
 
         //등록해주는 것 까지
         RegistrationObject(result); //둘 중 하나라도 했겠지? 아님 말고!

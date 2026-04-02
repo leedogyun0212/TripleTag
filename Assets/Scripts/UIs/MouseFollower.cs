@@ -32,7 +32,6 @@ public class MouseFollower : MonoBehaviour, IFunctionable
     {
         //저희가 로딩해놓은 거 있잖아요!
         GameObject inst = ObjectManager.CreateObject("NemoMan");
-        inst.transform.position = worldPosition;
     }
 
     void MoveToMouse(Vector2 screenPosition, Vector3 worldPosition)

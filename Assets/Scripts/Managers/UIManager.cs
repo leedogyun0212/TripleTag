@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum UIType
 {
@@ -17,14 +18,17 @@ public class UIManager : ManagerBase
     Canvas _mainCanvas;
     public Canvas MainCanvas => _mainCanvas;
 
+    GraphicRaycaster _raycaster;
+    public GraphicRaycaster Raycaster => _raycaster;
+
     //어떤 창을 열어주세요!
     //         이 타입 어떤 오브젝트!
     Dictionary<UIType, UIBase> uiDictionary = new();
 
     public IEnumerator Initialize(GameManager newManager)
     {
-        _mainCanvas = GetComponentInChildren<Canvas>();
         //GameObject.FindGameObjectWithTag("MainCanvas");
+        SetMainCanvas(GetComponentInChildren<Canvas>());
         SetUI(UIType.Loading, GetComponentInChildren<UI_LoadingScreen>());
         yield return null;
     }
@@ -32,14 +36,27 @@ public class UIManager : ManagerBase
     protected override IEnumerator OnConnected(GameManager newManager)
     {
         UIBase movableUI = CreateUI(UIType.Movable, "MovableScreen");
-        movableUI.SetChild(ObjectManager.CreateObject("PopUp"));
         yield return null;
     }
 
     protected override void OnDisconnect()
     {
-
+        //싹 다 나가!
+        UnsetAllUI();
     }
+
+    protected void SetMainCanvas(Canvas newCanvas)
+    {
+        _mainCanvas = newCanvas;
+        if (_mainCanvas)
+        {
+            _raycaster = _mainCanvas.GetComponent<GraphicRaycaster>();
+        }
+        else
+        {
+            _raycaster = null;
+        }
+    }    
 
     protected UIBase CreateUI(UIType wantType, string wantName)
     {
@@ -47,6 +64,49 @@ public class UIManager : ManagerBase
         UIBase result = instance?.GetComponent<UIBase>();
         return SetUI(wantType, result);
     }
+    
+    protected void UnsetUI(UIType wantType)//담당 공무원의 부서를 알고 있는 경우
+    {
+        //그 직원을 찾아야 함
+        //담당 공무원의 이름을 알고 있는 경우로 이동하시오
+        if (uiDictionary.TryGetValue(wantType, out UIBase found))
+        {
+            UnsetUI(found);
+
+            uiDictionary.Remove(wantType);
+        }
+    }
+    protected void UnsetUI(UIBase wantUI)//담당 공무원의 이름을 알고 있는 경우
+    {
+        if(!wantUI) return;
+
+        wantUI.Unregistration(this);
+    }
+    public static void ClaimUnsetUI(UIBase wantUI)                  => GameManager.Instance.UI?.UnsetUI(wantUI);
+    public static void ClaimUnsetUI(GameObject wantObject)          => ClaimUnsetUI(wantObject?.GetComponent<UIBase>());
+    
+    protected void UnsetAllUI()//싹 다 해고야
+    {
+        foreach(UIBase ui in uiDictionary.Values)//애들 전부 돌면서
+        {
+            UnsetUI(ui);//나가라고 해주기
+            //여기에서 나가라고 할때마다 Dictionary에서 빼려고 하면
+            //안되는 이유
+            //uiDictionary.Remove(wantType);
+            //제거를 하는 경우 uiDictionary의 모양이 달라진다
+        }
+        //다 나갔으니까 직원 명부를 버렵버림!
+        uiDictionary.Clear();
+    }
+    
+    protected UIBase SetUI(UIBase wantUI)
+    {
+        wantUI?.Registration(this);
+        return wantUI;
+    }
+    public static UIBase ClaimSetUI(UIBase wantUI)                  => GameManager.Instance?.UI?.SetUI(wantUI);
+    public static UIBase ClaimSetUI(GameObject wantObject)          => ClaimSetUI(wantObject?.GetComponent<UIBase>());
+    
     protected UIBase SetUI(UIType wantType, UIBase wantUI)
     {
         //Set UI를 하려고 하는데 문제가 무엇일까!
@@ -61,9 +121,11 @@ public class UIManager : ManagerBase
 
         //두 가지의 시련을 모두 통과하면, 너는 등록될 수 있는 자격을 갖추었다.
         uiDictionary.Add(wantType, wantUI);
-        return wantUI;
+        //등록완
+        return SetUI(wantUI);
     }
     public static UIBase ClaimSetUI(UIType wantType, UIBase wantUI) => GameManager.Instance?.UI?.SetUI(wantType, wantUI);
+
     protected UIBase GetUI(UIType wantType)
     {
         if (uiDictionary.TryGetValue(wantType,out UIBase result)) return result;//있으면 result반환
@@ -88,7 +150,7 @@ public class UIManager : ManagerBase
         //if (opener != null) opener.Open();
         return result;
     }
-    public static UIBase ClaimOpenUI(UIType wantType)   => GameManager.Instance?.UI?.OpenUI(wantType);
+    public static UIBase ClaimOpenUI(UIType wantType)               => GameManager.Instance?.UI?.OpenUI(wantType);
 
     protected UIBase CloseUI(UIType wantType)
     {
@@ -98,7 +160,7 @@ public class UIManager : ManagerBase
 
         return result;
     }
-    public static UIBase ClaimCloseUI(UIType wantType)  => GameManager.Instance?.UI?.CloseUI(wantType);
+    public static UIBase ClaimCloseUI(UIType wantType)              => GameManager.Instance?.UI?.CloseUI(wantType);
 
     protected UIBase ToggleUI(UIType wantType)
     {
@@ -106,7 +168,7 @@ public class UIManager : ManagerBase
         if (result is IOpenable asOpenable) asOpenable.Toggle();
         return result;
     }
-    public static UIBase ClaimToggleUI(UIType wantType) => GameManager.Instance?.UI?.ToggleUI(wantType);
+    public static UIBase ClaimToggleUI(UIType wantType)             => GameManager.Instance?.UI?.ToggleUI(wantType);
     
     public static void ClaimPopUp(string title, string context, string confirm)
     {

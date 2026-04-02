@@ -195,13 +195,15 @@ public class DataManager : ManagerBase
         innerDictionary.TryAdd(target.name.ToLower(), target);
     }
 
-    public static T LoadDataFile<T>(string fileName) where T : Object
+    public static T GetDataFromDictionary<T>(string fileName) where T : Object
     {
+        if (string.IsNullOrEmpty(fileName)) return null;
+
         fileName = fileName.ToLower();
 
-        if(dataDictionary.TryGetValue(typeof(T), out Dictionary<string, Object> innerDictionary))
+        if (dataDictionary.TryGetValue(typeof(T), out Dictionary<string, Object> innerDictionary))
         {
-            if(innerDictionary.TryGetValue(fileName, out Object result))
+            if (innerDictionary.TryGetValue(fileName, out Object result))
             {
                 return result as T;
             }
@@ -209,6 +211,21 @@ public class DataManager : ManagerBase
 
         //else는 안 적어야 위에 있는 두겹의 if를 모두 처리 가능!
         return null;
+    }
+
+    public static T LoadDataFile<T>(string fileName) where T : Object
+    {
+        T result = GetDataFromDictionary<T>(fileName);
+
+        if(!result) UIManager.ClaimErrorMessage(SystemMessage.FileNameNotFound(fileName));
+
+        return result;
+    }
+
+    public static bool TryLoadDataFile<T>(string fileName, out T result) where T : Object
+    {
+        result = GetDataFromDictionary<T>(fileName);
+        return result;
     }
 
     //LoadAssets로 넘어오는 순간 생긴 문제!
@@ -220,11 +237,11 @@ public class DataManager : ManagerBase
     //                                         Action<float>      => void Function(float a)
     //                                         Action<int, float> => void Function(int a, float b)
     //                                         최대 16개의 매개변수까지 등록할 수 있다
-    
-    //                                         Func => 함수
-    //                                         수식은 반환값이 있어야 하니까 => 맨 오른쪽에 반환 자료형
-    //                                         Func<float, int>           => int Function(float a)
-    //                                         Func<float, string, int>   => int Function(float a, string b)
+
+        //                                         Func => 함수
+        //                                         수식은 반환값이 있어야 하니까 => 맨 오른쪽에 반환 자료형
+        //                                         Func<float, int>           => int Function(float a)
+        //                                         Func<float, string, int>   => int Function(float a, string b)
     public async Task LoadAllFromAssetBundle<T>(string label, System.Action actionForEachLoad) where T : Object
     {
         //                                 V                (매개변수) => {내용}
