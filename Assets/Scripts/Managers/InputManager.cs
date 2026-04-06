@@ -16,9 +16,11 @@ using UnityEngine.PlayerLoop;
 //                        기능의 모양은 정해져 있습니다!
 //플레이어가 할 일 대리 뛰어주고, 열려있는 창이 있다면 그 친구의 기능도 수행해주고
 //내가 신호 주면 연결되어 있는 모든 애들이 한 번에 뛰쳐나와서 일을 수행하고 간다!
-public delegate void MouseDownEvent(Vector2 screenPosition, Vector3 worldPosition);
-public delegate void MouseUpEvent(Vector2 screenPosition, Vector3 worldPosition);
+public delegate void MouseButtonEvent(bool value, Vector2 screenPosition, Vector3 worldPosition);
 public delegate void MouseMoveEvent(Vector2 screenPosition, Vector3 worldPosition);
+public delegate void ButtonEvent(bool value);
+public delegate void VectorEvent(Vector2 value);
+public delegate void AxisEvent(float value);
 
 //인풋 매니저는 PlayerInput없이 일을 할 수 있을까?
 //할 수 없습니다.
@@ -31,11 +33,13 @@ public class InputManager : ManagerBase
 {
     //그냥 대리자는 누구나 등록하고 시전할 수 있지만
     //event 대리자는 누구나 등록하고 나만 시전할 수 있음!
-    public static event MouseDownEvent OnMouseLeftDown;
-    public static event MouseDownEvent OnMouseRightDown;
-    public static event MouseUpEvent OnMouseLeftUp;
-    public static event MouseUpEvent OnMouseRightUp;
+    public static event MouseButtonEvent OnMouseLeftButton;
+    public static event MouseButtonEvent OnMouseRightButton;
     public static event MouseMoveEvent OnMouseMove;
+    public static event ButtonEvent OnDash;
+    public static event ButtonEvent OnTrap;
+    public static event ButtonEvent OnAttack;
+    public static event VectorEvent OnMove;
 
     PlayerInput targetInput;
     Dictionary<string, InputAction> actionDictionary = new();
@@ -118,11 +122,17 @@ public class InputManager : ManagerBase
     {
         if (actionDictionary == null || actionDictionary.Count == 0) return;
 
-        InitializeAction("CursorPositionChanged", CursorPositionChanged);
-        InitializeAction("MouseLeftButtonDown",  (context) => OnMouseLeftDown?.Invoke(cursorScreenPosition, cursorWorldPosition));
-        InitializeAction("MouseRightButtonDown", (context) => OnMouseRightDown?.Invoke(cursorScreenPosition, cursorWorldPosition));
-        InitializeAction("MouseLeftButtonUp",    (context) => OnMouseLeftUp?.Invoke(cursorScreenPosition, cursorWorldPosition));
-        InitializeAction("MouseRightButtonUp",   (context) => OnMouseRightUp?.Invoke(cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("CursorPositionChanged",(context) => CursorPositionChanged(GetVector2Value(context)));
+        InitializeAction("Move",                 (context) => OnMove?.Invoke(GetVector2Value(context)));
+        
+        InitializeAction("MouseLeftButtonDown",  (context) => OnMouseLeftButton ?.Invoke(true, cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseRightButtonDown", (context) => OnMouseRightButton?.Invoke(true, cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseLeftButtonUp",    (context) => OnMouseLeftButton ?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseRightButtonUp",   (context) => OnMouseRightButton?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
+        
+        InitializeAction("DashButtonDown",       (context) => OnDash?.Invoke(true));
+        InitializeAction("TrapButtonDown",       (context) => OnTrap?.Invoke(true));
+        InitializeAction("AttackButtonDown",     (context) => OnAttack?.Invoke(true));
     }
 
     void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod)
@@ -136,11 +146,16 @@ public class InputManager : ManagerBase
         }
     }
 
-    void CursorPositionChanged(InputAction.CallbackContext context)
+    Vector2 GetVector2Value(InputAction.CallbackContext context)
+    {
+        if(context.valueType != typeof(Vector2)) return Vector2.zero;
+        return context.ReadValue<Vector2>();
+    }
+
+    void CursorPositionChanged(Vector2 screenPosition)
     {
 
         //마우스의 화면상 실제 픽셀 위치
-        Vector2 screenPosition = context.ReadValue<Vector2>();
         //화면상 x축으로 1픽셀 움직이면
         //유니티에서 1칸은 1m
         //화면 => 세상

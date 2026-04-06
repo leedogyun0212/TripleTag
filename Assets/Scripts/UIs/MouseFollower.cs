@@ -14,14 +14,12 @@ public class MouseFollower : MonoBehaviour, IFunctionable
     public void RegistrationFunctions()
     {
         //마우스 움직임이 발생했을 때에 할 일에 => 마우스 따라가기를 넣기
-        InputManager.OnMouseLeftUp += CreateToMouse;
-        InputManager.OnMouseRightDown += DestroyOnMouse;
+        InputManager.OnAttack += TestAttack;
     }
 
     public void UnregistrationFunctions()
     {
-        InputManager.OnMouseLeftUp -= CreateToMouse;
-        InputManager.OnMouseRightDown -= DestroyOnMouse;
+
     }
 
     void DestroyOnMouse(Vector2 screenPosition, Vector3 worldPosition)
@@ -38,5 +36,10 @@ public class MouseFollower : MonoBehaviour, IFunctionable
     {
         transform.position = worldPosition;
 
+    }
+
+    void TestAttack(bool value)
+    {
+        UIManager.ClaimPopUp($"확인", $"움직임", "확인");
     }
 }
