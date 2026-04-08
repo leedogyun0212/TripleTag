@@ -48,3 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408066ee2d8a0ce41a2f2f38a521150a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_MovableScreen
+  requiredUI:
+  - prefabName: ProfileWindow
+    uiType: 4
+    isOpen: 0
+  popupList: []

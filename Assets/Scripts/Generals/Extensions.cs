@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Threading.Tasks;
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 //확장메소드들을 가지고 있을 친구들!
@@ -66,5 +67,82 @@ public static class Extensions
         yield return new WaitUntil(() => targetTask.IsCompleted);
         //작업을 제거하다
         targetTask.Dispose();
+    }
+
+    public static float GetPenetratedDistance(float aHalf, float bHalf, float aPos, float bPos)
+    {
+        float absAHalf = Mathf.Abs(aHalf);
+        float absBHalf = Mathf.Abs(bHalf);
+        //그래서 겹쳤다면, 만약에 원래 안 겹쳤을 때에 있을 수 있는 공간
+        float minSpace = absAHalf + absBHalf;
+        //지금 이 둘사이의 거리가 얼마나 가까운지!
+        float distance = aPos - bPos;
+        //x최소 거리와 둘 사이의 거리 차이! => 예외처리!
+        float penetration = minSpace - Mathf.Abs(distance);
+        //어느 방향으로 묻혀있는지 확인하는 것도 중요!
+        //A가 왼쪽 => +로 보여줄까 -로 보여줄까!
+        //xDistance의 부호를 그대로 따라가게 하려면!
+        //              마이너스면 -1 / 0이상여면 1
+        penetration *= Mathf.Sign(distance);
+        return penetration;
+    }
+
+    //A와 B가 있는데, 얼마나 깊게 묻혀 있는지 확인
+    //기준은 A로 잡을거예요
+    public static Vector2 AABB(this Rect A, Rect B)
+    {
+        Vector2 result = Vector2.zero;
+        Vector2 aMin = A.min;
+        Vector2 aMax = A.max;
+        Vector2 aHalf = A.size * 0.5f;
+        Vector2 bMin = B.min;
+        Vector2 bMax = B.max;
+        Vector2 bHalf = B.size * 0.5f;
+
+        //한쪽의 최대 위치가 다른 쪽의 최소 위치보다 높아야 함!
+        if(aMax.x > bMin.x && bMax.x > aMin.x)
+        {
+            result.x = GetPenetratedDistance(aHalf.x, bHalf.x, A.position.x, B.position.x);
+        }
+
+        if (aMax.y > bMin.y && bMax.y > aMin.y)
+        {
+            result.y = GetPenetratedDistance(aHalf.y, bHalf.y, A.position.y, B.position.y);
+        }
+
+        return result;
+    }
+
+    //Clamp를 만드는 것과 비슷하다!
+    //숫자 하나를 범위내에 유지하도록 만들어 주는 것!
+    //대신 숫자 하나가 아니라 범위를 범위 내에 있도록 해주는 것!
+    //내부적으로 확률을 맟출 때라던지
+    public static float GetOutboundDistance(float inMin, float outMin, float inMax, float outMax)
+    {
+        float result = 0.0f;
+
+        bool leftOut = inMin < outMin;
+        bool rightOut = inMax > outMax;
+
+        if (leftOut ^ rightOut)
+        {
+            if (leftOut) result = outMin - inMin;
+            if (rightOut) result = outMax - inMax;
+        }
+        return result;
+    }
+
+    //빠져 나온 양을 체크하는 방법!
+    //오른쪽으로 2만큼 빠져 나왔다면 (-2, 0)  
+    //왼쪽으로 3만큼 빠져 나왔다면 (3, 0)  
+    //아래로 1만큼 빠져 나왔다면 (0, 1)  
+    //위로 1만큼 빠져 나왔다면 (0, -1)  
+    public static Vector2 InversedAABB(this Rect target, Rect bound)
+    {
+        Vector2 result;
+        result.x = GetOutboundDistance(target.xMin, bound.xMin, target.xMax, bound.xMax);
+        result.y = GetOutboundDistance(target.yMin, bound.yMin, target.yMax, bound.yMax);
+
+        return result;
     }
 }

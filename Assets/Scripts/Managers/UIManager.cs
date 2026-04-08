@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public enum UIType
 {
-    None, Loading, Title, Movable,
+    None, Loading, Title, Movable,Profile,Message,
     _Length
 }
 
@@ -24,6 +24,12 @@ public class UIManager : ManagerBase
     //어떤 창을 열어주세요!
     //         이 타입 어떤 오브젝트!
     Dictionary<UIType, UIBase> uiDictionary = new();
+
+    Rect _uiBoundary;
+    public static Rect UIBoundary => GameManager.Instance?.UI?._uiBoundary ?? Rect.zero;
+
+    float _uiScale = 1.0f;
+    public static float UIScale => GameManager.Instance?.UI?._uiScale ?? 1.0f;
 
     public IEnumerator Initialize(GameManager newManager)
     {
@@ -51,6 +57,12 @@ public class UIManager : ManagerBase
         if (_mainCanvas)
         {
             _raycaster = _mainCanvas.GetComponent<GraphicRaycaster>();
+
+            if(MainCanvas.transform is RectTransform mainRectTransform)
+            {
+                _uiScale = mainRectTransform.lossyScale.x;
+                _uiBoundary = mainRectTransform.rect;
+            }
         }
         else
         {
@@ -60,11 +72,12 @@ public class UIManager : ManagerBase
 
     protected UIBase CreateUI(UIType wantType, string wantName)
     {
-        GameObject instance = ObjectManager.CreateObject("MovableScreen", _mainCanvas.transform);
+        GameObject instance = ObjectManager.CreateObject(wantName, _mainCanvas.transform);
         UIBase result = instance?.GetComponent<UIBase>();
         return SetUI(wantType, result);
     }
-    
+    public static UIBase ClaimCreateUI(UIType wantType, string wantName) => GameManager.Instance?.UI?.CreateUI(wantType, wantName);
+
     protected void UnsetUI(UIType wantType)//담당 공무원의 부서를 알고 있는 경우
     {
         //그 직원을 찾아야 함

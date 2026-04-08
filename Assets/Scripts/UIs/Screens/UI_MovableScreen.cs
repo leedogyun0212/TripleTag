@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_MovableScreen : UIBase
+public class UI_MovableScreen : UI_ScreenBase
 {
     [SerializeField] List<UIBase> popupList = new();
     Vector3 popupPosition = Vector3.zero;
@@ -13,8 +13,11 @@ public class UI_MovableScreen : UIBase
     public override void Registration(UIManager manager)
     {
         base.Registration(manager);
+        InputManager.OnDash += (value) => UIManager.ClaimToggleUI(UIType.Profile);
         InputManager.OnMouseMove -= MouseMove;
         InputManager.OnMouseMove += MouseMove;
+        InputManager.OnMouseLeftButton -= MouseLeft;
+        InputManager.OnMouseLeftButton += MouseLeft;
         UIManager.OnpopUp -= PopUp;
         UIManager.OnpopUp += PopUp;
     }
@@ -23,6 +26,7 @@ public class UI_MovableScreen : UIBase
     {
         base.Unregistration(manager);
         InputManager.OnMouseMove -= MouseMove;
+        InputManager.OnMouseLeftButton -= MouseLeft;
         UIManager.OnpopUp -= PopUp;
     }
 
@@ -68,6 +72,10 @@ public class UI_MovableScreen : UIBase
             currentDragTarget.SetMouseStartPosition(startPosition);
         }
     }
+    private void MouseLeft(bool value, Vector2 screenPosition, Vector3 worldPosition)
+    {
+        if(!value) currentDragTarget = null;
+    }
 
     void MouseMove(Vector2 screenPosition, Vector3 worldPosition)
     {
@@ -90,7 +98,7 @@ public class UI_MovableScreen : UIBase
                 //팝업창에 합류
                 //대신 원래 네가 여기 없었다면 => 하나의 팝업인데 두번의 리스트에 들어가면?
                 //일단 띠껍긴 함
-                if (popupList.Contains(newUI)) popupList.Add(newUI);
+                if (!popupList.Contains(newUI)) popupList.Add(newUI);
             }
             //이 친구가 시스템 메시지를 받을 수 있는 걸까?
             //ISystemMessagePossible인지 체크를 하고

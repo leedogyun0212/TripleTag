@@ -14,7 +14,8 @@ public class MouseFollower : MonoBehaviour, IFunctionable
     public void RegistrationFunctions()
     {
         //마우스 움직임이 발생했을 때에 할 일에 => 마우스 따라가기를 넣기
-        InputManager.OnAttack += TestAttack;
+        InputManager.OnAttack += (value) => UIManager.ClaimPopUp("확인", $"움직임 : {value}", "확인");
+        InputManager.OnMove += (value) => UIManager.ClaimPopUp("확인", $"움직임 : {value}", "확인");
     }
 
     public void UnregistrationFunctions()

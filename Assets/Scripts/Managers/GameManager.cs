@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
         totalLoadCount += CreateManager(ref _camera).LoadCount;
         totalLoadCount += CreateManager(ref _input).LoadCount;
 
+
         yield return UI.Initialize(this);
         UIBase loadingUI = UIManager.ClaimOpenUI(UIType.Loading);//UI System이 돌아가기 시작했으니까 기능을 실행해보기
         IProgress<int> loadingprogress = loadingUI as IProgress<int>;

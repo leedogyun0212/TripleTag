@@ -281,8 +281,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: title
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -4904979288605555170, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4053777358673798480, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
@@ -291,28 +290,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5378515941980251420, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7465982443530549609}
+      addedObject: {fileID: 1407809231614326197}
     - targetCorrespondingSourceObject: {fileID: 5378515941980251420, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1407809231614326197}
+      addedObject: {fileID: 7605698399077552268}
   m_SourcePrefab: {fileID: 100100000, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
 --- !u!1 &4519938320384595204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5378515941980251420, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
   m_PrefabInstance: {fileID: 8367222141379227672}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-7465982443530549609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4519938320384595204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424d1ea5043aaed488ad2de299533e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PooledObject
 --- !u!114 &1407809231614326197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +316,18 @@ MonoBehaviour:
   contextText: {fileID: 1315140514549162790}
   confirmText: {fileID: 7111812289174620467}
   confirmButton: {fileID: 4913137419087509298}
+--- !u!114 &7605698399077552268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519938320384595204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424d1ea5043aaed488ad2de299533e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PooledObject
 --- !u!114 &4846871808013166609 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3989578001544894473, guid: 7c472f51e0af2ab4a806203d2e24c3ec, type: 3}
