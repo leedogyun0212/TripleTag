@@ -97,6 +97,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "OptionButton",
+                    "type": "Button",
+                    "id": "65eda992-0f64-4a2f-8d99-1d4fe678f118",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "33dbe259-e4d7-4b0a-aafa-d9c8ddfbe43f",
@@ -271,6 +280,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5018d344-23a8-4339-94ba-f530e37271c3",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OptionButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

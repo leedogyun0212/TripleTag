@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
 
 
         yield return UI.Initialize(this);
-        UIBase loadingUI = UIManager.ClaimOpenUI(UIType.Loading);//UI System이 돌아가기 시작했으니까 기능을 실행해보기
+        UIBase loadingUI = UIManager.ClaimOpenScreen(UIType.Loading);//UI System이 돌아가기 시작했으니까 기능을 실행해보기
         IProgress<int> loadingprogress = loadingUI as IProgress<int>;
 
         loadingprogress?.Set(0, totalLoadCount);
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
         yield return Input.Connect(this);
         loadingprogress?.AddCurrent(1);
         yield return new WaitForSeconds(1.0f);
-        UIManager.ClaimCloseUI(UIType.Loading);
+        UIManager.ClaimOpenScreen(UIType.Title);
         isLoading = false;
     }
 

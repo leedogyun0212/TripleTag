@@ -38,6 +38,7 @@ public class InputManager : ManagerBase
     public static event MouseMoveEvent OnMouseMove;
     public static event ButtonEvent OnDash;
     public static event ButtonEvent OnTrap;
+    public static event ButtonEvent OnOption;
     public static event ButtonEvent OnAttack;
     public static event VectorEvent OnMove;
 
@@ -132,6 +133,7 @@ public class InputManager : ManagerBase
         
         InitializeAction("DashButtonDown",       (context) => OnDash?.Invoke(true));
         InitializeAction("TrapButtonDown",       (context) => OnTrap?.Invoke(true));
+        InitializeAction("OptionButton",       (context) => OnOption?.Invoke(true));
         InitializeAction("AttackButtonDown",     (context) => OnAttack?.Invoke(true));
     }
 

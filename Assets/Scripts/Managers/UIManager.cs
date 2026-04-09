@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public enum UIType
 {
-    None, Loading, Title, Movable,Profile,Message,
+    None, Loading, Title,Option, Movable,Profile,Message,
     _Length
 }
 
@@ -18,6 +18,8 @@ public class UIManager : ManagerBase
     Canvas _mainCanvas;
     public Canvas MainCanvas => _mainCanvas;
 
+    UIBase _movableScreen;
+
     GraphicRaycaster _raycaster;
     public GraphicRaycaster Raycaster => _raycaster;
 
@@ -27,6 +29,9 @@ public class UIManager : ManagerBase
 
     Rect _uiBoundary;
     public static Rect UIBoundary => GameManager.Instance?.UI?._uiBoundary ?? Rect.zero;
+
+    UIType _currentScreenType = UIType.None;
+    public static UIType CurrentScreen => GameManager.Instance?.UI?._currentScreenType ?? UIType.None;
 
     float _uiScale = 1.0f;
     public static float UIScale => GameManager.Instance?.UI?._uiScale ?? 1.0f;
@@ -41,7 +46,30 @@ public class UIManager : ManagerBase
 
     protected override IEnumerator OnConnected(GameManager newManager)
     {
-        UIBase movableUI = CreateUI(UIType.Movable, "MovableScreen");
+        _movableScreen = CreateUI(UIType.Movable, "MovableScreen");
+
+        GameObject screenSwitcher = new GameObject("ScreenSwitcher");
+        RectTransform switcherTransform = screenSwitcher.AddComponent<RectTransform>();
+        //메인 캔버스에 넣고 
+        switcherTransform.SetParent(MainCanvas.transform);
+        //맨 위로 올려주기!
+        switcherTransform.SetAsFirstSibling();
+        //anchor를 streach - streach로 만들고 
+        switcherTransform.anchorMin = Vector3.zero;
+        switcherTransform.anchorMax = Vector3.one;
+        //여백을 0,0,0,0
+        switcherTransform.offsetMin = Vector3.zero;
+        switcherTransform.offsetMax = Vector3.zero;
+        //크기를 1로
+        switcherTransform.localScale = Vector3.one;
+        CreateUI(UIType.Title, "TitleScreen", switcherTransform);
+        CreateUI(UIType.Option, "OptionScreen", switcherTransform);
+
+        foreach(Transform currentTransform in switcherTransform)
+        {
+            currentTransform.gameObject.SetActive(false);
+        }
+
         yield return null;
     }
 
@@ -68,13 +96,23 @@ public class UIManager : ManagerBase
         {
             _raycaster = null;
         }
-    }    
-
-    protected UIBase CreateUI(UIType wantType, string wantName)
+    }
+    protected UIBase CreateUI(UIType wantType, string wantName, Transform parent)
     {
-        GameObject instance = ObjectManager.CreateObject(wantName, _mainCanvas.transform);
+        GameObject instance = ObjectManager.CreateObject(wantName, parent);
         UIBase result = instance?.GetComponent<UIBase>();
         return SetUI(wantType, result);
+    }
+    protected UIBase CreateUI(UIType wantType, string wantName)
+    {
+        UIBase result = CreateUI(wantType, wantName, MainCanvas?.transform);
+
+        if(result?.GetComponentInChildren<UI_DraggableWindow>())
+        {
+            _movableScreen?.SetChild(result.gameObject);
+        }
+
+        return result;
     }
     public static UIBase ClaimCreateUI(UIType wantType, string wantName) => GameManager.Instance?.UI?.CreateUI(wantType, wantName);
 
@@ -183,6 +221,14 @@ public class UIManager : ManagerBase
     }
     public static UIBase ClaimToggleUI(UIType wantType)             => GameManager.Instance?.UI?.ToggleUI(wantType);
     
+    protected UIBase OpenScreen(UIType wantType)
+    {
+        CloseUI(CurrentScreen);             //원래 있던거 닫고
+        _currentScreenType = wantType;      //이게 내 새로운 타입이다
+        return OpenUI(wantType);            //그리고 열기
+    }
+    public static UIBase ClaimOpenScreen(UIType wantType)           => GameManager.Instance?.UI?.OpenScreen(wantType);
+
     public static void ClaimPopUp(string title, string context, string confirm)
     {
         OnpopUp?.Invoke(title, context, confirm);
