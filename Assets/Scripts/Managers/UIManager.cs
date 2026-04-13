@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public enum UIType
 {
-    None, Loading, Title,Option, Movable,Profile,Message,
+    None, Loading, Title,Option, Movable,Profile,Message,Main,
     _Length
 }
 
@@ -63,6 +63,7 @@ public class UIManager : ManagerBase
         //크기를 1로
         switcherTransform.localScale = Vector3.one;
         CreateUI(UIType.Title, "TitleScreen", switcherTransform);
+        CreateUI(UIType.Main, "MainScreen", switcherTransform);
         CreateUI(UIType.Option, "OptionScreen", switcherTransform);
 
         foreach(Transform currentTransform in switcherTransform)
