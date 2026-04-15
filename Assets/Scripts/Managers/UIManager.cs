@@ -6,7 +6,14 @@ using UnityEngine.UI;
 
 public enum UIType
 {
-    None, Loading, Title,Option, Movable,Profile,Message,Main,GameQuit,
+    None, Loading, Title,Option, Movable,Profile,Message,Main,GameQuit,Shop,
+    _Length
+}
+
+public enum ScreenChangeType
+{
+    None,
+    ScreenChanger,
     _Length
 }
 
@@ -21,7 +28,7 @@ public class UIManager : ManagerBase
         new (UIType.Title,"TitleScreen"),
         new (UIType.Main, "MainScreen"),
         new (UIType.Option, "OptionScreen"),
-};
+    };
 
     Canvas _mainCanvas;
     public Canvas MainCanvas => _mainCanvas;
@@ -29,6 +36,7 @@ public class UIManager : ManagerBase
     UIBase _movableScreen;
     RectTransform switcherTransform;
     RectTransform createdTransform;
+    RectTransform changerTransform;
 
     GraphicRaycaster _raycaster;
     public GraphicRaycaster Raycaster => _raycaster;
@@ -37,11 +45,15 @@ public class UIManager : ManagerBase
     //         이 타입 어떤 오브젝트!
     Dictionary<UIType, UIBase> uiDictionary = new();
 
+    Dictionary<ScreenChangeType, UI_ScreenChanger> screenChangerDictionary = new();
+
     Rect _uiBoundary;
     public static Rect UIBoundary => GameManager.Instance?.UI?._uiBoundary ?? Rect.zero;
 
     UIType _currentScreenType = UIType.None;
     public static UIType CurrentScreen => GameManager.Instance?.UI?._currentScreenType ?? UIType.None;
+
+    UI_ScreenChanger currentScreenChanger;
 
     float _uiScale = 1.0f;
     public static float UIScale => GameManager.Instance?.UI?._uiScale ?? 1.0f;
@@ -89,16 +101,30 @@ public class UIManager : ManagerBase
         
         }
 
-        RectTransform changerTransform = CreateFullScreen("ScreenChanger");
+        changerTransform = CreateFullScreen("ScreenChanger");
         changerTransform.SetAsLastSibling();
 
-        GameObject instance = ObjectManager.CreateObject("ScreenChanger", changerTransform);
-        if(instance.TryGetComponent(out UI_ScreenChanger asChanger))
+        for (ScreenChangeType currentChanger = (ScreenChangeType)1; // int i = 0;
+            currentChanger < ScreenChangeType._Length;              // i < 3;
+            currentChanger++)                                       // i++;
         {
-            asChanger.ChangeStart();
-            yield return new WaitForSeconds(3);
-            asChanger.ChangeEnd();
+            GameObject instance = ObjectManager.CreateObject(currentChanger.ToString(), changerTransform);
+            //만든 대상에게서 스크린 체인저 기능을 가져오기
+            if(instance?.TryGetComponent(out UI_ScreenChanger asChanger) ?? false)
+            {
+                //가져와졌으먄 딕셔너리에 추가
+                screenChangerDictionary.Add(currentChanger, asChanger);
+            }
+            //끄고 갑시다
+            instance.SetActive(false);
         }
+
+
+        //{
+        //    ClaimScreenChangeEffectStart(ScreenChangeType.ScreenChanger);
+        //    yield return new WaitForSeconds(3);
+        //    ClaimScreenChangeEffectEnd();
+        //}
 
         yield return null;
     }
@@ -139,6 +165,7 @@ public class UIManager : ManagerBase
 
         if(result?.GetComponentInChildren<UI_DraggableWindow>())
         {
+            Debug.Log(result.name);
             _movableScreen?.SetChild(result.gameObject);
         }
 
@@ -261,11 +288,33 @@ public class UIManager : ManagerBase
     }
     public static UIBase ClaimOpenScreen(UIType wantType)           => GameManager.Instance?.UI?.OpenScreen(wantType);
 
+    public void ScreenChangeEffectStart(ScreenChangeType wantType)
+    {
+
+        if (screenChangerDictionary.TryGetValue(wantType, out UI_ScreenChanger result))
+        {
+            if (!result) return;
+            //켠다!
+            result.gameObject.SetActive(true);
+            result?.ChangeStart(ScreenChangeEffectEnd);
+            currentScreenChanger = result;
+        }
+    }
+    public static void ClaimScreenChangeEffectStart(ScreenChangeType wantType) => GameManager.Instance?.UI?.ScreenChangeEffectStart(wantType);
+    
+    public void ScreenChangeEffectEnd()
+    {
+        if (currentScreenChanger == null) return;
+        GameObject targetObject = currentScreenChanger.gameObject;
+        currentScreenChanger.ChangeEnd(() => targetObject.SetActive(false));
+        currentScreenChanger = null;
+    }
+    public static void ClaimScreenChangeEffectEnd() => GameManager.Instance?.UI?.ScreenChangeEffectEnd();
+
     public static void ClaimPopUp(string title, string context, string confirm)
     {
         OnpopUp?.Invoke(title, context, confirm);
     }
-
     public static void ClaimErrorMessage(string context)
     {
         OnpopUp?.Invoke("Error", context, "confirm");

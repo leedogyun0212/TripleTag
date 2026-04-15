@@ -13,7 +13,7 @@ public struct UIClaim
         //UI내놓아! => 예외가 있을 수 있음!
         //            이미...있는데?
         UIBase result = UIManager.ClaimGetUI(uiType);
-        
+
         if(!result) result = UIManager.ClaimCreateUI(uiType, prefabName);
         
         if (!result) return result;

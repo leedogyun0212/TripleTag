@@ -185,7 +185,9 @@ public class GameManager : MonoBehaviour
         yield return Input.Connect(this);
         loadingprogress?.AddCurrent(1);
         yield return new WaitForSeconds(1.0f);
+        UIManager.ClaimScreenChangeEffectStart(ScreenChangeType.ScreenChanger);
         UIManager.ClaimOpenScreen(UIType.Title);
+        UIManager.ClaimScreenChangeEffectEnd();
         isLoading = false;
     }
 

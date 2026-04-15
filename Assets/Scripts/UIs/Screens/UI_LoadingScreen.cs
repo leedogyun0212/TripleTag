@@ -24,7 +24,7 @@ public class UI_LoadingScreen : UI_ScreenBase
     public UnityEngine.UI.Slider progressBar;
     public TMPro.TextMeshProUGUI progressText;
     public TMPro.TextMeshProUGUI explainText;
-    
+
     // IStatus
     public string SetCurrentStatus(string newText)
     {     
