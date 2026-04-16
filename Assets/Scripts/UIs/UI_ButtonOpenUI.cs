@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class UI_ButtonOpenUI : MonoBehaviour
@@ -7,7 +8,7 @@ public class UI_ButtonOpenUI : MonoBehaviour
 
     public void OpenScreen()
     {
-        if (wantToggle) UIManager.ClaimOpenScreen(wantType);
+        if (wantToggle) UIManager.ClaimOpenScreen(wantType,ScreenChangeType.ScreenChanger);
         else UIManager.ClaimOpenUI(wantType);
     }
 

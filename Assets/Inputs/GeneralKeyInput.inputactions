@@ -106,6 +106,60 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ProfileButton",
+                    "type": "Button",
+                    "id": "aaac2f75-718d-4068-af06-b9139bdb8cb3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MessageButton",
+                    "type": "Button",
+                    "id": "6938cd61-ebee-43e7-9bfc-d88a755c47ae",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShopButton",
+                    "type": "Button",
+                    "id": "4d19f08f-499d-4004-9415-28bc43c91627",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RankButton",
+                    "type": "Button",
+                    "id": "838ebf48-aa5c-4ba5-a101-4a416df0a1a9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ExitButton",
+                    "type": "Button",
+                    "id": "b4f6af39-073e-4636-a206-c7cd70d46f27",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GameStartButton",
+                    "type": "Button",
+                    "id": "88c493e4-d39c-4306-8b11-5437f69a43ea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "33dbe259-e4d7-4b0a-aafa-d9c8ddfbe43f",
@@ -284,11 +338,77 @@
                 {
                     "name": "",
                     "id": "5018d344-23a8-4339-94ba-f530e37271c3",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/n",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "OptionButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17b44fca-db64-4bf3-873e-75879ab1e792",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ProfileButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a827149-35c7-492c-a268-30e912913c7e",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MessageButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4233a19-95b2-4f42-bc13-8f04800929ce",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShopButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ded03f1e-988e-41d3-a363-b1e14991019e",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RankButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a113592e-a340-4737-9b9e-94466e2a7cf0",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eaa1b50c-6354-4867-9206-7cfe1324cd93",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameStartButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -6,14 +6,15 @@ using UnityEngine.UI;
 
 public enum UIType
 {
-    None, Loading, Title,Option, Movable,Profile,Message,Main,GameQuit,Shop,
+    None, Loading, Title,Option, Movable,Profile,Message,
+    Main,GameQuit,Shop,Rank,Menu,GiveUp,InGame,
     _Length
 }
 
 public enum ScreenChangeType
 {
     None,
-    ScreenChanger,
+    ScreenChanger, SlideChanger,
     _Length
 }
 
@@ -27,6 +28,7 @@ public class UIManager : ManagerBase
     {
         new (UIType.Title,"TitleScreen"),
         new (UIType.Main, "MainScreen"),
+        new (UIType.InGame, "InGameUI"),
         new (UIType.Option, "OptionScreen"),
     };
 
@@ -288,19 +290,41 @@ public class UIManager : ManagerBase
     }
     public static UIBase ClaimOpenScreen(UIType wantType)           => GameManager.Instance?.UI?.OpenScreen(wantType);
 
-    public void ScreenChangeEffectStart(ScreenChangeType wantType)
+    protected void OpenScreen(UIType wantScreen, ScreenChangeType changeType)
+    {
+        ClaimScreenChangeEffect(changeType, () => OpenScreen(wantScreen));
+    }
+    public static void ClaimOpenScreen(UIType wantScreen, ScreenChangeType changeType) 
+        => GameManager.Instance?.UI?.OpenScreen(wantScreen, changeType);
+
+    public void ScreenChangeEffectStart(ScreenChangeType wantType, System.Action endFunction = null)
     {
 
         if (screenChangerDictionary.TryGetValue(wantType, out UI_ScreenChanger result))
         {
-            if (!result) return;
+            if (!result)
+            {
+                endFunction?.Invoke();
+                return;
+            }
             //켠다!
             result.gameObject.SetActive(true);
-            result?.ChangeStart(ScreenChangeEffectEnd);
+            result?.ChangeStart(endFunction);
             currentScreenChanger = result;
         }
+        else //스크린 체인저가 없어... 그냥 함수 실행하고 떙
+        {
+            endFunction?.Invoke();
+        }
     }
-    public static void ClaimScreenChangeEffectStart(ScreenChangeType wantType) => GameManager.Instance?.UI?.ScreenChangeEffectStart(wantType);
+    public static void ClaimScreenChangeEffectStart(ScreenChangeType wantType, System.Action endFunction = null) 
+        => GameManager.Instance?.UI?.ScreenChangeEffectStart(wantType, endFunction);
+
+
+    public static void ClaimScreenChangeEffect(ScreenChangeType wantType, System.Action endFunction = null)
+    {
+        GameManager.Instance?.UI?.ScreenChangeEffectStart(wantType, endFunction + ClaimScreenChangeEffectEnd); 
+    }
     
     public void ScreenChangeEffectEnd()
     {

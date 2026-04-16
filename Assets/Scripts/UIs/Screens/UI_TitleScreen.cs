@@ -16,6 +16,6 @@ public class UI_TitleScreen : UI_ScreenBase
 
     void OptionStart(bool value)
     {
-        UIManager.ClaimOpenScreen(UIType.Option);
+        UIManager.ClaimToggleUI(UIType.Option);
     }
 }

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe16cec4b80ac84e8994150b35bcb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonOpenUI
-  wantType: 9
+  wantType: 10
   wantToggle: 1
 --- !u!114 &8652807257430718405
 MonoBehaviour:
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 1393385670930256724}
   - component: {fileID: 1891709473204629112}
   - component: {fileID: 6741754439806763788}
-  - component: {fileID: 1357414846251709668}
+  - component: {fileID: 5690970230887826893}
   m_Layer: 5
   m_Name: RankingWindow
   m_TagString: Untagged
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1357414846251709668
+--- !u!114 &5690970230887826893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,9 +253,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3189970663946772176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 461ddaf590b84384a9a0985ccbc0a3b5, type: 3}
+  m_Script: {fileID: 11500000, guid: bdafeda2fd6100244bc4d75b4a082d80, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_ShopWindow
+  m_EditorClassIdentifier: Assembly-CSharp::UI_RankingWindow
 --- !u!1 &4171004681514260836
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -105}
-  m_SizeDelta: {x: -103.99997, y: 100}
+  m_AnchoredPosition: {x: 0, y: -70}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8288168301833926421
 CanvasRenderer:
@@ -641,8 +641,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: 0}
-  m_SizeDelta: {x: 1000, y: 0}
+  m_AnchoredPosition: {x: 500, y: -6.75}
+  m_SizeDelta: {x: 1000, y: -38.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2818693722400045414
 CanvasRenderer:
@@ -673,7 +673,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -5673087007259257018, guid: 9ebe50daf9bf1aa46b81634029140b4d, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -717,7 +717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 104}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4861963505382789307
@@ -748,8 +748,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8451970551397733441, guid: 09b6dc15ecdc3de448ec9960fcc91d95, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -5673087007259257018, guid: 9ebe50daf9bf1aa46b81634029140b4d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

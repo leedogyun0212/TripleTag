@@ -4,19 +4,10 @@ using UnityEngine.UI;
 
 public class UI_OptionScreen : UI_ScreenBase
 {
+    [SerializeField] RectTransform myTransform;
+
     public void OnEnable()
     {
-        InputManager.OnOption -= OptionStart;
-        InputManager.OnOption += OptionStart;
-    }
-
-    public void OnDisable()
-    {
-        InputManager.OnOption -= OptionStart;
-    }
-
-    public void OptionStart(bool value)
-    {
-        UIManager.ClaimOpenScreen(UIType.Title);
+        //myTransform.SetAsLastSibling();
     }
 }

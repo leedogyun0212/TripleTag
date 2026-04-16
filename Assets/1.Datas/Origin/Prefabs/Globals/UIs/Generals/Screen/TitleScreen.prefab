@@ -568,7 +568,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 5872131969937264668}
           m_TargetAssemblyTypeName: UI_ButtonOpenUI, Assembly-CSharp
-          m_MethodName: OpenScreen
+          m_MethodName: Open
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 2461502952944285982}
   - component: {fileID: 60875724877322871}
   - component: {fileID: 6817826585365353132}
-  - component: {fileID: 3118472522257769090}
+  - component: {fileID: 2864148001862010820}
   - component: {fileID: 6062752071041485490}
   m_Layer: 5
   m_Name: Start
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3118472522257769090
+--- !u!114 &2864148001862010820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -876,11 +876,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4650169834909222712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe16cec4b80ac84e8994150b35bcb2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fba2d0e2d2268a49babb456706e9754, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonOpenUI
+  m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonOpenScreen
   wantType: 7
-  wantToggle: 1
+  changeType: 2
 --- !u!114 &6062752071041485490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,9 +898,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3118472522257769090}
-          m_TargetAssemblyTypeName: UI_ButtonOpenUI, Assembly-CSharp
-          m_MethodName: OpenScreen
+        - m_Target: {fileID: 2864148001862010820}
+          m_TargetAssemblyTypeName: UI_ButtonOpenScreen, Assembly-CSharp
+          m_MethodName: Open
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
