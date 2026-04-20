@@ -118,7 +118,7 @@ public class UIManager : ManagerBase
                 screenChangerDictionary.Add(currentChanger, asChanger);
             }
             //끄고 갑시다
-            instance.SetActive(false);
+            instance?.SetActive(false);
         }
 
 
