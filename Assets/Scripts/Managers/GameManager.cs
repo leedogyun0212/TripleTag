@@ -47,10 +47,15 @@ public class GameManager : MonoBehaviour
     public static event InitializeEvent OnInitializeController;
     public static event InitializeEvent OnInitializeCharacter;
     public static event InitializeEvent OnInitializeObject;
+
     public static event UpdateEvent     OnUpdateManager;
     public static event UpdateEvent     OnUpdateController;
     public static event UpdateEvent     OnUpdateCharacter;
     public static event UpdateEvent     OnUpdateObject;
+
+    public static event UpdateEvent     OnPhysicCharacter;
+    public static event UpdateEvent     OnPhysicObject;
+
     public static event DestroyEvent    OnDestroyManager;
     public static event DestroyEvent    OnDestroyController;
     public static event DestroyEvent    OnDestroyCharacter;
@@ -340,5 +345,16 @@ public class GameManager : MonoBehaviour
         InvokeDestroyEvent(ref OnDestroyCharacter);
         //매니저를 제거한다
         InvokeDestroyEvent(ref OnDestroyManager);
+    }
+
+    void FixedUpdate()
+    {
+        //물리작용도 하지 말아야 하는 타이밍이 있다~~
+        if (isLoading || !isPlaying) return;
+
+        float deltaTime = Time.fixedDeltaTime; // 기본값은 0.02초
+
+        OnPhysicCharacter?.Invoke(deltaTime);
+        OnPhysicObject?.Invoke(deltaTime);
     }
 }
