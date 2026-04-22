@@ -41,6 +41,7 @@ public class ObjectManager : ManagerBase
 
     protected override IEnumerator OnConnected(GameManager newManager)
     {
+        RegistrationInHierarchy();
         RegistrationPool(globalPoolSettings);
         InitializePool();
 
@@ -317,6 +318,18 @@ public class ObjectManager : ManagerBase
         {
             currrent.UnregistrationFunctions();
         }
+    }
+
+    public void RegistrationInHierarchy()
+    {
+        foreach (MonoBehaviour current in FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        {
+            if(current is IFunctionable currentFunctionable)
+            {
+                currentFunctionable.RegistrationFunctions();
+            }
+        }
+        
     }
 
     public void RegistrationPool(string poolName)

@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //Pawn : 조종할 수 있지만 이동할 수 없는 캐릭터
@@ -6,13 +7,9 @@ using UnityEngine;
 
 public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
 {
-    protected Vector3 targetDestination;
+    protected Vector3? targetDirection = null;
+    protected Vector3? targetDestination = null;
     protected float targetTolerance;
-
-    void Start()
-    {
-        RegistrationFunctions();
-    }
 
     public void RegistrationFunctions()
     {
@@ -32,11 +29,31 @@ public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
         GameManager.OnPhysicCharacter -= PhysicUpdate;
     }
 
-    private void PhysicUpdate(float deltaTime)
+    public void PhysicUpdate(float deltaTime)
     {
+        UpdateToDirection(deltaTime);
+        UpdateToDestination(deltaTime);
+    }
+    public void UpdateToDirection(float deltaTime) 
+    {
+        if (targetDirection is null) return;
+
+        float currentMoveSpeed = deltaTime * 5.0f;
+
+        transform.position += currentMoveSpeed * targetDirection.Value;
+
+    }
+    public void UpdateToDestination(float deltaTime)
+    {
+        //목적지가 없으면 리턴
+        if (targetDestination is null) return;
+
+        //여길 넘어서면 목적지가 있는 상태
+
         //해당 위치로 조금씩 가는 법!
         //목적지 - 출발지
-        Vector3 currentMoveDirection = (targetDestination - transform.position);
+        Vector3 currentMoveDirection = (targetDestination.Value - transform.position);
+
         //일단 얼마나 더 가야 해요?
         float distance = currentMoveDirection.magnitude;
         //   거리가       인정범위 밖
@@ -45,25 +62,32 @@ public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
             //방향을 잡아봅시다
             currentMoveDirection.Normalize();
 
+            float currentMoveSpeed = deltaTime * 5.0f;
+
             //지금 이 프레임에 나는 몇m를 갈 수 있을까?
             //거리 : 속력 * 시간
-            transform.position += deltaTime* 5.0f * currentMoveDirection;
+            float resultMoveSpeed = Mathf.Min(currentMoveSpeed, distance);
+
+            transform.position += resultMoveSpeed * currentMoveDirection;
         }
     }
 
     public void MoveToDestination(Vector3 destination, float tolerance)
     {
+        targetDirection = null;//방향으로는 움직이지 안겠다!
         targetDestination = destination;
         targetTolerance = tolerance;
     }
 
     public void MoveToDirection(Vector3 direction)
     {
-
+        targetDestination = null; //목적지를 제거한다
+        targetDirection = direction.normalized;
     }
 
     public void StopMovement()
     {
-
+        targetDestination = null; //목적지를 제거한다
+        targetDirection = null;// 방향으로는 움직이지 않겠다!
     }
 }

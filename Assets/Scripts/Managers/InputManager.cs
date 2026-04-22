@@ -20,7 +20,6 @@ public delegate void MouseButtonEvent(bool value, Vector2 screenPosition, Vector
 public delegate void MouseMoveEvent(Vector2 screenPosition, Vector3 worldPosition);
 public delegate void ButtonEvent(bool value);
 public delegate void VectorEvent2D(Vector2 value);
-public delegate void VectorEvent3D(Vector3 value);
 public delegate void AxisEvent(float value);
 
 //인풋 매니저는 PlayerInput없이 일을 할 수 있을까?
@@ -48,8 +47,7 @@ public class InputManager : ManagerBase
     public static event ButtonEvent OnStart;
     public static event ButtonEvent OnMenu;
     public static event ButtonEvent OnAttack;
-    public static event VectorEvent2D OnMove2D;
-    public static event VectorEvent3D OnMove3D;
+    public static event VectorEvent2D OnMove;
 
     PlayerInput targetInput;
     Dictionary<string, InputAction> actionDictionary = new();
@@ -133,13 +131,14 @@ public class InputManager : ManagerBase
         if (actionDictionary == null || actionDictionary.Count == 0) return;
 
         InitializeAction("CursorPositionChanged",(context) => CursorPositionChanged(GetVector2Value(context)));
-        InitializeAction("Move",                 (context) => OnMove2D?.Invoke(GetVector2Value(context)));
-        InitializeAction("Move3d",                 (context) => OnMove3D?.Invoke(GetVector3Value(context)));
+        InitializeAction("Move",                 (context) => OnMove?.Invoke(GetVector2Value(context))
+                               ,                 (context) => OnMove?.Invoke(Vector2.zero));
         
-        InitializeAction("MouseLeftButtonDown",  (context) => OnMouseLeftButton ?.Invoke(true, cursorScreenPosition, cursorWorldPosition));
-        InitializeAction("MouseRightButtonDown", (context) => OnMouseRightButton?.Invoke(true, cursorScreenPosition, cursorWorldPosition));
-        InitializeAction("MouseLeftButtonUp",    (context) => OnMouseLeftButton ?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
-        InitializeAction("MouseRightButtonUp",   (context) => OnMouseRightButton?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
+        InitializeAction("MouseLeftButton" ,     (context) => OnMouseLeftButton ?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
+                                           ,     (context) => OnMouseLeftButton ?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
+        
+        InitializeAction("MouseRightButton",     (context) => OnMouseRightButton?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
+                                           ,     (context) => OnMouseRightButton?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
         
         InitializeAction("DashButtonDown",       (context) => OnDash?.Invoke(true));
         InitializeAction("TrapButtonDown",       (context) => OnTrap?.Invoke(true));
@@ -150,18 +149,21 @@ public class InputManager : ManagerBase
         InitializeAction("ExitButton",           (context) => OnExit?.Invoke(true));
         InitializeAction("ProfileButton",        (context) => OnProfile?.Invoke(true));
         InitializeAction("RankButton",           (context) => OnRanking?.Invoke(true));
-        InitializeAction("GameStartButton",          (context) => OnStart?.Invoke(true));
+        InitializeAction("GameStartButton",      (context) => OnStart?.Invoke(true));
         InitializeAction("MenuButton",           (context) => OnMenu?.Invoke(true));
     }
 
-    void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod)
+    void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod, Action<InputAction.CallbackContext> cancelMethod = null)
     {
         if (actionDictionary == null) return;
-        if (actionDictionary.TryGetValue(actionName, out InputAction cursorPositionChanged))
+        if (actionDictionary.TryGetValue(actionName, out InputAction currentInput))
         {
-            //커서위치변경액션의 발동에다가 CursorPositionChanged함수를 추가
-            //이것도 같이 해줘
-            cursorPositionChanged.performed += actionMethod;
+            //                                              발동할 때 할 일
+            if (actionMethod is not null)currentInput.performed += actionMethod;
+            //                                              취소할 때 할 일
+            if (cancelMethod is not null)currentInput.canceled += cancelMethod;
+            //       키가 눌렸을 때
+            //currentInput.started
         }
     }
 

@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
     public static event DestroyEvent    OnDestroyCharacter;
     public static event DestroyEvent    OnDestroyObject;
 
+    [SerializeField] UIType startScreen;
+
     bool isLoading = true;
     bool isPlaying = true;
 
@@ -190,7 +192,7 @@ public class GameManager : MonoBehaviour
         loadingprogress?.AddCurrent(1);
         yield return null;
 
-        UIManager.ClaimOpenScreen(UIType.Title, ScreenChangeType.ScreenChanger);
+        UIManager.ClaimOpenScreen(startScreen, ScreenChangeType.ScreenChanger);
         isLoading = false;
     }
 

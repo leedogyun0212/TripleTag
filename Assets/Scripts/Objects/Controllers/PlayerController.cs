@@ -9,6 +9,8 @@ public class PlayerController : ControllerBase
         base.OnPossess(newCharacter);
         InputManager.OnMouseRightButton -= MoveToMousePosition;
         InputManager.OnMouseRightButton += MoveToMousePosition;
+        InputManager.OnMove -= MoveToDirection;
+        InputManager.OnMove += MoveToDirection;
     }
 
     //해제가 되면 내 캐릭터 뺏긴 거니까 키 입력 받을 필요가 없음!
@@ -16,10 +18,16 @@ public class PlayerController : ControllerBase
     {
         base.OnUnpossess(oldCharacter);
         InputManager.OnMouseRightButton -= MoveToMousePosition;
+        InputManager.OnMove -= MoveToDirection;
     }
 
     private void MoveToMousePosition(bool value, Vector2 screenPosition, Vector3 worldPosition)
     {
         if (value) CommandMoveToDestination(worldPosition, 0.0f);
+    }
+
+    private void MoveToDirection(Vector2 value)
+    {
+        CommandMoveToDirection(value);
     }
 }
