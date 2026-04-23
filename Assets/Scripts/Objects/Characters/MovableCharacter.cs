@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
 {
+    [SerializeField] Animator anim;
+
     protected Vector3? targetDirection = null;
     protected Vector3? targetDestination = null;
     protected float targetTolerance;
@@ -20,13 +22,29 @@ public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
         //                                         13초를 보정해줘야 하는데 기준이 있어야 해요!
         //                                         0.02초마다 한다는 가정이 있다면 650번을 몰아서 하면 된다
         //물리를 작동시키는 용도로 사용하는 Update => FixUpdate
-        GameManager.OnPhysicCharacter -= PhysicUpdate;
-        GameManager.OnPhysicCharacter += PhysicUpdate;
+        GameManager.OnPhysicCharacter -= MovementUpdate;
+        GameManager.OnPhysicCharacter += MovementUpdate;
     }
 
     public void UnregistrationFunctions()
     {
-        GameManager.OnPhysicCharacter -= PhysicUpdate;
+        GameManager.OnPhysicCharacter -= MovementUpdate;
+    }
+
+    public void MovementUpdate(float deltaTime)
+    {
+        Vector3 originPosition = transform.position;                 //이동하기전에 제 위치를 저장
+        PhysicUpdate(deltaTime);                                     //물리 업데이트
+        Vector3 positionDelta = transform.position - originPosition; //이동한 위치의 차이를 계산
+        AnimationUpdate(positionDelta);                              //이동한 양에 따라서 애니메이션을 업데이트
+    }
+
+    public void AnimationUpdate(Vector3 moveDelta)
+    {
+        if (!anim) return;
+        anim.SetFloat("MoveX",      LookRotation.x);
+        anim.SetFloat("MoveY",      LookRotation.y);
+        anim.SetFloat("MoveSpeed",  moveDelta.magnitude / Time.fixedDeltaTime);
     }
 
     public void PhysicUpdate(float deltaTime)
@@ -34,13 +52,23 @@ public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
         UpdateToDirection(deltaTime);
         UpdateToDestination(deltaTime);
     }
+
+    public virtual float GetMoveSpeed() => 5.0f;
+    public virtual float GetMoveSpeed(float deltaTime) => GetMoveSpeed() * deltaTime;
+
+    public void Translate(Vector3 delta)
+    {
+        transform.position += delta;
+        //움직일때에 해당 방향을 바라보도록!
+        _lookRotation = delta.normalized;
+    }
+
     public void UpdateToDirection(float deltaTime) 
     {
         if (targetDirection is null) return;
 
-        float currentMoveSpeed = deltaTime * 5.0f;
-
-        transform.position += currentMoveSpeed * targetDirection.Value;
+        float currentMoveSpeed = GetMoveSpeed(deltaTime);
+        Translate(currentMoveSpeed * targetDirection.Value);
 
     }
     public void UpdateToDestination(float deltaTime)
@@ -62,13 +90,13 @@ public class MovableCharacter : CharacterBase, IRunnable, IFunctionable
             //방향을 잡아봅시다
             currentMoveDirection.Normalize();
 
-            float currentMoveSpeed = deltaTime * 5.0f;
+            float currentMoveSpeed = GetMoveSpeed(deltaTime);
 
             //지금 이 프레임에 나는 몇m를 갈 수 있을까?
             //거리 : 속력 * 시간
             float resultMoveSpeed = Mathf.Min(currentMoveSpeed, distance);
 
-            transform.position += resultMoveSpeed * currentMoveDirection;
+            Translate(resultMoveSpeed * currentMoveDirection);
         }
     }
 
