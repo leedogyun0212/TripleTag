@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class AnimationModule : CharacterModule
 {
+    //클래스간의 결합
+    //is - a 관계 : 상속관계
+    //has - a 관계 : 소유관계 MovementModule movementModule; 
     [SerializeField] Animator anim;
     [SerializeField] bool isRotationByMovement;
 
@@ -28,8 +31,11 @@ public class AnimationModule : CharacterModule
     public void AnimationByLookRotation(Vector3 lookRotation)
     {
         if (!anim) return;
-        anim.SetFloat("MoveX", lookRotation.x);
-        anim.SetFloat("MoveY", lookRotation.y);
+
+        Vector3 localRotation = transform.InverseTransformVector(lookRotation);
+
+        anim.SetFloat("MoveX", lookRotation.x*10);
+        anim.SetFloat("MoveY", lookRotation.z*10);
 
     }
     public void AnimationByMovement(Vector3 moveDelta)

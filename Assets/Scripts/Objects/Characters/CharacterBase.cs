@@ -18,6 +18,12 @@ public class CharacterBase : MonoBehaviour
     public void DamageNotify(GameObject damageCauser, ControllerBase instigator, float damage)
         => OnDamage?.Invoke(damageCauser, instigator, damage);
 
+    /// <summary> 현재 역할</summary>
+    CharacterType _charType;
+    public CharacterType CharType => _charType;
+    /// <summary> 기절 </summary>
+    public bool onStun;
+
     //가장 중요한 기능!
     //말을 했을 때 말을 잘 들어 먹는 것
     ControllerBase _controller;
@@ -111,4 +117,9 @@ public class CharacterBase : MonoBehaviour
     }
 
     //캐릭터에 공통적으로 들어갈 수 있는 기능들!
+
+    public void CharTypeChange(CharacterType wantType)
+    {
+        _charType = wantType;
+    }
 }

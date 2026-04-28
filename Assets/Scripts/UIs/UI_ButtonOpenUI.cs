@@ -10,6 +10,7 @@ public class UI_ButtonOpenUI : MonoBehaviour
     {
         if (wantToggle) UIManager.ClaimOpenScreen(wantType,ScreenChangeType.ScreenChanger);
         else UIManager.ClaimOpenUI(wantType);
+        
     }
 
     public void Open()

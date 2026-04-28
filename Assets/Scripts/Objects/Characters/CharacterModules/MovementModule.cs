@@ -5,7 +5,9 @@ public class MovementModule : CharacterModule, IRunnable
     protected Vector3? targetDirection = null;
     protected Vector3? targetDestination = null;
     protected float targetTolerance;
-    
+
+    protected MoveType moveType = MoveType.walk; 
+
     //이런 거대한모듈을 만들 때에 한번 "대분류"로 분류하기
     //자식에서 더 이상 못 바꾸게!
     public sealed override System.Type RegistrationType => typeof(MovementModule);
@@ -100,4 +102,5 @@ public class MovementModule : CharacterModule, IRunnable
         targetDestination = null; //목적지를 제거한다
         targetDirection = null;// 방향으로는 움직이지 않겠다!
     }
+
 }

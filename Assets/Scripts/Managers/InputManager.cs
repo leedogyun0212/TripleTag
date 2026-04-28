@@ -19,7 +19,7 @@ using UnityEngine.PlayerLoop;
 public delegate void MouseButtonEvent(bool value, Vector2 screenPosition, Vector3 worldPosition);
 public delegate void MouseMoveEvent(Vector2 screenPosition, Vector3 worldPosition);
 public delegate void ButtonEvent(bool value);
-public delegate void VectorEvent2D(Vector2 value);
+public delegate void VectorEvent3D(Vector3 value);
 public delegate void AxisEvent(float value);
 
 //인풋 매니저는 PlayerInput없이 일을 할 수 있을까?
@@ -47,7 +47,7 @@ public class InputManager : ManagerBase
     public static event ButtonEvent OnStart;
     public static event ButtonEvent OnMenu;
     public static event ButtonEvent OnAttack;
-    public static event VectorEvent2D OnMove;
+    public static event VectorEvent3D OnMove;
 
     PlayerInput targetInput;
     Dictionary<string, InputAction> actionDictionary = new();
@@ -131,8 +131,8 @@ public class InputManager : ManagerBase
         if (actionDictionary == null || actionDictionary.Count == 0) return;
 
         InitializeAction("CursorPositionChanged",(context) => CursorPositionChanged(GetVector2Value(context)));
-        InitializeAction("Move",                 (context) => OnMove?.Invoke(GetVector2Value(context))
-                               ,                 (context) => OnMove?.Invoke(Vector2.zero));
+        InitializeAction("Move",                 (context) => OnMove?.Invoke(GetVector3Value(context))
+                               ,                 (context) => OnMove?.Invoke(Vector3.zero));
         
         InitializeAction("MouseLeftButton" ,     (context) => OnMouseLeftButton ?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
                                            ,     (context) => OnMouseLeftButton ?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
@@ -172,9 +172,14 @@ public class InputManager : ManagerBase
         if(context.valueType != typeof(Vector2)) return default;
         return context.ReadValue<T>();
     }
+    T GetInputValue3<T>(InputAction.CallbackContext context) where T : struct
+    {
+        if(context.valueType != typeof(Vector3)) return default;
+        return context.ReadValue<T>();
+    }
 
     Vector2 GetVector2Value(InputAction.CallbackContext context) => GetInputValue<Vector2>(context);
-    Vector2 GetVector3Value(InputAction.CallbackContext context) => GetInputValue<Vector3>(context);
+    Vector3 GetVector3Value(InputAction.CallbackContext context) => GetInputValue3<Vector3>(context);
 
     void CursorPositionChanged(Vector2 screenPosition)
     {

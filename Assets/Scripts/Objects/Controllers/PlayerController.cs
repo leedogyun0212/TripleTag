@@ -26,7 +26,7 @@ public class PlayerController : ControllerBase
         if (value) CommandMoveToDestination(worldPosition, 0.0f);
     }
 
-    private void MoveToDirection(Vector2 value)
+    private void MoveToDirection(Vector3 value)
     {
         CommandMoveToDirection(value);
     }
