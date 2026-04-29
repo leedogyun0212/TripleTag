@@ -43,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DashButtonDown",
+                    "name": "RunButton",
                     "type": "Button",
                     "id": "499c6614-342c-401d-965b-bb5360e9c9eb",
                     "expectedControlType": "",
@@ -52,7 +52,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TrapButtonDown",
+                    "name": "TrapButton",
                     "type": "Button",
                     "id": "c7ef6b2a-ca93-483d-b4e0-1ad9fe478d72",
                     "expectedControlType": "",
@@ -61,7 +61,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "AttackButtonDown",
+                    "name": "AttackButton",
                     "type": "Button",
                     "id": "7a455023-52db-4498-8fd7-4224dc1a75b7",
                     "expectedControlType": "",
@@ -70,7 +70,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "JumpButtonDown",
+                    "name": "JumpButton",
                     "type": "Button",
                     "id": "ea2b7d3c-d0af-4453-a0a9-670e4a666b34",
                     "expectedControlType": "",
@@ -203,7 +203,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DashButtonDown",
+                    "action": "RunButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e21c1fbd-74d8-4dd7-b1d5-6e45e4b192a6",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -214,7 +225,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TrapButtonDown",
+                    "action": "TrapButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -225,7 +236,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AttackButtonDown",
+                    "action": "AttackButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -236,7 +247,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "JumpButtonDown",
+                    "action": "JumpButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

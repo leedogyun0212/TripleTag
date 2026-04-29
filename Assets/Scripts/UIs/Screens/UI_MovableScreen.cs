@@ -13,7 +13,7 @@ public class UI_MovableScreen : UI_ScreenBase
     public override void Registration(UIManager manager)
     {
         base.Registration(manager);
-        InputManager.OnDash += (value) => UIManager.ClaimToggleUI(UIType.Profile);
+        //InputManager.OnRun += (value) => UIManager.ClaimToggleUI(UIType.Profile);
         InputManager.OnMouseMove -= MouseMove;
         InputManager.OnMouseMove += MouseMove;
         InputManager.OnMouseLeftButton -= MouseLeft;

@@ -19,7 +19,7 @@ public class CharacterBase : MonoBehaviour
         => OnDamage?.Invoke(damageCauser, instigator, damage);
 
     /// <summary> 현재 역할</summary>
-    CharacterType _charType;
+    CharacterType _charType = CharacterType.Runner;
     public CharacterType CharType => _charType;
     /// <summary> 기절 </summary>
     public bool onStun;

@@ -1,4 +1,8 @@
+using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MovementModule : CharacterModule, IRunnable
 {
@@ -6,7 +10,11 @@ public class MovementModule : CharacterModule, IRunnable
     protected Vector3? targetDestination = null;
     protected float targetTolerance;
 
-    protected MoveType moveType = MoveType.walk; 
+    protected float Speed = 5.0f;
+
+    protected MoveType moveType = MoveType.walk;
+
+    public bool isCooltime = false;
 
     //이런 거대한모듈을 만들 때에 한번 "대분류"로 분류하기
     //자식에서 더 이상 못 바꾸게!
@@ -30,7 +38,20 @@ public class MovementModule : CharacterModule, IRunnable
         Vector3 originPosition = transform.position;                 //이동하기전에 제 위치를 저장
         PhysicUpdate(deltaTime);                                     //물리 업데이트
         Vector3 positionDelta = transform.position - originPosition; //이동한 위치의 차이를 계산
+        UpdateToRotation(positionDelta);
         Owner.MovementNotify(positionDelta);                              //이동한 양에 따라서 애니메이션을 업데이트
+    }
+
+    public void UpdateToRotation(Vector3 delta)
+    {
+        if (delta == Vector3.zero) return;
+
+        Vector3 lookForward = new Vector3(delta.x, 0f, delta.z);
+
+
+        Quaternion targetRotation = Quaternion.LookRotation(lookForward);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5.0f * Time.deltaTime);
     }
 
     public void PhysicUpdate(float deltaTime)
@@ -39,7 +60,7 @@ public class MovementModule : CharacterModule, IRunnable
         UpdateToDestination(deltaTime);
     }
 
-    public virtual float GetMoveSpeed() => 5.0f;
+    public virtual float GetMoveSpeed() => Speed;
     public virtual float GetMoveSpeed(float deltaTime) => GetMoveSpeed() * deltaTime;
 
     public void Translate(Vector3 delta)
@@ -103,4 +124,28 @@ public class MovementModule : CharacterModule, IRunnable
         targetDirection = null;// 방향으로는 움직이지 않겠다!
     }
 
+    //실행할 기능
+    public void ChangeMoveType(MoveType wantType, float duration, float cooldown)
+    {
+        if (isCooltime) return;
+
+        StartCoroutine(ChangeMoveStateRoutine(wantType, duration, cooldown));
+    }
+
+    //유지시간동안 타입을 변경해주고 이후 원래대로 돌아온 후 쿨타임 동안 사용 불가
+    private IEnumerator ChangeMoveStateRoutine(MoveType wantType, float duration, float cooldown)
+    {
+        isCooltime = true;
+
+        MoveType originalType = moveType;
+
+        moveType = wantType;
+
+        yield return new WaitForSeconds(duration);
+
+        moveType = originalType;
+        Debug.Log("쿨타임");
+        yield return new WaitForSeconds(cooldown);
+        isCooltime = false;
+    }
 }

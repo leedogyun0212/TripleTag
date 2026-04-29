@@ -1965,9 +1965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f976ae2e7ed8d08489978af638133afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  runType: 2
-  duration: 1.2
-  cooldown: 8
 --- !u!114 &466064720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6620,9 +6617,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f976ae2e7ed8d08489978af638133afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  runType: 2
-  duration: 7
-  cooldown: 8
+--- !u!114 &1465839664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465839649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e45325eedd8afa409d946a4ea442367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RunModule
+  isCooltime: 0
+  RunSpeed: 1
 --- !u!1 &1467737283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f9de2aefc3dbd74fbc4ab8f7c7646c2, type: 3}
@@ -10359,13 +10367,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterBase
       objectReference: {fileID: 0}
-    - target: {fileID: 2893938565100713371, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 3746742752857351542, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
+      propertyPath: m_Height
+      value: 1.315
       objectReference: {fileID: 0}
     - target: {fileID: 3746742752857351542, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Center.y
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 4355738871443534761, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
       propertyPath: m_Constraints
@@ -10373,15 +10381,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5986700743713875211, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6344470137086921442, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822395594417362105, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
-      propertyPath: RunSpeed
-      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8498000762462200823, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
       propertyPath: clothes.Array.size
@@ -10395,7 +10399,8 @@ PrefabInstance:
       propertyPath: 'clothes.Array.data[4]'
       value: 
       objectReference: {fileID: 136655663}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7370793375187175509, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7268066031208793873, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
@@ -10408,6 +10413,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2893938565100713371, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1465839657}
+    - targetCorrespondingSourceObject: {fileID: 2893938565100713371, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1465839664}
   m_SourcePrefab: {fileID: 100100000, guid: ead3bdca984cc4a4080bc58a735d7229, type: 3}
 --- !u!1001 &3851470109271769658
 PrefabInstance:

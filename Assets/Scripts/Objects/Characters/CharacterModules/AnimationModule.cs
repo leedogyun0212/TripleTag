@@ -32,10 +32,10 @@ public class AnimationModule : CharacterModule
     {
         if (!anim) return;
 
-        Vector3 localRotation = transform.InverseTransformVector(lookRotation);
+        //Debug.Log(lookRotation.x);
 
-        anim.SetFloat("MoveX", lookRotation.x*10);
-        anim.SetFloat("MoveY", lookRotation.z*10);
+        anim.SetFloat("MoveX", lookRotation.x);
+        anim.SetFloat("MoveY", lookRotation.z);
 
     }
     public void AnimationByMovement(Vector3 moveDelta)

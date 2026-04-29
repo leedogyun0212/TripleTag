@@ -10,11 +10,15 @@ public class HitPointModule : CharacterModule
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
     
     //public float IncreaseHP(float value);
+    //맞았을때 내려가는 체력
     public float DecreaseHP(float value)
     {
         if (Owner.CharType is CharacterType.Chaser) return 0;
-        return _hp--;
+        if(value > 4) value = 4;
+        return _hp-= value;
     }
+
+    //시작시 체력 세팅
     public float SetHP(float value)
     {
         _hp = _maxhp = value;
@@ -22,12 +26,14 @@ public class HitPointModule : CharacterModule
     }
 
     //public float Damage();
+    //죽지만 않으면 일정 시간이 지난후 체력 회복
     public float Heal()
     {
         _hp = _maxhp;
         return _hp;
     }
 
+    //술래가 때린게 아니면 기절을 한다. 술래면 그대로 사망한다
     public bool OutCheck(ControllerBase instigator)
     {
         if (instigator.Character.CharType is not CharacterType.Runner)
