@@ -38,8 +38,6 @@ public class RunModule : MovementModule
     public override float GetMoveSpeed()
     {
         RunSpeed = GetRunMove();
-        Debug.Log(Speed+$"{Owner.CharType}");
-        Debug.Log(Speed * RunSpeed);
         if (moveType is MoveType.Run)
         {
             return Speed * RunSpeed;
@@ -48,12 +46,6 @@ public class RunModule : MovementModule
     }
 
     //원래 생각 했던 것이 시간초가 짧고 속도 증가도 그리 크지 않다.
-
-    //방향에 맞춰 회전
-    public void MoveToRotation(Vector3 rotation)
-    {
-
-    }
 
     public void Jump()
     {

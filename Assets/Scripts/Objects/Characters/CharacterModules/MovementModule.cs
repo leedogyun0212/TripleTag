@@ -48,6 +48,10 @@ public class MovementModule : CharacterModule, IRunnable
 
         Vector3 lookForward = new Vector3(delta.x, 0f, delta.z);
 
+        if (lookForward.sqrMagnitude < 0.001f)
+        {
+            return;
+        }
 
         Quaternion targetRotation = Quaternion.LookRotation(lookForward);
 
@@ -116,6 +120,7 @@ public class MovementModule : CharacterModule, IRunnable
     {
         targetDestination = null; //목적지를 제거한다
         targetDirection = direction.normalized;
+        Debug.Log(targetDirection);
     }
 
     public void StopMovement()
