@@ -48,7 +48,10 @@ public class ControllerBase : MonoBehaviour, IFunctionable
 
     public void CommandMoveToDirection(Vector3 direction)
     {
-        if(Character && Character.GetModule<MovementModule>() is IRunnable target) target.MoveToDirection(direction);
+        if (Character && Character.GetModule<MovementModule>() is IRunnable target)
+        {
+            target.MoveToDirection(direction);
+        }
     }
     public void CommandMoveToDestination(Vector3 direction, float tolerance)
     {

@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class RunModule : MovementModule
 {
+    /// <summary>  추가 스피드 </summary>
     [SerializeField] float RunSpeed = 1.00f;
     float SaveSpeed = 0f;
     bool PlusSpeed;
 
-    //달리기 시 추가로 얻는 스피드
+    /// <summary>  달리기 시 추가로 얻는 스피드 </summary>
     public float GetRunMove()
     {
         if (moveType is not MoveType.Run)
@@ -47,9 +48,5 @@ public class RunModule : MovementModule
 
     //원래 생각 했던 것이 시간초가 짧고 속도 증가도 그리 크지 않다.
 
-    public void Jump()
-    {
-
-    }
 }
 

@@ -15,6 +15,12 @@ public class MovementModule : CharacterModule, IRunnable
     protected MoveType moveType = MoveType.walk;
 
     public bool isCooltime = false;
+    public bool isGround = true;
+    protected bool isJump = false;
+
+
+    [SerializeField] Transform FootLeftTrans;
+    protected float SaveYDir;
 
     //이런 거대한모듈을 만들 때에 한번 "대분류"로 분류하기
     //자식에서 더 이상 못 바꾸게!
@@ -36,12 +42,14 @@ public class MovementModule : CharacterModule, IRunnable
     public void MovementUpdate(float deltaTime)
     {
         Vector3 originPosition = transform.position;                 //이동하기전에 제 위치를 저장
+        
         PhysicUpdate(deltaTime);                                     //물리 업데이트
         Vector3 positionDelta = transform.position - originPosition; //이동한 위치의 차이를 계산
         UpdateToRotation(positionDelta);
         Owner.MovementNotify(positionDelta);                              //이동한 양에 따라서 애니메이션을 업데이트
     }
 
+    /// <summary> 입력 키에 따라 시선 방향으로 몸이 회전   </summary>
     public void UpdateToRotation(Vector3 delta)
     {
         if (delta == Vector3.zero) return;
@@ -74,6 +82,7 @@ public class MovementModule : CharacterModule, IRunnable
 
     public void UpdateToDirection(float deltaTime)
     {
+        JumpForce();
         if (targetDirection is null) return;
 
         float currentMoveSpeed = GetMoveSpeed(deltaTime);
@@ -120,7 +129,8 @@ public class MovementModule : CharacterModule, IRunnable
     {
         targetDestination = null; //목적지를 제거한다
         targetDirection = direction.normalized;
-        Debug.Log(targetDirection);
+        if (direction.normalized.y > 0.0f) SaveYDir = direction.normalized.y;
+        
     }
 
     public void StopMovement()
@@ -129,7 +139,8 @@ public class MovementModule : CharacterModule, IRunnable
         targetDirection = null;// 방향으로는 움직이지 않겠다!
     }
 
-    //실행할 기능
+    //
+    /// <summary> 키를 누를시 실행하는 기능  </summary>
     public void ChangeMoveType(MoveType wantType, float duration, float cooldown)
     {
         if (isCooltime) return;
@@ -137,7 +148,7 @@ public class MovementModule : CharacterModule, IRunnable
         StartCoroutine(ChangeMoveStateRoutine(wantType, duration, cooldown));
     }
 
-    //유지시간동안 타입을 변경해주고 이후 원래대로 돌아온 후 쿨타임 동안 사용 불가
+    /// <summary> 유지시간동안 MoveType을 변경해주고 이후 원래대로 돌아온 후 쿨타임 동안 사용 불가   </summary>
     private IEnumerator ChangeMoveStateRoutine(MoveType wantType, float duration, float cooldown)
     {
         isCooltime = true;
@@ -152,5 +163,41 @@ public class MovementModule : CharacterModule, IRunnable
         Debug.Log("쿨타임");
         yield return new WaitForSeconds(cooldown);
         isCooltime = false;
+    }
+
+    /// <summary> 캐릭터가 땅에 닿았는지 체크  </summary>
+    public bool GroundCheck(string LayerName = "Ground")
+    {
+        int layerMask = 1 << LayerMask.NameToLayer(LayerName);
+        isGround = Physics.Raycast(FootLeftTrans.position, Vector3.down, 0.3f, layerMask);
+        Debug.Log(isGround + $"{LayerMask.NameToLayer(LayerName)}???");
+        return isGround;
+    }                                                                                                                                                                                                                                                                              
+
+    /// <summary> 점프하는 동안에는 힘 유지 </summary>
+    public void JumpForce()
+    {
+        // 1. 현재 바닥 상태 확인
+        GroundCheck();
+
+        if (!targetDirection.HasValue) return;
+
+        Vector3 temp = targetDirection.Value;
+        
+        if (!isGround)
+        {
+            isJump = false;
+            if (targetDirection.Value.y < SaveYDir)
+            {
+                temp.y = SaveYDir;
+                targetDirection = temp;
+            }
+        }
+        else if (!isJump && isGround)
+        {
+            temp.y = 0.0f;
+            targetDirection = temp;
+            isJump = true;
+        }
     }
 }
