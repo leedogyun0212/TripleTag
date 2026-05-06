@@ -53,11 +53,9 @@ public class InputManager : ManagerBase
     Dictionary<string, InputAction> actionDictionary = new();
     List<RaycastResult> cursorHitList = new();
 
+    //지금 마우스가 올라가 있는 대상을 저장해야 하는 이유
     Vector2 cursorScreenPosition;
     Vector3 cursorWorldPosition;
-
-
-    public bool is2D = true;
 
     protected override IEnumerator OnConnected(GameManager newManager)
     {
@@ -94,27 +92,80 @@ public class InputManager : ManagerBase
 
     public void UpdateEvent(float deltaTime)
     {
-        RefreshGameObjectUnderCursor();
+        RefreshGameObjectUnderCursor(cursorScreenPosition);
     }
 
-    void RefreshGameObjectUnderCursor()
+    void RefreshGameObjectUnderCursor(Vector2 screenPosition)
     {
         cursorHitList.Clear();
-        if (is2D)
+        GameManager.Instance.Camera.GetRaycastResult(screenPosition, cursorHitList);
+        
+        //마우스의 화면상 실제 픽셀 위치
+        //화면상 x축으로 1픽셀 움직이면
+        //유니티에서 1칸은 1m
+        //화면 => 세상
+        //필요한 것이 무엇일까? => 기준점이 되는 좌표
+        //화면의 왼쪽 끝은 세상의 어디일까?
+        //카메라가 필요하다
+        //카메라를 기준으로 세상을 본다
+        //절두체
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+        GameObject firstObject = null;
+
+        if(cursorHitList.Count > 0 && cursorHitList[0].element != null)
         {
-            GameManager.Instance.Camera.GetRaycastResult2D(cursorScreenPosition, cursorHitList);
+            firstObject = cursorHitList[0].gameObject;
+        }
+        if (GameManager.is2D)
+        {
+            worldPosition.z = 0;
+            float GetValue(RaycastResult target)
+            {
+                return target.sortingOrder + target.sortingLayer * 100000;
+            }
+            RaycastResult nearest = cursorHitList.GetMaximum<RaycastResult>(GetValue);
+            firstObject = nearest.gameObject;
+            worldPosition = nearest.worldPosition;
         }
         else
         {
-            GameManager.Instance.Camera.GetRaycastResult3D(cursorScreenPosition, cursorHitList);
+            float GetDistance(RaycastResult target)
+            {
+                return target.distance;
+            }
+            RaycastResult nearest = cursorHitList.GetMinmum<RaycastResult>(GetDistance);
+            firstObject = nearest.gameObject;
+            worldPosition = nearest.worldPosition;
         }
+
+        //가장 ~한 대상 찾기 문제
+        //가장 가까운 대상 찾기
+        float firstDistance = float.MaxValue;
+        Vector3 firstPosition = worldPosition;
+
+        foreach (RaycastResult currentResult in cursorHitList)
+        {
+            float currentDistance = currentResult.distance;
+
+            if (currentDistance < firstDistance)
+            {
+                firstObject = currentResult.gameObject;
+                firstDistance = currentDistance;
+                firstPosition = currentResult.worldPosition;
+            }
+        }
+
+        //위치 내놔
+        cursorScreenPosition = screenPosition;
+        cursorWorldPosition = worldPosition;
     }
 
 
     public GameObject GetGameObjectUnderCursor()
     {
+
         //마우스의 닿은것의 개수가 0이라면 => 없으니까 돌아가라
-        if(cursorHitList.Count == 0) return null;
+        if (cursorHitList.Count == 0) return null;
         return cursorHitList[0].gameObject; // 일단 지금은 임시로 첫 번째 오브젝트 돌려주기!
     }
 
@@ -183,34 +234,12 @@ public class InputManager : ManagerBase
 
     void CursorPositionChanged(Vector2 screenPosition)
     {
+        RefreshGameObjectUnderCursor(screenPosition); // 새로고침 한 번 때려주고
 
-        //마우스의 화면상 실제 픽셀 위치
-        //화면상 x축으로 1픽셀 움직이면
-        //유니티에서 1칸은 1m
-        //화면 => 세상
-        //필요한 것이 무엇일까? => 기준점이 되는 좌표
-        //화면의 왼쪽 끝은 세상의 어디일까?
-        //카메라가 필요하다
-        //카메라를 기준으로 세상을 본다
-        //절두체
-        Vector3 worldPosition;
-
-        if(is2D)
-        {
-            worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-            worldPosition.z = 0;
-        }
-        else
-        {
-            worldPosition = Vector3.zero;
-        }
-
-        //위치 내놔
-        cursorScreenPosition = screenPosition;
-        cursorWorldPosition = worldPosition;
+        
 
         //대리자는 모든 스킬을 한 번에 사용할 수 있는 친구 => 사기캐
         //....배운 스킬이 없으면?
-        OnMouseMove?.Invoke(screenPosition, worldPosition);
+        OnMouseMove?.Invoke(cursorScreenPosition, cursorWorldPosition);
     }
 }

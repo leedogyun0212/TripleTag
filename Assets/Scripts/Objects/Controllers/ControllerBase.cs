@@ -5,12 +5,12 @@ public class ControllerBase : MonoBehaviour, IFunctionable
     CharacterBase _character;
     public CharacterBase Character => _character;
 
-    public void RegistrationFunctions()
+    public virtual void RegistrationFunctions()
     {
         Possess(GetComponent<CharacterBase>());
     }
 
-    public void UnregistrationFunctions()
+    public virtual void UnregistrationFunctions()
     {
         Unpossess();
     }

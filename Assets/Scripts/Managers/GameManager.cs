@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public delegate void InitializeEvent();
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] UIType startScreen;
 
+    public static bool is2D = false;
     bool isLoading = true;
     bool isPlaying = true;
 

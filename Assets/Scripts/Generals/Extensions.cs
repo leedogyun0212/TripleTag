@@ -2,6 +2,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //확장메소드들을 가지고 있을 친구들!
 //영토 확장
@@ -57,6 +58,40 @@ public static class Extensions
         else                return target.gameObject.TryAddComponent<T>();//NRVO
         //                         TryAddComponent<T>(target.gameObject);
     }
+
+    //왼쪽 오른쪽 친구를 가지고 비교를 해서 그 결과가 bool로 나오는 형태의 함수를 Comparison(비교)
+
+    public static bool IsBigger(float a, float b) => a > b;
+    public static bool IsSmaller(float a, float b) => a < b;
+
+    public static T GetExtreme<T>(this IEnumerable targetList, float defaultScore,
+        System.Func<T, float> Evalueator,
+        System.Func<float, float, bool> Comparison)
+    {
+        T result = default;
+        float firstScore = defaultScore;
+        
+        //foreach에 in역할로 넣을 수 있는 것들 List, Array, Dictionary 같은 애들!
+        //IEnumerable : 열거할 수 있는 / 반복할 수 있는
+        foreach (T currentTarget in targetList)
+        {
+            float currentScore = Evalueator(currentTarget);
+
+            //현재 스코어와 일등 스코어를 비교!
+            if (Comparison(currentScore, firstScore))
+            {
+                result = currentTarget;
+                firstScore = currentScore;
+            }
+        }
+        return result;
+    }
+
+    public static T GetMaximum<T>(this IEnumerable targetList, System.Func<T, float> Evalueator)
+        => targetList.GetExtreme(float.MinValue, Evalueator, IsBigger);
+
+    public static T GetMinmum<T>(this IEnumerable targetList, System.Func<T, float> Evalueator)
+        => targetList.GetExtreme(float.MaxValue, Evalueator, (a, b) => a < b);
 
     public static IEnumerator WaitForTask(this Task targetTask)
     {
