@@ -18,6 +18,7 @@ using UnityEngine.PlayerLoop;
 //내가 신호 주면 연결되어 있는 모든 애들이 한 번에 뛰쳐나와서 일을 수행하고 간다!
 public delegate void MouseButtonEvent(bool value, Vector2 screenPosition, Vector3 worldPosition);
 public delegate void MouseMoveEvent(Vector2 screenPosition, Vector3 worldPosition);
+public delegate void MouseHoverEvent(GameObject newTarget, GameObject oldTarget);
 public delegate void ButtonEvent(bool value);
 public delegate void VectorEvent3D(Vector3 value);
 public delegate void AxisEvent(float value);
@@ -36,6 +37,8 @@ public class InputManager : ManagerBase
     public static event MouseButtonEvent OnMouseLeftButton;
     public static event MouseButtonEvent OnMouseRightButton;
     public static event MouseMoveEvent OnMouseMove;
+    public static event MouseHoverEvent OnMouseHover;
+
     public static event ButtonEvent OnRun;
     public static event ButtonEvent OnTrap;
     public static event ButtonEvent OnOption;
@@ -47,6 +50,7 @@ public class InputManager : ManagerBase
     public static event ButtonEvent OnStart;
     public static event ButtonEvent OnMenu;
     public static event ButtonEvent OnAttack;
+
     public static event VectorEvent3D OnMove;
 
     PlayerInput targetInput;
@@ -54,6 +58,7 @@ public class InputManager : ManagerBase
     List<RaycastResult> cursorHitList = new();
 
     //지금 마우스가 올라가 있는 대상을 저장해야 하는 이유
+    GameObject cursorHoverObject;
     Vector2 cursorScreenPosition;
     Vector3 cursorWorldPosition;
 
@@ -125,7 +130,6 @@ public class InputManager : ManagerBase
             }
             RaycastResult nearest = cursorHitList.GetMaximum<RaycastResult>(GetValue);
             firstObject = nearest.gameObject;
-            worldPosition = nearest.worldPosition;
         }
         else
         {
@@ -138,26 +142,18 @@ public class InputManager : ManagerBase
             worldPosition = nearest.worldPosition;
         }
 
-        //가장 ~한 대상 찾기 문제
-        //가장 가까운 대상 찾기
-        float firstDistance = float.MaxValue;
-        Vector3 firstPosition = worldPosition;
-
-        foreach (RaycastResult currentResult in cursorHitList)
-        {
-            float currentDistance = currentResult.distance;
-
-            if (currentDistance < firstDistance)
-            {
-                firstObject = currentResult.gameObject;
-                firstDistance = currentDistance;
-                firstPosition = currentResult.worldPosition;
-            }
-        }
+        GameObject lastHoverObject = cursorHoverObject;
 
         //위치 내놔
         cursorScreenPosition = screenPosition;
         cursorWorldPosition = worldPosition;
+        cursorHoverObject = firstObject;
+
+        if (lastHoverObject != firstObject)
+        {
+            OnMouseHover?.Invoke(firstObject, lastHoverObject);
+            Debug.Log($"{worldPosition} \t: {firstObject}");
+        }
     }
 
 

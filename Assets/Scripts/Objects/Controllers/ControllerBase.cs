@@ -57,9 +57,9 @@ public class ControllerBase : MonoBehaviour, IFunctionable
     {
         if(Character && Character.GetModule<MovementModule>() is IRunnable target) target.MoveToDestination(direction, tolerance);
     }
-    public void CommandChangeMoveType(MoveType wantType, float duration, float cooldown)
+    public void CommandChangeMoveType(MoveType wantType)
     {
-        if (Character && Character.GetModule<MovementModule>() is MovementModule target) target.ChangeMoveType(wantType, duration, cooldown);
+        if (Character && Character.GetModule<MovementModule>() is MovementModule target) target.ChangeMoveType(wantType);
     }
 
     public void CommandStop()

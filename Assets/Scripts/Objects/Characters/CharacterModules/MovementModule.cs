@@ -18,6 +18,8 @@ public class MovementModule : CharacterModule, IRunnable
     public bool isGround = true;
     protected bool isJump = false;
 
+    [SerializeField] float duration = 1.2f;
+    [SerializeField] float cooldown = 8.0f;
 
     [SerializeField] Transform FootLeftTrans;
     protected float SaveYDir;
@@ -141,15 +143,15 @@ public class MovementModule : CharacterModule, IRunnable
 
     //
     /// <summary> 키를 누를시 실행하는 기능  </summary>
-    public void ChangeMoveType(MoveType wantType, float duration, float cooldown)
+    public void ChangeMoveType(MoveType wantType)
     {
         if (isCooltime) return;
 
-        StartCoroutine(ChangeMoveStateRoutine(wantType, duration, cooldown));
+        StartCoroutine(ChangeMoveStateRoutine(wantType));
     }
 
     /// <summary> 유지시간동안 MoveType을 변경해주고 이후 원래대로 돌아온 후 쿨타임 동안 사용 불가   </summary>
-    private IEnumerator ChangeMoveStateRoutine(MoveType wantType, float duration, float cooldown)
+    private IEnumerator ChangeMoveStateRoutine(MoveType wantType)
     {
         isCooltime = true;
 

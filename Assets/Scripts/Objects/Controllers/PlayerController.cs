@@ -5,9 +5,6 @@ public class PlayerController : ControllerBase
 {
     [SerializeField] MoveType runType = MoveType.Run;
 
-    [SerializeField] private float duration = 1.2f;
-    [SerializeField] private float cooldown = 8.0f;
-
     //빙의가 되면 내 캐릭터 생긴 거니까 키 입력
     //시작!
     protected override void OnPossess(CharacterBase newCharacter)
@@ -37,7 +34,7 @@ public class PlayerController : ControllerBase
 
     private void MoveToRunning(bool value)
     {
-        CommandChangeMoveType(runType, duration, cooldown);
+        CommandChangeMoveType(runType);
     }
 
     private void MoveToDirection(Vector3 value)
