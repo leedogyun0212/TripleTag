@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: fd5f999dafbd7ab49bc1efa5ba99939f
+guid: 46fe291fb8692c04687e259330622dc4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2182124076254010665
-    second: rock_0
+      213: -8104203026517362857
+    second: Trap_White_Gemini-removebg-preview_0
   - first:
-      213: 2115267796186251350
-    second: rock_1
-  - first:
-      213: -6546699357316064334
-    second: rock_2
-  - first:
-      213: 4414985671160336941
-    second: rock_3
-  - first:
-      213: 6745779496355511533
-    second: rock_4
+      213: 1056237351856899705
+    second: Trap_White_Gemini-removebg-preview_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rock_0
+      name: Trap_White_Gemini-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 92
-        width: 346
-        height: 308
+        x: 4
+        y: 6
+        width: 265
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d26d0bc6b987b1e0800000000000000
-      internalID: -2182124076254010665
+      spriteID: 75779c80946188f80800000000000000
+      internalID: -8104203026517362857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_1
+      name: Trap_White_Gemini-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 381
-        y: 283
-        width: 82
-        height: 83
+        x: 48
+        y: 98
+        width: 246
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,74 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 650418c7ad0fa5d10800000000000000
-      internalID: 2115267796186251350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock_2
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 119
-        width: 145
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2bbd5e3de937525a0800000000000000
-      internalID: -6546699357316064334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock_3
-      rect:
-        serializedVersion: 2
-        x: 313
-        y: 199
-        width: 152
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2293f9831e254d30800000000000000
-      internalID: 4414985671160336941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock_4
-      rect:
-        serializedVersion: 2
-        x: 266
-        y: 62
-        width: 133
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dec326516b2dd9d50800000000000000
-      internalID: 6745779496355511533
+      spriteID: 9760eeb764288ae00800000000000000
+      internalID: 1056237351856899705
       vertices: []
       indices: 
       edges: []
@@ -248,11 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rock_0: -2182124076254010665
-      rock_1: 2115267796186251350
-      rock_2: -6546699357316064334
-      rock_3: 4414985671160336941
-      rock_4: 6745779496355511533
+      Trap_White_Gemini-removebg-preview_0: -8104203026517362857
+      Trap_White_Gemini-removebg-preview_1: 1056237351856899705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

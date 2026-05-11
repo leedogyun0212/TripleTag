@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 7119b4d34bdb8d44fabe293a481fe9fc
+guid: 54589d3d9a9523a4d8fa28284d61cef9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2821283207087914545
-    second: wolf-trap_0
+      213: 545843281533522549
+    second: Jump_White_Gemini_0
   - first:
-      213: -564268589125433289
-    second: wolf-trap_1
+      213: -7266777046718337153
+    second: Jump_White_Gemini_1
   - first:
-      213: -226090359364362277
-    second: wolf-trap_2
-  - first:
-      213: 7472508839460043805
-    second: wolf-trap_3
-  - first:
-      213: -9086848268074334935
-    second: wolf-trap_4
-  - first:
-      213: 4864610093270000913
-    second: wolf-trap_5
+      213: -927195834672484108
+    second: Jump_White_Gemini_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wolf-trap_0
+      name: Jump_White_Gemini_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 103
-        width: 229
-        height: 296
+        x: 5
+        y: 7
+        width: 220
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13eff390126372720800000000000000
-      internalID: 2821283207087914545
+      spriteID: 572d6d29299339700800000000000000
+      internalID: 545843281533522549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf-trap_1
+      name: Jump_White_Gemini_1
       rect:
         serializedVersion: 2
-        x: 242
-        y: 251
-        width: 33
-        height: 30
+        x: 17
+        y: 0
+        width: 54
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,86 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 738844335b05b28f0800000000000000
-      internalID: -564268589125433289
+      spriteID: f7f246ce6c8372b90800000000000000
+      internalID: -7266777046718337153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf-trap_2
+      name: Jump_White_Gemini_2
       rect:
         serializedVersion: 2
-        x: 274
-        y: 92
-        width: 221
-        height: 277
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bdf52fa1404ccdcf0800000000000000
-      internalID: -226090359364362277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolf-trap_3
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 194
-        width: 116
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1c7bfcc23fa3b760800000000000000
-      internalID: 7472508839460043805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolf-trap_4
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 145
-        width: 24
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9254e85f4a705e180800000000000000
-      internalID: -9086848268074334935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolf-trap_5
-      rect:
-        serializedVersion: 2
-        x: 218
-        y: 88
+        x: 41
+        y: 0
         width: 45
-        height: 44
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11563242b11928340800000000000000
-      internalID: 4864610093270000913
+      spriteID: 4f0ff150d40f123f0800000000000000
+      internalID: -927195834672484108
       vertices: []
       indices: 
       edges: []
@@ -273,12 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wolf-trap_0: 2821283207087914545
-      wolf-trap_1: -564268589125433289
-      wolf-trap_2: -226090359364362277
-      wolf-trap_3: 7472508839460043805
-      wolf-trap_4: -9086848268074334935
-      wolf-trap_5: 4864610093270000913
+      Jump_White_Gemini_0: 545843281533522549
+      Jump_White_Gemini_1: -7266777046718337153
+      Jump_White_Gemini_2: -927195834672484108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
