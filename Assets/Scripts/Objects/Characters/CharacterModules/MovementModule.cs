@@ -48,10 +48,14 @@ public class MovementModule : CharacterModule, IRunnable
         PhysicUpdate(deltaTime);                                     //물리 업데이트
         Vector3 positionDelta = transform.position - originPosition; //이동한 위치의 차이를 계산
         UpdateToRotation(positionDelta);
+        
         Owner.MovementNotify(positionDelta);                              //이동한 양에 따라서 애니메이션을 업데이트
+        
     }
 
     /// <summary> 입력 키에 따라 시선 방향으로 몸이 회전   </summary>
+    //만약 카메라를 1인칭으로 한다면 회전을 터치나 마우스를 이용해 움직이는 것으로 회전과 움직임을 분리하고 캐릭터의 정면을 w키로 한다
+    //(1인칭의 문제점중 하나는 회전을 하고 캐릭터의 정면으로 갈려면 키를 바꿔야 하는 문제가 있다)
     public void UpdateToRotation(Vector3 delta)
     {
         if (delta == Vector3.zero) return;
@@ -84,12 +88,12 @@ public class MovementModule : CharacterModule, IRunnable
 
     public void UpdateToDirection(float deltaTime)
     {
-        JumpForce();
+        //JumpForce();
         if (targetDirection is null) return;
 
         float currentMoveSpeed = GetMoveSpeed(deltaTime);
         Translate(currentMoveSpeed * targetDirection.Value);
-
+        GameManager.Instance.Camera.CameraMove(GetMoveSpeed(deltaTime) * targetDirection.Value, Owner.Head.position);
     }
     public void UpdateToDestination(float deltaTime)
     {

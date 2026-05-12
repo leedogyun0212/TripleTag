@@ -8,6 +8,8 @@ public class CameraManager : ManagerBase
 {
     public Camera MainCamera { get; private set; }
 
+
+
     protected override IEnumerator OnConnected(GameManager newManager)
     {
         SetMainCamera(Camera.main);
@@ -33,5 +35,12 @@ public class CameraManager : ManagerBase
         PointerEventData eventData = new(currentEvent);
         eventData.position = screenPosition;
         currentEvent.RaycastAll(eventData, outResult);
+    }
+
+    public void CameraMove(Vector3 Position, Vector3 Head)
+    {
+        Head.y += 8.0f;
+        MainCamera.transform.position = Head;
+        //MainCamera.transform.position += Position;
     }
 }

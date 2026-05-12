@@ -657,6 +657,9 @@ MonoBehaviour:
   - prefabName: targetHoverInfo
     uiType: 14
     isOpen: 0
+  - prefabName: StartWindow
+    uiType: 15
+    isOpen: 0
 --- !u!114 &2552402971813756355
 MonoBehaviour:
   m_ObjectHideFlags: 0

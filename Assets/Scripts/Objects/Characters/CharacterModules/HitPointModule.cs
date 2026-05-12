@@ -9,6 +9,19 @@ public class HitPointModule : CharacterModule
 
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
 
+    public override void OnRegistration(CharacterBase newOwner)
+    {
+        base.OnRegistration(newOwner);
+        GameManager.OnUpdateCharacter -= UpdateHP;
+        GameManager.OnUpdateCharacter += UpdateHP;
+    }
+
+    public override void OnUnregistration(CharacterBase oldOwner)
+    {
+        base.OnUnregistration(oldOwner);
+        GameManager.OnUpdateCharacter -= UpdateHP;
+    }
+
     //public float IncreaseHP(float value);
     /// <summary> 맞았을때 내려가는 체력  </summary>
     public float DecreaseHP(float value)
@@ -23,6 +36,11 @@ public class HitPointModule : CharacterModule
     {
         _hp = _maxhp = value;
         return _hp;
+    }
+
+    /// <summary> 업데이트 되는 체력   </summary>
+    public void UpdateHP(float deltaTime)
+    {
     }
 
     //public float Damage();
