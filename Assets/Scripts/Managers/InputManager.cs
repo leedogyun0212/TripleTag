@@ -50,6 +50,7 @@ public class InputManager : ManagerBase
     public static event ButtonEvent OnStart;
     public static event ButtonEvent OnMenu;
     public static event ButtonEvent OnAttack;
+    public static event ButtonEvent OnCancel;
 
     public static event VectorEvent3D OnMove;
 
@@ -198,6 +199,7 @@ public class InputManager : ManagerBase
         InitializeAction("RankButton",           (context) => OnRanking?.Invoke(true));
         InitializeAction("GameStartButton",      (context) => OnStart?.Invoke(true));
         InitializeAction("MenuButton",           (context) => OnMenu?.Invoke(true));
+        InitializeAction("Cancel",               (context) => OnCancel?.Invoke(true));
     }
 
     void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod, Action<InputAction.CallbackContext> cancelMethod = null)

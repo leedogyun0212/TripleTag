@@ -7,6 +7,8 @@ public class HitPointModule : CharacterModule
     float _maxhp;
     public float MaxHP => _maxhp;
 
+    public float time = 5.0f;
+
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
 
     public override void OnRegistration(CharacterBase newOwner)
@@ -28,7 +30,7 @@ public class HitPointModule : CharacterModule
     {
         if (Owner.CharType is CharacterType.Chaser) return 0;
         if(value > 4) value = 4;
-        return _hp-= value;
+        return _hp -= value;
     }
 
     /// <summary> 시작시 체력 세팅  </summary>
@@ -38,15 +40,22 @@ public class HitPointModule : CharacterModule
         return _hp;
     }
 
-    /// <summary> 업데이트 되는 체력   </summary>
+    /// <summary> 업데이트 되는 체력 </summary>
+    //일정 시간이 지난후 체력 초기화
     public void UpdateHP(float deltaTime)
     {
+        if(time < deltaTime)
+        {
+            time += deltaTime;
+            Heal();
+        }
     }
 
     //public float Damage();
     /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary>
     public float Heal()
     {
+        if (_hp < 0 && !Owner.onStun) return 0;
         _hp = _maxhp;
         return _hp;
     }

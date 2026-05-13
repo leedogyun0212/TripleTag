@@ -8,7 +8,7 @@ public enum UIType
 {
     None, Loading, Title,Option, Movable,Profile,Message,
     Main,GameQuit,Shop,Rank,Menu,GiveUp,InGame,
-    TargetHoverInfo,GameStart,
+    TargetHoverInfo,GameStart, Matchmaking,
     _Length
 }
 

@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe16cec4b80ac84e8994150b35bcb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonOpenUI
-  wantType: 9
+  wantType: 15
   wantToggle: 0
 --- !u!114 &4212391010889326261
 MonoBehaviour:

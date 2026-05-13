@@ -65,6 +65,7 @@ public class UI_MainScreen : UI_ScreenBase
     }
     void OpenStart(bool value)
     {
-        UIManager.ClaimOpenScreen(UIType.InGame, ScreenChangeType.SlideChanger);
+        UIManager.ClaimOpenUI(UIType.GameStart);
+
     }
 }

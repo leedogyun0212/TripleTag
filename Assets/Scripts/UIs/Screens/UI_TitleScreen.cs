@@ -33,5 +33,6 @@ public class UI_TitleScreen : UI_ScreenBase
     void OpenStart(bool value)
     {
         UIManager.ClaimOpenScreen(UIType.Main, ScreenChangeType.SlideChanger);
+        
     }
 }
