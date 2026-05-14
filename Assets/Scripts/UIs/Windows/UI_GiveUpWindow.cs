@@ -9,6 +9,21 @@ public class UI_GiveUpWindow : OpenableUIBase
         UIManager.ClaimCloseUI(UIType.Menu);
     }
 
+    public void OnEnable()
+    {
+        InputManager.OnCancel -= Exit;
+        InputManager.OnCancel += Exit;
+    }
+
+    public void OnDisable()
+    {
+        InputManager.OnCancel -= Exit;
+    }
+
+    private void Exit(bool value)
+    {
+        UIManager.ClaimCloseUI(UIType.GiveUp);
+    }
 
     public void Cancel() => UIManager.ClaimCloseUI(UIType.GiveUp);
 }

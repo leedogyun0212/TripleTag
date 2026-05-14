@@ -24,6 +24,8 @@ public class MovementModule : CharacterModule, IRunnable
     [SerializeField] Transform FootLeftTrans;
     protected float SaveYDir;
 
+    bool _inputJumpPressed = false;
+
     //이런 거대한모듈을 만들 때에 한번 "대분류"로 분류하기
     //자식에서 더 이상 못 바꾸게!
     public sealed override System.Type RegistrationType => typeof(MovementModule);
@@ -88,7 +90,7 @@ public class MovementModule : CharacterModule, IRunnable
 
     public void UpdateToDirection(float deltaTime)
     {
-        //JumpForce();
+        JumpForce();
         if (targetDirection is null) return;
 
         float currentMoveSpeed = GetMoveSpeed(deltaTime);
@@ -133,16 +135,21 @@ public class MovementModule : CharacterModule, IRunnable
 
     public void MoveToDirection(Vector3 direction)
     {
+
         targetDestination = null; //목적지를 제거한다
         targetDirection = direction.normalized;
-        if (direction.normalized.y > 0.0f) SaveYDir = direction.normalized.y;
-        
+        if (direction.normalized.y > 0.0f)
+        {
+            SaveYDir = direction.normalized.y;
+            _inputJumpPressed = true;
+        }
     }
 
     public void StopMovement()
     {
         targetDestination = null; //목적지를 제거한다
         targetDirection = null;// 방향으로는 움직이지 않겠다!
+        _inputJumpPressed = false;
     }
 
     //
@@ -190,7 +197,7 @@ public class MovementModule : CharacterModule, IRunnable
 
         Vector3 temp = targetDirection.Value;
         
-        if (!isGround)
+        if (!isGround && _inputJumpPressed)
         {
             isJump = false;
             if (targetDirection.Value.y < SaveYDir)
@@ -203,6 +210,7 @@ public class MovementModule : CharacterModule, IRunnable
         {
             temp.y = 0.0f;
             targetDirection = temp;
+            _inputJumpPressed = false;
             isJump = true;
         }
     }

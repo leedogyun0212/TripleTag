@@ -153,7 +153,7 @@ public class InputManager : ManagerBase
         if (lastHoverObject != firstObject)
         {
             OnMouseHover?.Invoke(firstObject, lastHoverObject);
-            Debug.Log($"{worldPosition} \t: {firstObject}");
+            //Debug.Log($"{worldPosition} \t: {firstObject}");
         }
     }
 

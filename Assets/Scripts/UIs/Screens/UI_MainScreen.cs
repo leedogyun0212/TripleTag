@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class UI_MainScreen : UI_ScreenBase
 {
+    [SerializeField] bool PC = false;
+
     public void OnEnable()
     {
         InputManager.OnOption -= OptionStart;
@@ -56,7 +58,8 @@ public class UI_MainScreen : UI_ScreenBase
     }
     void Profile(bool value)
     {
-        UIManager.ClaimToggleUI(UIType.Profile);
+        if(!PC)
+            UIManager.ClaimToggleUI(UIType.Profile);
     }
 
     void OpenTitle(bool value)

@@ -48,6 +48,11 @@ public class UI_Matchmaking : OpenableUIBase
         currentTime = Time.time - startTime;
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
+        Debug.Log($"{seconds:00}" + matchOn);
+        if (seconds > 10 && !matchOn)
+        {
+            matchOn = true;
+        }
         if (!matchOn)
             TimeSet(minutes, seconds);
         else
@@ -55,10 +60,7 @@ public class UI_Matchmaking : OpenableUIBase
             GameStart();
         }
 
-        if (seconds > 10 && !matchOn)
-        {
-            matchOn = true;
-        }
+        
     }
 
     public void TimeSet(int min, int sec)
@@ -69,6 +71,7 @@ public class UI_Matchmaking : OpenableUIBase
     public void GameStart()
     {
         UIManager.ClaimOpenScreen(UIType.InGame, ScreenChangeType.SlideChanger);
+        matchOn = false;
         UIManager.ClaimCloseUI(UIType.Matchmaking);
     }
     
