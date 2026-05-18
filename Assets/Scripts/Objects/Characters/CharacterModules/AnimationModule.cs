@@ -47,4 +47,10 @@ public class AnimationModule : CharacterModule
         }
         anim.SetFloat("MoveSpeed", moveDelta.magnitude / Time.fixedDeltaTime);
     }
+
+    public void AnimationByAttack(bool value)
+    {
+        if (!anim) return;
+        anim.SetBool("Attack", value);
+    }
 }

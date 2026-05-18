@@ -16,12 +16,19 @@ public class HitPointModule : CharacterModule
         base.OnRegistration(newOwner);
         GameManager.OnUpdateCharacter -= UpdateHP;
         GameManager.OnUpdateCharacter += UpdateHP;
+        
+        if (Owner == null) return;
+        newOwner.OnDamage -= OnDamageReceived;
+        newOwner.OnDamage += OnDamageReceived;
     }
 
     public override void OnUnregistration(CharacterBase oldOwner)
     {
         base.OnUnregistration(oldOwner);
         GameManager.OnUpdateCharacter -= UpdateHP;
+        
+        if (oldOwner == null) return;
+        oldOwner.OnDamage -= OnDamageReceived;
     }
 
     //public float IncreaseHP(float value);
@@ -71,6 +78,22 @@ public class HitPointModule : CharacterModule
         Owner.onStun = false;
 
         return Owner.onStun;
+    }
+
+    void OnDamageReceived(GameObject damageCauser, ControllerBase instigator, float damage)
+    {
+        // 안전 체크
+        if (damage <= 0f) return;
+
+        float newHp = DecreaseHP(damage);
+
+        // HP가 0 이하이면 기절/사망 판정 수행
+        if (newHp <= 0f)
+        {
+            bool isStunned = OutCheck(instigator);
+            // 추가 동작(사망 처리, 이펙트 등)은 여기에 연결 가능
+            // 예: if (!isStunned) { /* 사망 처리 */ }
+        }
     }
 
 }
