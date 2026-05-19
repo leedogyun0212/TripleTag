@@ -39,8 +39,6 @@ public class AttackModule : CharacterModule
         targetChar?.DamageNotify(Owner.gameObject, Owner.Controller, finalDamage);
     }
 
-
-
     /// <summary> 술래의 공격 : 맞으면 죽는다 </summary>
     // instigator가 술래일때 나를 떄리면 발동한다 instigator가 나를 때리고 나는 데미지를 받는다
     public float ChaserAttack(CharacterBase target)

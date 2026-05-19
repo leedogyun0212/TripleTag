@@ -359,10 +359,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.05
-  m_Height: 0.25
+  m_Radius: 0.063
+  m_Height: 0.25718066
   m_Direction: 1
-  m_Center: {x: 0, y: 0.12, z: 0}
+  m_Center: {x: 0.0043, y: 0.116409674, z: 0.010300002}
 --- !u!1 &3528851131707178137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6563085166918742503, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
@@ -476,10 +476,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.05
-  m_Height: 0.25
+  m_Radius: 0.063
+  m_Height: 0.25718066
   m_Direction: 1
-  m_Center: {x: 0, y: 0.12, z: 0}
+  m_Center: {x: 0.0043, y: 0.116409674, z: 0.010300002}
 --- !u!1 &5727314322431545098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2636785355641946740, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}

@@ -66,4 +66,9 @@ public class ControllerBase : MonoBehaviour, IFunctionable
     {
         if(Character && Character.GetModule<MovementModule>() is IRunnable target) target.StopMovement();
     }
+
+    public void CommandAttackTry(bool value)
+    {
+        if (Character && Character.GetModule<AnimationModule>() is AnimationModule target) target.AnimationByAttack(value);
+    }
 }

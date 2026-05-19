@@ -34,8 +34,8 @@ public class AnimationModule : CharacterModule
 
         //Debug.Log(lookRotation.x);
 
-        anim.SetFloat("MoveX", lookRotation.x);
-        anim.SetFloat("MoveY", lookRotation.z);
+        anim.SetFloat("MoveX", lookRotation.x * 10);
+        anim.SetFloat("MoveY", lookRotation.z * 10);
 
     }
     public void AnimationByMovement(Vector3 moveDelta)
@@ -51,6 +51,7 @@ public class AnimationModule : CharacterModule
     public void AnimationByAttack(bool value)
     {
         if (!anim) return;
-        anim.SetBool("Attack", value);
+
+        anim.SetTrigger("Attack");
     }
 }
