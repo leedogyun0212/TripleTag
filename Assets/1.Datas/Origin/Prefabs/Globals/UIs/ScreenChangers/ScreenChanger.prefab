@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7972479341240895289}
   - component: {fileID: 2074722376535325051}
-  - component: {fileID: 7961845761243735630}
+  - component: {fileID: 1981468312044770944}
   m_Layer: 5
   m_Name: ScreenChanger
   m_TagString: Untagged
@@ -135,7 +135,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7961845761243735630
+--- !u!114 &1981468312044770944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3927958030366950509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f56ef2644a732a42a038f9c91bb16b8, type: 3}
+  m_Script: {fileID: 11500000, guid: a437f2db86fa1d948b13eaa2012a4e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_ScreenChanger
   anim: {fileID: 2074722376535325051}

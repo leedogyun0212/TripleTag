@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7919042092603155988}
-  - component: {fileID: 9014668176017465676}
+  - component: {fileID: 6176302034210549199}
   m_Layer: 5
   m_Name: targetHoverInfo
   m_TagString: Untagged
@@ -113,7 +113,7 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: 0}
   m_SizeDelta: {x: 300, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9014668176017465676
+--- !u!114 &6176302034210549199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,10 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6171880307075158103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90c2f5067f69c7847a35690a53a88d2a, type: 3}
+  m_Script: {fileID: 11500000, guid: b1da3a838b301354e8188735350d9628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_TargetHoverInfo
-  shiftedPosition: {x: 0, y: 50}
+  shiftedPosition: {x: 0, y: 0}
   RunCoolTime: {fileID: 4900908350665207455}
   TrapCoolTime: {fileID: 4932780599687225692}
   CoolTime: {fileID: 0}
