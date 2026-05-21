@@ -1,16 +1,17 @@
-using System;
 using UnityEngine;
 
-public class UI_Matchmaking : OpenableUIBase
+public class UI_ChooseChaserScreen : UI_ScreenBase
 {
-    [SerializeField] TMPro.TextMeshProUGUI matchTime;
+    [SerializeField] TMPro.TextMeshProUGUI ChaserChooseText;
+
+    [SerializeField] GameObject ChaserChoose;
 
     [SerializeField] int MatchTimeLimit = 10;
 
     float startTime;
     float currentTime;
 
-    bool matchOn = false;
+    int RandomNum;
 
     public override void Registration(UIManager manager)
     {
@@ -29,56 +30,56 @@ public class UI_Matchmaking : OpenableUIBase
     private void OnEnable()
     {
         startTime = Time.time;
+        RandomNum = Random.Range(1, 4);
         GameManager.OnUpdateObject -= TimeUpdate;
         GameManager.OnUpdateObject += TimeUpdate;
         InputManager.OnCancel -= MatchExit;
         InputManager.OnCancel += MatchExit;
     }
 
-    
+
 
     public void OnDisable()
     {
         GameManager.OnUpdateObject -= TimeUpdate;
         InputManager.OnCancel -= MatchExit;
+        ChaserChoose.SetActive(false);
     }
 
     public void TimeUpdate(float deltaTime)
     {
-        if (matchTime is null) return;
+        if (ChaserChooseText is null) return;
 
         currentTime = Time.time - startTime;
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
-        Debug.Log($"{seconds:00}" + matchOn);
-        if (seconds > MatchTimeLimit && !matchOn)
+        if (seconds > 3 && seconds < MatchTimeLimit)
         {
-            matchOn = true;
-        }
-        if (!matchOn)
-            TimeSet(minutes, seconds);
-        else
+            TimeSet();
+        }   
+        else if (seconds > MatchTimeLimit)
         {
             GameStart();
         }
 
-        
+
     }
 
-    public void TimeSet(int min, int sec)
+    public void TimeSet()
     {
-        matchTime.SetText($"{min}:{sec:00}");
+        ChaserChooseText.SetText($"이번 술래는 Group{RandomNum} 입니다");
+        ChaserChoose.SetActive(true);
     }
 
     public void GameStart()
     {
-        UIManager.ClaimOpenScreen(UIType.ChooseChaser, ScreenChangeType.SlideChanger);
-        matchOn = false;
-        UIManager.ClaimCloseUI(UIType.Matchmaking);
+        UIManager.ClaimOpenScreen(UIType.InGame, ScreenChangeType.SlideChanger);
+
+        UIManager.ClaimCloseUI(UIType.ChooseChaser);
     }
-    
+
     private void MatchExit(bool value)
     {
-        UIManager.ClaimCloseUI(UIType.Matchmaking);
+        UIManager.ClaimCloseUI(UIType.ChooseChaser);
     }
 }

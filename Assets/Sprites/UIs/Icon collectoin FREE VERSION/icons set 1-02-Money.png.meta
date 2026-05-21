@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c9ee94e9352771d4c8726c77cdb7e999
+guid: 1032b596668684045a435bf56b45bd2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7061011300099496002
-    second: Button (5)_0
+      213: -2801064464021172891
+    second: icons set 1-02-Money_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Button (5)_0
+      name: icons set 1-02-Money_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 25
+        y: 5
+        width: 104
+        height: 139
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 40, z: 40, w: 40}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb7ec8622af320e90800000000000000
-      internalID: -7061011300099496002
+      spriteID: 56d4c0de5be9029d0800000000000000
+      internalID: -2801064464021172891
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3f7334d7e390e3c4198dc64f74b48f19
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Button (5)_0: -7061011300099496002
+      icons set 1-02-Money_0: -2801064464021172891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

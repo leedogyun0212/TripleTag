@@ -8,7 +8,7 @@ public enum UIType
 {
     None, Loading, Title,Option, Movable,Profile,Message,
     Main,GameQuit,Shop,Rank,Menu,GiveUp,InGame,
-    TargetHoverInfo,GameStart, Matchmaking,
+    TargetHoverInfo,GameStart, Matchmaking, ChooseChaser,InGameEnd,
     _Length
 }
 
@@ -31,6 +31,8 @@ public class UIManager : ManagerBase
         new (UIType.Main, "MainScreen"),
         new (UIType.InGame, "InGameUI"),
         new (UIType.Option, "OptionScreen"),
+        new (UIType.ChooseChaser, "ChooseChaserScreen"),
+        new (UIType.InGameEnd, "InGameEndScreen"),
     };
 
     Canvas _mainCanvas;

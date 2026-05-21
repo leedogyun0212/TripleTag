@@ -26,4 +26,5 @@ public class UI_InGameUIScreen : UI_ScreenBase
     {
         UIManager.ClaimOpenUI(UIType.GiveUp);
     }
+
 }

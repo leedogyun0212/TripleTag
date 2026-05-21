@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkinnedModel
       objectReference: {fileID: 0}
+    - target: {fileID: 684592978051452494, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594973713719428269, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3738033587666306972, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4883425426620692709, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
       propertyPath: m_Name
       value: CharacterBase
@@ -334,6 +346,7 @@ MonoBehaviour:
   duration: 1.2
   cooldown: 8
   FootLeftTrans: {fileID: 0}
+  minRotationMoveSqr: 0.001
   RunSpeed: 1
 --- !u!1 &3037648609047957260 stripped
 GameObject:
