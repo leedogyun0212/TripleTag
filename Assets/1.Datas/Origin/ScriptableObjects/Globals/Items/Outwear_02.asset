@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436301dba77fcc84a90284f22d056303, type: 3}
+  m_Name: Outwear_02
+  m_EditorClassIdentifier: Assembly-CSharp::ItemContainer
+  icon: {fileID: -4596343571774408315, guid: 110a922aab000164f9e945fbd77315ac, type: 3}
+  displayName: Outwear_02
+  explain: "\uC0C1\uC758"
+  type: 1
+  maxStack: 99
