@@ -51,6 +51,7 @@ public class InputManager : ManagerBase
     public static event ButtonEvent OnMenu;
     public static event ButtonEvent OnAttack;
     public static event ButtonEvent OnCancel;
+    public static event ButtonEvent OnInven;
 
     public static event VectorEvent3D OnMove;
 
@@ -188,10 +189,10 @@ public class InputManager : ManagerBase
         InitializeAction("MouseRightButton",     (context) => OnMouseRightButton?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
                                            ,     (context) => OnMouseRightButton?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
         
-        InitializeAction("RunButton",       (context) => OnRun?.Invoke(true));
-        InitializeAction("TrapButton",       (context) => OnTrap?.Invoke(true));
+        InitializeAction("RunButton",            (context) => OnRun?.Invoke(true));
+        InitializeAction("TrapButton",           (context) => OnTrap?.Invoke(true));
         InitializeAction("OptionButton",         (context) => OnOption?.Invoke(true));
-        InitializeAction("AttackButton",     (context) => OnAttack?.Invoke(true));
+        InitializeAction("AttackButton",         (context) => OnAttack?.Invoke(true));
         InitializeAction("ShopButton",           (context) => OnShop?.Invoke(true));
         InitializeAction("MessageButton",        (context) => OnMessage?.Invoke(true));
         InitializeAction("ExitButton",           (context) => OnExit?.Invoke(true));
@@ -199,7 +200,8 @@ public class InputManager : ManagerBase
         InitializeAction("RankButton",           (context) => OnRanking?.Invoke(true));
         InitializeAction("GameStartButton",      (context) => OnStart?.Invoke(true));
         InitializeAction("MenuButton",           (context) => OnMenu?.Invoke(true));
-        InitializeAction("Cancel",               (context) => OnCancel?.Invoke(true));
+        InitializeAction("CancelButton",         (context) => OnCancel?.Invoke(true));
+        InitializeAction("InventoryButton",      (context) => OnInven?.Invoke(true));
     }
 
     void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod, Action<InputAction.CallbackContext> cancelMethod = null)

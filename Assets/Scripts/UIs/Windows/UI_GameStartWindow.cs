@@ -4,7 +4,6 @@ public class UI_GameStartWindow : OpenableUIBase
 {
     [SerializeField] GameObject TimePrefab;
 
-    bool First = true;
 
     public void OnEnable()
     {

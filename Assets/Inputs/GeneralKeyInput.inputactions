@@ -142,6 +142,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "InventoryButton",
+                    "type": "Button",
+                    "id": "d7e64e7c-a237-48fa-a0f1-efb25d9c752c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CancelButton",
+                    "type": "Button",
+                    "id": "cf61518b-3d07-47dc-821d-d06aa9467bb7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "33dbe259-e4d7-4b0a-aafa-d9c8ddfbe43f",
@@ -149,15 +167,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "cf61518b-3d07-47dc-821d-d06aa9467bb7",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -460,12 +469,23 @@
                 },
                 {
                     "name": "",
+                    "id": "146d4fb6-2611-48fa-bb53-5fa28dbfd140",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7af26303-8a4f-43bf-8084-ec3f89bdf56c",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Cancel",
+                    "action": "CancelButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

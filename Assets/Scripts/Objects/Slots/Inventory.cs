@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Inventory : MonoBehaviour
 {
@@ -21,6 +22,19 @@ public class Inventory : MonoBehaviour
     public void Initialize()
     {
         slots = new ItemSlot[rows, columns];
+        for (int row = 0; row < rows; row++)
+        {
+            for (int column = 0; column < columns; column++)
+            {
+                slots[row, column] = new ItemSlot();
+            }
+        }
+    }
+
+    public void WearPlus()
+    {
+        ItemContainer Wear = DataManager.LoadDataFile<ItemContainer>("Outwear_02");
+        AddItem(Wear);
     }
 
     public void Sort(System.Comparison<ItemContainer> Method)
@@ -64,6 +78,23 @@ public class Inventory : MonoBehaviour
         return default;
     }
 
+    public ItemSlot[] GetAllslot()
+    {
+        ItemSlot[] result = new ItemSlot[slots.Length];
+
+        int height = slots.GetLength(0);
+        int width = slots.GetLength(1);
+        for (int row = 0; row < height; row++)
+        {
+            for (int column = 0; column < width; column++)
+            {
+                result[width * row + column] = slots[row, column];
+            }
+        }
+
+        return result;
+    }
+
     public ItemSlot FindItem(ItemContainer target)
     {
         return default;
@@ -76,7 +107,10 @@ public class Inventory : MonoBehaviour
 
     public ItemSlot FindItem(int wantRow, int wantColumn)
     {
-        return default;
+        if (wantRow    < 0 || wantColumn < 0) return null;
+        if (wantRow    >= slots.GetLength(0)) return null;
+        if (wantColumn >= slots.GetLength(1)) return null;
+        return slots[wantRow, wantColumn];
     }
 
     public ItemSlot FindItem(string containWord)
@@ -106,6 +140,7 @@ public class Inventory : MonoBehaviour
 
     public int AddItem(ItemContainer wantItem, int amount = 1)
     {
+        slots[0,0].AddItem(wantItem, amount);
         return default;
     }
 

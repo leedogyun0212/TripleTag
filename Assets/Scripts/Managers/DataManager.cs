@@ -78,6 +78,9 @@ public class DataManager : ManagerBase
         loadString = "장소 정하는 중";
         yield return LoadAllFromAssetBundle<PoolRequest>("Global", ProgressOnLoad).WaitForTask();
 
+        loadString = "간식 확인 중";
+        yield return LoadAllFromAssetBundle<ItemContainer>("Global", ProgressOnLoad).WaitForTask();
+
         //그냥 함수를 실행하는 것이 아니라, 이 작업을 시작할 인원을 모집해야 한다! -> 해당 스레드한테 시켜야 한다!
         //LoadFileFromAssetBundle<GameObject>("Origin/Prefabs/Square.prefab");
 

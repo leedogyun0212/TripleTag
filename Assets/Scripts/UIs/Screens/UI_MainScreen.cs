@@ -26,6 +26,9 @@ public class UI_MainScreen : UI_ScreenBase
      
         InputManager.OnStart -= OpenStart;
         InputManager.OnStart += OpenStart;
+
+        InputManager.OnInven -= Inventory;
+        InputManager.OnInven += Inventory;
     }
 
     public void OnDisable()
@@ -37,6 +40,7 @@ public class UI_MainScreen : UI_ScreenBase
         InputManager.OnMessage -= Message; 
         InputManager.OnProfile -= Profile;
         InputManager.OnStart -= OpenStart;
+        InputManager.OnInven -= Inventory;
     }
 
     void OptionStart(bool value)
@@ -48,14 +52,17 @@ public class UI_MainScreen : UI_ScreenBase
     {
         UIManager.ClaimToggleUI(UIType.Shop);
     }
+
     void Rank(bool value)
     {
         UIManager.ClaimToggleUI(UIType.Rank);
     }
+
     void Message(bool value)
     {
         UIManager.ClaimToggleUI(UIType.Message);
     }
+
     void Profile(bool value)
     {
         if(!PC)
@@ -66,9 +73,14 @@ public class UI_MainScreen : UI_ScreenBase
     {
         UIManager.ClaimOpenScreen(UIType.Title, ScreenChangeType.ScreenChanger);
     }
+
     void OpenStart(bool value)
     {
-        UIManager.ClaimOpenUI(UIType.GameStart);
+        UIManager.ClaimToggleUI(UIType.GameStart);
+    }
 
+    void Inventory(bool value)
+    {
+        UIManager.ClaimToggleUI(UIType.Inventory);
     }
 }
