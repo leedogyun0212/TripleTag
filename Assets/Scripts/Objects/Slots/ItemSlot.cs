@@ -1,5 +1,8 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+
+public delegate void ItemSlotChangeEvent(ItemSlot changedSlot);
 
 public class ItemSlot
 {
@@ -8,10 +11,19 @@ public class ItemSlot
     //이 칸 만의 정보
     [SerializeField] int currentStack;
 
-    public virtual bool Containable(ItemContainer newItem)
+    public event ItemSlotChangeEvent OnItemSlotChanged;
+
+    public void NoticeChanged() => OnItemSlotChanged?.Invoke(this);
+
+    public virtual bool Containable(ItemContainer wantItem)
     {
-        if (item) return true;
-        else return false;
+        if (wantItem is null) return false;
+        
+        if (item is not null && item != wantItem) return false;
+
+        if(GetIsMax()) return false;
+
+        return true;
     }
 
     public ItemContainer GetItem() => item;
@@ -20,12 +32,54 @@ public class ItemSlot
 
     public bool GetIsMax()         => item ? currentStack >= item.maxStack : false;
 
+    public bool GetIsEmpty()       => item is null || currentStack <= 0;
+
+    public int Clear()
+    {
+        item = null; //아이템 비움
+        int removed = currentStack; //비우기 전에 저장
+        currentStack = 0; //스택 초기화
+        return removed; // 얼마나 비웠는지 반환
+    }
+
     public int AddItem(ItemContainer wantItem, int amount)
     {
-        if (wantItem is null) return 0;
         if (amount <= 0) return 0;
-        if (item is not null && item != wantItem) return amount;
+        if (!Containable(wantItem)) return amount;
 
-        return amount;
+        item = wantItem;
+        int stackable = Mathf.Min(item.maxStack - currentStack, amount);
+        currentStack += stackable;
+
+        return amount - stackable; // 추가하려는 값 - 추가한 값
+    }
+
+    public int RemoveItem(ItemContainer wantItem)
+    {
+        Debug.Log($"RemoveItem: {wantItem.name} /// {currentStack}");
+        if (!wantItem) return 0;
+
+        if(GetIsEmpty()) return 0;
+
+        if(item != wantItem) return 0;
+
+        return Clear();
+    }
+
+    public int RemoveItem(ItemContainer wantItem, int amount)
+    {
+        if (amount <= 0) return 0;
+
+        if (!wantItem) return 0;
+
+        if (GetIsEmpty()) return amount;
+
+        if (item != wantItem) return amount;
+
+        if (amount >= currentStack)return amount - Clear();
+
+        currentStack -= amount;
+
+        return 0;
     }
 }

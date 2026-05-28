@@ -14,9 +14,19 @@ public class UI_ItemSlotInfo : UIBase
 
     public void ConnectSlot(ItemSlot targetSlot)
     {
+        DisconnectSlot();
         if (targetSlot is null) return;
         connectedSlot = targetSlot;
+        connectedSlot.OnItemSlotChanged -= VisualUpdate;
+        connectedSlot.OnItemSlotChanged += VisualUpdate;
         VisualUpdate(connectedSlot);
+    }
+
+    public void DisconnectSlot()
+    {
+        if (connectedSlot is null) return;
+        connectedSlot.OnItemSlotChanged -= VisualUpdate;
+        connectedSlot = null;
     }
 
     protected virtual void VisualUpdate(ItemSlot targetSlot)
