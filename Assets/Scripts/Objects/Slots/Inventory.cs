@@ -31,15 +31,15 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void WearPlus()
+    public void WearPlus(int amount)
     {
         ItemContainer Wear = DataManager.LoadDataFile<ItemContainer>("Outwear_02");
-        AddItem(Wear,250);
+        AddItem(Wear,amount);
     }
-    public void WearRemove()
+    public void WearMinus(int amount)
     {
         ItemContainer Wear = DataManager.LoadDataFile<ItemContainer>("Outwear_02");
-        RemoveItem(Wear,70);
+        RemoveItem(Wear,amount);
     }
 
     public void Sort(System.Comparison<ItemContainer> Method)
@@ -259,13 +259,13 @@ public class Inventory : MonoBehaviour
 
     public int RemoveItem(ItemContainer wantItem)
     {
-        int removed = 0;
+        int result = 0;
         foreach (ItemSlot currentSlot in FindLastItem(wantItem))
         {
-            removed = currentSlot.RemoveItem(wantItem);
+            result = currentSlot.RemoveItem(wantItem);
             currentSlot.NoticeChanged();
         }
-        return removed;
+        return result;
     }
 
     public int RemoveItem(ItemContainer wantItem, int amount)

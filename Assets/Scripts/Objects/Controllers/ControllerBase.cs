@@ -69,6 +69,10 @@ public class ControllerBase : MonoBehaviour, IFunctionable
 
     public void CommandAttackTry(bool value)
     {
-        if (Character && Character.GetModule<AnimationModule>() is AnimationModule target) target.AnimationByAttack(value);
+        if (Character && Character.GetModule<AnimationModule>() is AnimationModule target)
+        {
+            target.AnimationByAttack(value);
+            target.AnimAttackOn();
+        }
     }
 }

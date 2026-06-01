@@ -124,11 +124,11 @@ MonoBehaviour:
       - m_Target: {fileID: 205594676853236274}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: WearPlus
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 255
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB204\uB974\uC9C0 \uB9C8\uC138\uC694."
+  m_text: "\uC81C\uAC70"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8cc9afb6d6679f4b8eae61a913f1cae, type: 2}
   m_sharedMaterial: {fileID: -6506298351887234612, guid: b8cc9afb6d6679f4b8eae61a913f1cae, type: 2}
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB204\uB974\uC9C0 \uB9C8\uC138\uC694."
+  m_text: "\uCD94\uAC00"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8cc9afb6d6679f4b8eae61a913f1cae, type: 2}
   m_sharedMaterial: {fileID: -6506298351887234612, guid: b8cc9afb6d6679f4b8eae61a913f1cae, type: 2}
@@ -942,12 +942,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 205594676853236274}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: WearRemove
-        m_Mode: 1
+        m_MethodName: WearMinus
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 80
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

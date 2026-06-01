@@ -7,6 +7,8 @@ public class AttackModule : CharacterModule
     float damage;
     HitPointModule hpModule;
     
+    public bool isAttack = false;
+
     public sealed override System.Type RegistrationType => typeof(AttackModule);
 
     public override void OnRegistration(CharacterBase newOwner)
@@ -22,9 +24,10 @@ public class AttackModule : CharacterModule
 
     public void AttackTarget(GameObject target, float damage)
     {
+        
         if (Owner is null || target is null) return;
 
-        CharacterBase targetChar = target.GetComponent<CharacterBase>();
+        CharacterBase targetChar = target.GetComponentInParent<CharacterBase>();
         if (targetChar == null) return;
 
         if (Owner.CharType == CharacterType.Chaser && targetChar.CharType == CharacterType.Chaser) return;
@@ -76,4 +79,15 @@ public class AttackModule : CharacterModule
     ///<summary> 깔아놓는 덫 : 걸리면 체력이 1닳는다. 잠시 스턴에 걸린다 </summary>
     public void Trap(ControllerBase instigator)
     { }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isAttack) return;
+        AttackModule target = other.GetComponent<AttackModule>();
+
+        if (target == null) return;
+        isAttack = false;
+        Debug.Log("공격 모듈이 감지됨");
+        AttackTarget(target.gameObject, damage);
+    }
 }

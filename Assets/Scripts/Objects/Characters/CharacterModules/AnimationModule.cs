@@ -54,4 +54,10 @@ public class AnimationModule : CharacterModule
 
         anim.SetTrigger("Attack");
     }
+
+    public void AnimAttackOn()
+    {
+        AttackModule myattack = gameObject.GetComponentInParent<AttackModule>();
+        if (myattack) myattack.isAttack = true;
+    }
 }
