@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AnimationModule : CharacterModule
@@ -7,13 +8,14 @@ public class AnimationModule : CharacterModule
     //has - a 관계 : 소유관계 MovementModule movementModule; 
     [SerializeField] Animator anim;
     [SerializeField] bool isRotationByMovement;
-
+    AttackModule myattack;
     public sealed override System.Type RegistrationType => typeof(AnimationModule);
 
 
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
+        myattack = gameObject.GetComponentInParent<AttackModule>();
         newOwner.OnLookAt -= AnimationByLookRotation;
         newOwner.OnLookAt += AnimationByLookRotation;
         newOwner.OnMovement -= AnimationByMovement;
@@ -57,7 +59,16 @@ public class AnimationModule : CharacterModule
 
     public void AnimAttackOn()
     {
-        AttackModule myattack = gameObject.GetComponentInParent<AttackModule>();
-        if (myattack) myattack.isAttack = true;
+        if (myattack)
+        {
+            myattack.isAttack = true;
+        }
+    }
+    public void AnimAttackOff()
+    {
+        if (myattack)
+        {
+            myattack.isAttack = false;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -90,4 +91,5 @@ public class AttackModule : CharacterModule
         Debug.Log("공격 모듈이 감지됨");
         AttackTarget(target.gameObject, damage);
     }
+
 }

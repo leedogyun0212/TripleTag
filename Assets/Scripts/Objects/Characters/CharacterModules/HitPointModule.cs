@@ -14,6 +14,7 @@ public class HitPointModule : CharacterModule
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
+        SetHP(4.0f);
         GameManager.OnUpdateCharacter -= UpdateHP;
         GameManager.OnUpdateCharacter += UpdateHP;
         
@@ -51,7 +52,8 @@ public class HitPointModule : CharacterModule
     //일정 시간이 지난후 체력 초기화
     public void UpdateHP(float deltaTime)
     {
-        if(time < deltaTime)
+        Debug.Log($"업데이트 되는 체력{HP}/{gameObject.name}");
+        if (time < deltaTime)
         {
             time += deltaTime;
             Heal();
