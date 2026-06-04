@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 4023983297797238829}
   - component: {fileID: 2838297242777411752}
   - component: {fileID: 2153768886549556397}
-  - component: {fileID: 6121870802143026946}
+  - component: {fileID: -2831285836621242247}
   m_Layer: 5
   m_Name: INgameTime
   m_TagString: Untagged
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6121870802143026946
+--- !u!114 &-2831285836621242247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,11 +390,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3993273219321144780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187f5af7e8104d940b9cc8543e5a96f5, type: 3}
+  m_Script: {fileID: 11500000, guid: fb1193dbfe4c0de4996a2fbe36f6f758, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_Matchmaking
-  matchTime: {fileID: 7834023834348215757}
-  MatchTimeLimit: 1
+  m_EditorClassIdentifier: Assembly-CSharp::UI_IngameTimeWimdow
+  matchTime: {fileID: 0}
+  MatchTimeLimit: 10
 --- !u!1 &6573281538448026394
 GameObject:
   m_ObjectHideFlags: 0

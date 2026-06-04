@@ -54,24 +54,99 @@ public class InteractableModule : CharacterModule
     MeshRenderer fovMeshRenderer;
     Mesh fovMesh;
 
-    void Awake()
+    // 외부에서 호출하거나 autoUpdate가 켜져있으면 매 프레임 실행됩니다.
+    public void Vision(float detlaTime)
     {
-        // 컴포넌트 없으면 추가
-        fovMeshFilter = GetComponentInChildren<MeshFilter>();
+        UpdateFOVMesh();
+    }
+
+    void UpdateFOVMesh()
+    {
+        if (fovMesh == null) return;
+        int stepCount = Mathf.Max(1, meshResolution); // 분할수
+        float stepAngleSize = fovAngle / stepCount; // 각도fovAngle을 stepCount만큼 나눔
+
+        // 버텍스: origin + stepCount+1 points
+        Vector3[] vertices = new Vector3[stepCount + 2]; // Mesh의 꼭짓점 배열 (원점 + 각 단계의 점들)
+        Vector2[] uv = new Vector2[vertices.Length]; // UV 배열 (텍스처 매핑용, 필요에 따라 조정)
+        int[] triangles = new int[(stepCount) * 3]; // 삼각형 배열 (각 단계마다 3개씩)
+
+        Vector3 origin = Vector3.zero; // local space origin
+        vertices[0] = origin;
+
+        int triIndex  = 0;
+        int vertIndex = 1; 
+
+        // 각 단계마다 레이캐스트로 장애물 체크
+        float halfFov = fovAngle * 0.5f; // 시야의 절반
+        for (int i = 0; i <= stepCount; i++) // stepCount+1 만큼 반복하여 각 단계의 점 계산
+        {
+            float angle = -halfFov + stepAngleSize * i; // local forward 기준으로 왼쪽에서 오른쪽으로 각도 계산
+            Vector3 dir = DirFromAngle(angle, true); // 캐릭터의 방향 계산 (로컬 기준)
+
+            // 월드 위치/방향 계산
+            Vector3 worldOrigin = transform.position; // 월드 위치는 캐릭터의 위치
+            Vector3 worldDir = transform.TransformDirection(dir); // 방향은 캐릭터 회전에 따라 변환
+
+            RaycastHit hit;
+            Vector3 point;
+            if (Physics.Raycast(worldOrigin, worldDir, out hit, viewDistance, obstacleMask)) // 레이캐스트를 쏴서 장애물(obstacleMask) 체크
+            {
+                // 장애물에 닿으면 그 지점까지 시야
+                point = transform.InverseTransformPoint(hit.point); // 맞으면 맞은 곳 까지 시야
+            }
+            else
+            {
+                // 최대 거리까지
+                point = transform.InverseTransformPoint(worldOrigin + worldDir * viewDistance); // 안 맞으면 최대 거리까지 시야
+            }
+
+            vertices[vertIndex] = point;
+            uv[vertIndex] = new Vector2((float)vertIndex / vertices.Length, 0); // UV는 필요에 따라 조정 (여기서는 간단히 정규화된 값 사용)
+
+            if (i > 0) // 첫 번째 점 이후부터 삼각형 생성 (원점, 이전 점, 현재 점) 
+            {
+                triangles[triIndex + 0] = 0;
+                triangles[triIndex + 1] = vertIndex - 1;
+                triangles[triIndex + 2] = vertIndex;
+                triIndex += 3;
+            }
+
+            vertIndex++;
+        }
+
+        fovMesh.Clear();
+        fovMesh.vertices = vertices; // 곡짓점 배열 설정 
+        fovMesh.uv = uv; // UV 배열 설정 (텍스처 매핑용, 필요에 따라 조정)
+        fovMesh.triangles = triangles; // 삼각형 연결
+        fovMesh.RecalculateNormals();
+    }
+
+    // angle: 도 단위. isGlobalAngle=true이면 월드 기준, false면 로컬(전방 기준)
+    Vector3 DirFromAngle(float angleInDegrees, bool isLocal)
+    {
+        float angleRad = angleInDegrees * Mathf.Deg2Rad;
+        // 로컬 XZ 평면에서의 방향. Unity에서 전방(Z)이 0도라고 가정 
+        Vector3 dir = new Vector3(Mathf.Sin(angleRad), 0, Mathf.Cos(angleRad));
+        return dir;
+    }
+
+    public void MeshSetting()
+    {
+        fovMeshFilter  = GetComponentInChildren<MeshFilter>();
         fovMeshRenderer = GetComponentInChildren<MeshRenderer>();
 
         if (fovMeshFilter == null)
         {
-            GameObject go = new GameObject("FOV_Mesh");
-            go.transform.SetParent(transform, false);
-            fovMeshFilter = go.AddComponent<MeshFilter>();
-            fovMeshRenderer = go.AddComponent<MeshRenderer>();
-            // 기본 머티리얼은 필요에 따라 설정하세요. (Inspector에서 설정 권장)
+            GameObject fov = new GameObject("FOV_Mesh");
+            fov.transform.SetParent(transform, false);
+            fovMeshFilter = fov.TryAddComponent<MeshFilter>();
+            fovMeshRenderer = fov.TryAddComponent<MeshRenderer>();
             fovMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             fovMeshRenderer.receiveShadows = false;
         }
 
-        if (fovMeshFilter.sharedMesh == null)
+        if(fovMeshFilter.sharedMesh == null)
         {
             fovMesh = new Mesh();
             fovMesh.name = "FOV_Mesh_Generated";
@@ -84,37 +159,32 @@ public class InteractableModule : CharacterModule
         }
     }
 
-    // 외부에서 호출하거나 autoUpdate가 켜져있으면 매 프레임 실행됩니다.
-    public void Vision(float detlaTime)
+    public void Vision()
     {
-        UpdateFOVMesh();
+        UpdateVision();
     }
 
-    void UpdateFOVMesh()
+    void UpdateVision()
     {
         if (fovMesh == null) return;
         int stepCount = Mathf.Max(1, meshResolution);
         float stepAngleSize = fovAngle / stepCount;
+        float halfFov = fovAngle * 0.5f;
 
-        // 버텍스: origin + stepCount+1 points
         Vector3[] vertices = new Vector3[stepCount + 2];
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[(stepCount) * 3];
 
-        Vector3 origin = Vector3.zero; // local space origin
-        vertices[0] = origin;
+        vertices[0] = Vector3.zero;
 
         int triIndex = 0;
         int vertIndex = 1;
 
-        // 각 단계마다 레이캐스트로 장애물 체크
-        float halfFov = fovAngle * 0.5f;
         for (int i = 0; i <= stepCount; i++)
         {
             float angle = -halfFov + stepAngleSize * i;
-            Vector3 dir = DirFromAngle(angle, true); // local forward 기준
+            Vector3 dir = DirFromAngle(angle, true);
 
-            // 월드 위치/방향 계산
             Vector3 worldOrigin = transform.position;
             Vector3 worldDir = transform.TransformDirection(dir);
 
@@ -122,47 +192,24 @@ public class InteractableModule : CharacterModule
             Vector3 point;
             if (Physics.Raycast(worldOrigin, worldDir, out hit, viewDistance, obstacleMask))
             {
-                // 장애물에 닿으면 그 지점까지 시야
                 point = transform.InverseTransformPoint(hit.point);
             }
             else
             {
-                // 최대 거리까지
                 point = transform.InverseTransformPoint(worldOrigin + worldDir * viewDistance);
+
             }
 
             vertices[vertIndex] = point;
             uv[vertIndex] = new Vector2((float)vertIndex / vertices.Length, 0);
 
-            if (i > 0)
+            if(i>0)
             {
                 triangles[triIndex + 0] = 0;
                 triangles[triIndex + 1] = vertIndex - 1;
                 triangles[triIndex + 2] = vertIndex;
                 triIndex += 3;
             }
-
-            vertIndex++;
         }
-
-        fovMesh.Clear();
-        fovMesh.vertices = vertices;
-        fovMesh.uv = uv;
-        fovMesh.triangles = triangles;
-        fovMesh.RecalculateNormals();
     }
-
-    // angle: 도 단위. isGlobalAngle=true이면 월드 기준, false면 로컬(전방 기준)
-    Vector3 DirFromAngle(float angleInDegrees, bool isLocal)
-    {
-        float angleRad = angleInDegrees * Mathf.Deg2Rad;
-        // 로컬 XZ 평면에서의 방향. Unity에서 전방(Z)이 0도라고 가정
-        Vector3 dir = new Vector3(Mathf.Sin(angleRad), 0, Mathf.Cos(angleRad));
-        return dir;
-    }
-
-    //public void Vision()
-    //{
-
-    //}
 }
