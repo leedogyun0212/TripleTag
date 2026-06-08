@@ -21,6 +21,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Origin
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91d7fb00681e19d47bf25db62c3a48ad
+    m_Address: Assets/Sprites/aTest/NewUnlitUniversalRenderPipelineShader.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9a9d192fdeffe9844be12864b9d5ee07
     m_Address: Origin/Prefabs/Globals
     m_ReadOnly: 0

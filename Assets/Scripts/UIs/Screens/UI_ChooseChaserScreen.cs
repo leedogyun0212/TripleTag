@@ -53,7 +53,7 @@ public class UI_ChooseChaserScreen : UI_ScreenBase
         currentTime = Time.time - startTime;
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
-        if (seconds > 3 && seconds < MatchTimeLimit)
+        if (seconds > 1 && seconds < MatchTimeLimit)
         {
             TimeSet();
         }   
