@@ -10,23 +10,25 @@ public class UI_ItemSlotInfo : UIBase
 
     [SerializeField] Sprite noneIcon;
 
-    ItemSlot connectedSlot;
+    protected ItemSlot _connectedSlot;
+
+    public ItemSlot ConnectedSlot => _connectedSlot;
 
     public void ConnectSlot(ItemSlot targetSlot)
     {
         DisconnectSlot();
         if (targetSlot is null) return;
-        connectedSlot = targetSlot;
-        connectedSlot.OnItemSlotChanged -= VisualUpdate;
-        connectedSlot.OnItemSlotChanged += VisualUpdate;
-        VisualUpdate(connectedSlot);
+        _connectedSlot = targetSlot;
+        _connectedSlot.OnItemSlotChanged -= VisualUpdate;
+        _connectedSlot.OnItemSlotChanged += VisualUpdate;
+        VisualUpdate(_connectedSlot);
     }
 
     public void DisconnectSlot()
     {
-        if (connectedSlot is null) return;
-        connectedSlot.OnItemSlotChanged -= VisualUpdate;
-        connectedSlot = null;
+        if (_connectedSlot is null) return;
+        _connectedSlot.OnItemSlotChanged -= VisualUpdate;
+        _connectedSlot = null;
     }
 
     protected virtual void VisualUpdate(ItemSlot targetSlot)

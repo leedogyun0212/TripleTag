@@ -8,7 +8,7 @@ public enum UIType
 {
     None, Loading, Title,Option, Movable,Profile,Message,
     Main,GameQuit,Shop,Rank,Menu,GiveUp,InGame,
-    TargetHoverInfo,GameStart, Matchmaking, ChooseChaser,InGameEnd,Inventory,
+    TargetHoverInfo,GameStart, Matchmaking, ChooseChaser,InGameEnd,Inventory, ItemCursorSlot,
     _Length
 }
 
@@ -39,6 +39,7 @@ public class UIManager : ManagerBase
     public Canvas MainCanvas => _mainCanvas;
 
     UIBase _movableScreen;
+    RectTransform overlayTransform;
     RectTransform switcherTransform;
     RectTransform createdTransform;
     RectTransform changerTransform;
@@ -109,6 +110,9 @@ public class UIManager : ManagerBase
         changerTransform = CreateFullScreen("ScreenChanger");
         changerTransform.SetAsLastSibling();
 
+        overlayTransform = CreateFullScreen("OverlayTransform");
+        overlayTransform.SetAsLastSibling();
+
         for (ScreenChangeType currentChanger = (ScreenChangeType)1; // int i = 0;
             currentChanger < ScreenChangeType._Length;              // i < 3;
             currentChanger++)                                       // i++;
@@ -158,12 +162,21 @@ public class UIManager : ManagerBase
             _raycaster = null;
         }
     }
+
     protected UIBase CreateUI(UIType wantType, string wantName, Transform parent)
     {
         GameObject instance = ObjectManager.CreateObject(wantName, parent);
         UIBase result = instance?.GetComponent<UIBase>();
         return SetUI(wantType, result);
     }
+
+    protected UIBase CreateOverlay(UIType wantType, string wantName)
+    {
+        return CreateUI(wantType, wantName, overlayTransform ?? MainCanvas?.transform);
+    }
+
+    public static UIBase ClaimOverlay(UIType wantType, string wantName) => GameManager.Instance?.UI?.CreateOverlay(wantType, wantName);
+
     protected UIBase CreateUI(UIType wantType, string wantName)
     {
         UIBase result = CreateUI(wantType, wantName,createdTransform ?? MainCanvas?.transform);

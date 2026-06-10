@@ -40,7 +40,6 @@ public static class Extensions
         T result = null;
 
         if (target == null) return result; //RVO
-        Debug.Log($"[Extensions] TryAddComponent<{typeof(T).Name}> called on '{target.name}'");
 
         result = target.GetComponent<T>() ?? target.AddComponent<T>();
         //Debug.Log($"[Extensions] Result: {(result == null ? "null" : result.GetType().Name)}");

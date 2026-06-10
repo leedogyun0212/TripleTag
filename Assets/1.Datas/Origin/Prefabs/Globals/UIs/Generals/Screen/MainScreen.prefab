@@ -503,27 +503,39 @@ MonoBehaviour:
   - prefabName: ShopWindow
     uiType: 9
     isOpen: 0
+    isOverlay: 0
   - prefabName: RankingWindow
     uiType: 10
     isOpen: 0
+    isOverlay: 0
   - prefabName: MessageWindow
     uiType: 6
     isOpen: 0
+    isOverlay: 0
   - prefabName: MenuWindow
     uiType: 11
     isOpen: 0
+    isOverlay: 0
   - prefabName: GiveUpWindow
     uiType: 12
     isOpen: 0
+    isOverlay: 0
   - prefabName: StartWindow
     uiType: 15
     isOpen: 0
+    isOverlay: 0
   - prefabName: ProfileWindow
     uiType: 5
     isOpen: 0
+    isOverlay: 0
   - prefabName: Inventory
     uiType: 19
     isOpen: 0
+    isOverlay: 0
+  - prefabName: CursorSlot
+    uiType: 20
+    isOpen: 0
+    isOverlay: 1
 --- !u!114 &2552402971813756355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,18 +552,39 @@ MonoBehaviour:
   - prefabName: ShopWindow
     uiType: 9
     isOpen: 0
+    isOverlay: 0
   - prefabName: RankingWindow
     uiType: 10
     isOpen: 0
+    isOverlay: 0
   - prefabName: MessageWindow
     uiType: 6
     isOpen: 0
+    isOverlay: 0
   - prefabName: MenuWindow
     uiType: 11
     isOpen: 0
+    isOverlay: 0
   - prefabName: GiveUpWindow
     uiType: 12
     isOpen: 0
+    isOverlay: 0
+  - prefabName: StartWindow
+    uiType: 15
+    isOpen: 0
+    isOverlay: 0
+  - prefabName: ProfileWindow
+    uiType: 5
+    isOpen: 0
+    isOverlay: 0
+  - prefabName: Inventory
+    uiType: 19
+    isOpen: 0
+    isOverlay: 0
+  - prefabName: CursorSlot
+    uiType: 20
+    isOpen: 0
+    isOverlay: 0
   PC: 0
 --- !u!1 &1879995502604813470
 GameObject:

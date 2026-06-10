@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    //인벤토리에서 스태틱으로 만들긴 할 건데
+    //주의할 점!
+    //static은 해당 프로그램이 종료될 때 까지 유지!
+    //인게임 플레이가 종료되거나 세이브되거나 다시 시작하거나 등등
+    //다채로운 상황에서 얘를 관리해주셔야 함!
+    public static ItemSlot cursorSlot = new ItemSlot();
+
     //몇 칸인지?
     //칸 제한을 걸기 위해서 필요한 두 가지의 숫자
     //가로 개수 세로개수
@@ -209,6 +216,8 @@ public class Inventory : MonoBehaviour
 
     public int AddItem(ItemContainer wantItem, int amount = 1)
     {
+
+
         amount = AddItemOnExistSlots(wantItem, amount);
 
         if(amount <= 0) return 0;
@@ -316,6 +325,28 @@ public class Inventory : MonoBehaviour
     {
 
     }
+    public void ExchangeItem(int startRow, int startColumn, int targetRow, int targetColumn)
+    {
+        ExchangeItem(startRow, startColumn, this, targetRow, targetColumn);
+    }
+    public void ExchangeItem(int startRow, int startColumn, ItemSlot targetSlot)
+    {
+        ItemSlot first = FindItem(startRow, startColumn);
+        if (first is null) return;
+        if (targetSlot is null) return;
+
+        ItemSlot second = targetSlot;
+        if (second is null) return;
+        first.ExchangeItem(second);
+        first.NoticeChanged();
+        second.NoticeChanged();
+    }
+    public void ExchangeItem(int startRow, int startColumn, Inventory targetInventory, int targetRow, int targetColumn)
+    {
+        if (!targetInventory) return;
+        ExchangeItem(startRow, startColumn, targetInventory.FindItem(targetRow, targetColumn));
+    }
+
 
     public bool UseItem(ItemContainer target)
     {

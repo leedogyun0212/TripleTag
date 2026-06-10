@@ -60,7 +60,8 @@ public class InputManager : ManagerBase
     List<RaycastResult> cursorHitList = new();
 
     //지금 마우스가 올라가 있는 대상을 저장해야 하는 이유
-    GameObject cursorHoverObject;
+    static GameObject _cursorHoverObject;
+    public static GameObject CursorHoverObject => _cursorHoverObject;
     Vector2 cursorScreenPosition;
     Vector3 cursorWorldPosition;
 
@@ -144,12 +145,12 @@ public class InputManager : ManagerBase
             worldPosition = nearest.worldPosition;
         }
 
-        GameObject lastHoverObject = cursorHoverObject;
+        GameObject lastHoverObject = _cursorHoverObject;
 
         //위치 내놔
         cursorScreenPosition = screenPosition;
         cursorWorldPosition = worldPosition;
-        cursorHoverObject = firstObject;
+        _cursorHoverObject = firstObject;
 
         if (lastHoverObject != firstObject)
         {
