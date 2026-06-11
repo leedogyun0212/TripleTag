@@ -52,7 +52,6 @@ public class HitPointModule : CharacterModule
     //일정 시간이 지난후 체력 초기화
     public void UpdateHP(float deltaTime)
     {
-        Debug.Log($"업데이트 되는 체력{HP}/{gameObject.name}");
         if (time < deltaTime)
         {
             time += deltaTime;

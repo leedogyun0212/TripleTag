@@ -52,8 +52,16 @@ public class InputManager : ManagerBase
     public static event ButtonEvent OnAttack;
     public static event ButtonEvent OnCancel;
     public static event ButtonEvent OnInven;
+    public static event ButtonEvent OnShift;
 
     public static event VectorEvent3D OnMove;
+
+    public static bool IsShift { get; private set; } = false;
+    void ShiftInput(bool value)
+    {
+        IsShift = value;
+        OnShift?.Invoke(value);
+    }
 
     PlayerInput targetInput;
     Dictionary<string, InputAction> actionDictionary = new();
@@ -180,29 +188,31 @@ public class InputManager : ManagerBase
     {
         if (actionDictionary == null || actionDictionary.Count == 0) return;
 
-        InitializeAction("CursorPositionChanged",(context) => CursorPositionChanged(GetVector2Value(context)));
-        InitializeAction("Move",                 (context) => OnMove?.Invoke(GetVector3Value(context))
-                               ,                 (context) => OnMove?.Invoke(Vector3.zero));
-        
-        InitializeAction("MouseLeftButton" ,     (context) => OnMouseLeftButton ?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
-                                           ,     (context) => OnMouseLeftButton ?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
-        
-        InitializeAction("MouseRightButton",     (context) => OnMouseRightButton?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
-                                           ,     (context) => OnMouseRightButton?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
-        
-        InitializeAction("RunButton",            (context) => OnRun?.Invoke(true));
-        InitializeAction("TrapButton",           (context) => OnTrap?.Invoke(true));
-        InitializeAction("OptionButton",         (context) => OnOption?.Invoke(true));
-        InitializeAction("AttackButton",         (context) => OnAttack?.Invoke(true));
-        InitializeAction("ShopButton",           (context) => OnShop?.Invoke(true));
-        InitializeAction("MessageButton",        (context) => OnMessage?.Invoke(true));
-        InitializeAction("ExitButton",           (context) => OnExit?.Invoke(true));
-        InitializeAction("ProfileButton",        (context) => OnProfile?.Invoke(true));
-        InitializeAction("RankButton",           (context) => OnRanking?.Invoke(true));
-        InitializeAction("GameStartButton",      (context) => OnStart?.Invoke(true));
-        InitializeAction("MenuButton",           (context) => OnMenu?.Invoke(true));
-        InitializeAction("CancelButton",         (context) => OnCancel?.Invoke(true));
-        InitializeAction("InventoryButton",      (context) => OnInven?.Invoke(true));
+        InitializeAction("CursorPositionChanged", (context) => CursorPositionChanged(GetVector2Value(context)));
+        InitializeAction("Move",                  (context) => OnMove?.Invoke(GetVector3Value(context))
+                               ,                  (context) => OnMove?.Invoke(Vector3.zero));
+                                                  
+        InitializeAction("MouseLeftButton" ,      (context) => OnMouseLeftButton ?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
+                                           ,      (context) => OnMouseLeftButton ?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
+                                                  
+        InitializeAction("MouseRightButton",      (context) => OnMouseRightButton?.Invoke(true, cursorScreenPosition, cursorWorldPosition)
+                                           ,      (context) => OnMouseRightButton?.Invoke(false, cursorScreenPosition, cursorWorldPosition));
+                                                  
+        InitializeAction("RunButton",             (context) => OnRun?.Invoke(true));
+        InitializeAction("TrapButton",            (context) => OnTrap?.Invoke(true));
+        InitializeAction("OptionButton",          (context) => OnOption?.Invoke(true));
+        InitializeAction("AttackButton",          (context) => OnAttack?.Invoke(true));
+        InitializeAction("ShopButton",            (context) => OnShop?.Invoke(true));
+        InitializeAction("MessageButton",         (context) => OnMessage?.Invoke(true));
+        InitializeAction("ExitButton",            (context) => OnExit?.Invoke(true));
+        InitializeAction("ProfileButton",         (context) => OnProfile?.Invoke(true));
+        InitializeAction("RankButton",            (context) => OnRanking?.Invoke(true));
+        InitializeAction("GameStartButton",       (context) => OnStart?.Invoke(true));
+        InitializeAction("MenuButton",            (context) => OnMenu?.Invoke(true));
+        InitializeAction("CancelButton",          (context) => OnCancel?.Invoke(true));
+        InitializeAction("InventoryButton",       (context) => OnInven?.Invoke(true));
+        InitializeAction("ControlButton",         (context) => ShiftInput(true)
+                                        ,         (context) => ShiftInput(false));
     }
 
     void InitializeAction(string actionName, Action<InputAction.CallbackContext> actionMethod, Action<InputAction.CallbackContext> cancelMethod = null)

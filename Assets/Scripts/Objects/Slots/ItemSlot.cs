@@ -28,10 +28,10 @@ public class ItemSlot
 
     public ItemContainer GetItem() => item;
 
+    public int GetStackable(ItemContainer wantItem) => Containable(wantItem) ? wantItem.maxStack - currentStack : 0;
+    public int GetStackable() => GetStackable(item);
     public int GetStack()          => currentStack;
-
     public bool GetIsMax()         => item ? currentStack >= item.maxStack : false;
-
     public bool GetIsEmpty()       => item is null || currentStack <= 0;
 
     public int Clear()
@@ -96,11 +96,74 @@ public class ItemSlot
         wantSlot.currentStack = wasStack;
     }
 
+    public int GiveItem(ItemSlot wantSlot) => GiveItem(wantSlot, currentStack);
+    public int GiveSingleItem(ItemSlot wantSlot) => GiveItem(wantSlot, 1);
+
+    public int GiveItem(ItemSlot wantSlot, int amount)
+    {
+        if(wantSlot is null) return amount;
+        if(!item) return amount;
+        if (currentStack <= 0 || amount <= 0) return amount;
+        ItemContainer targetItem = item;
+
+        amount = Mathf.Min(amount, wantSlot.GetStackable(targetItem));
+
+        amount -= RemoveItem(targetItem, amount);
+
+        amount = wantSlot.AddItem(targetItem, amount);
+
+        return amount;
+    }
+
     public void LeftClick(ItemSlot wantSlot)
     {
         if (wantSlot is null) return;
-        ExchangeItem(wantSlot);
+        if (InputManager.IsShift)
+        {
+            if(wantSlot.GetIsEmpty())
+            {
+                if (GetIsEmpty()) return; 
+                else if (wantSlot.Containable(item))
+                {
+                    GiveItem(wantSlot, Mathf.CeilToInt(currentStack * 0.5f));
+                }
+            }
+            else if (Containable(wantSlot.item))
+            {
+                wantSlot.GiveItem(this, Mathf.CeilToInt(wantSlot.currentStack * 0.5f));
+            }
+        } 
+        else
+        {
+            if (wantSlot.Containable(item))
+            {
+                GiveItem(wantSlot);
+            }
+            else
+            {
+                ExchangeItem(wantSlot);
+            }
+        }
+        NoticeChanged();
+        wantSlot.NoticeChanged();
+    }
+
+    public void RightClick(ItemSlot wantSlot)
+    {
+        if (wantSlot is null) return;
+
+        if (InputManager.IsShift || wantSlot.GetIsEmpty())
+        {
+            if (wantSlot.Containable(item)) GiveSingleItem(wantSlot);
+            else return;
+        }
+        else if (wantSlot.Containable(item))
+        {
+             wantSlot.GiveSingleItem(this);
+        }
+        else return;
         NoticeChanged();
         wantSlot.NoticeChanged();
     }
 }
+
