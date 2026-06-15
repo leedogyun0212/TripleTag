@@ -70,4 +70,32 @@ public class BoneChange : MonoBehaviour
             clothingRenderer.rootBone = targetRenderer.rootBone;
         }
     }
+
+    public GameObject EquipClothing(GameObject clothingPrefab)
+    {
+        if (clothingPrefab == null)
+            return null;
+
+        // 몸 뼈 맵 생성
+        Dictionary<string, Transform> boneMap = new Dictionary<string, Transform>();
+
+        foreach (Transform bone in targetRenderer.bones)
+        {
+            if (bone != null)
+                boneMap[bone.name] = bone;
+        }
+
+        // 생성된 옷의 모든 SkinnedMeshRenderer 리매핑
+        SkinnedMeshRenderer[] smrs =
+            clothingPrefab.GetComponentsInChildren<SkinnedMeshRenderer>();
+
+        foreach (var smr in smrs)
+        {
+            RemapBones(smr, boneMap);
+        }
+
+        clothes.Add(clothingPrefab);
+
+        return clothingPrefab;
+    }
 }

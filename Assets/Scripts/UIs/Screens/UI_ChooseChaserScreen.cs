@@ -37,8 +37,6 @@ public class UI_ChooseChaserScreen : UI_ScreenBase
         InputManager.OnCancel += MatchExit;
     }
 
-
-
     public void OnDisable()
     {
         GameManager.OnUpdateObject -= TimeUpdate;
@@ -82,4 +80,13 @@ public class UI_ChooseChaserScreen : UI_ScreenBase
     {
         UIManager.ClaimCloseUI(UIType.ChooseChaser);
     }
+
+    public void Chaser(CharacterBase target)
+    {
+        if (!target) return;
+
+        target.CharTypeChange(CharacterType.Chaser);
+    }
 }
+
+// 그래서 Chaser 이것을 어디에서 실행함?

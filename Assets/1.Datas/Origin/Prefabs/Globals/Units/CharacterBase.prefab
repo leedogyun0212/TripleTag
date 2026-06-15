@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 742727644003331455, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+      propertyPath: Body
+      value: 
+      objectReference: {fileID: 7268066031208793873}
+    - target: {fileID: 742727644003331455, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+      propertyPath: Head
+      value: 
+      objectReference: {fileID: 601872364520971209}
     - target: {fileID: 2594973713719428269, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -194,6 +202,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5475861208178719302}
   m_SourcePrefab: {fileID: 100100000, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+--- !u!4 &601872364520971209 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7185066584641246903, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+  m_PrefabInstance: {fileID: 7776656934860983678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &825016008744014362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6962345086311276388, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
@@ -646,6 +659,11 @@ CapsuleCollider:
   m_Height: 0.05
   m_Direction: 1
   m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!4 &7268066031208793873 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1094770309027793519, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}
+  m_PrefabInstance: {fileID: 7776656934860983678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7504403084295083426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 272681768911804636, guid: 00e50b30cc47da04e8b106590dc7c8e6, type: 3}

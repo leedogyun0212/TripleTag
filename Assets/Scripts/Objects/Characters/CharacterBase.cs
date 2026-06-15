@@ -26,6 +26,8 @@ public class CharacterBase : MonoBehaviour
 
     public Transform Head;
 
+    public Transform Body;
+
     //가장 중요한 기능!
     //말을 했을 때 말을 잘 들어 먹는 것
     ControllerBase _controller;
