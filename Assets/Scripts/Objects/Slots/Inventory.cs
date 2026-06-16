@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
     //      [1,2]
     ItemSlot[,] slots;
 
+    readonly string[] itemList = { "Outwear_01", "Outwear_02" };
+
     public void Initialize()
     {
         slots = new ItemSlot[rows, columns];
@@ -40,7 +42,8 @@ public class Inventory : MonoBehaviour
 
     public void WearPlus(int amount)
     {
-        ItemContainer Wear = DataManager.LoadDataFile<ItemContainer>("Outwear_02");
+        int index = Random.Range(0, itemList.Length);
+        ItemContainer Wear = DataManager.LoadDataFile<ItemContainer>(itemList[index]);
         AddItem(Wear,amount);
     }
     public void WearMinus(int amount)
@@ -49,10 +52,96 @@ public class Inventory : MonoBehaviour
         RemoveItem(Wear,amount);
     }
 
-    public void Sort(System.Comparison<ItemContainer> Method)
+    //Comparison
+    // 마이너스 : 왼쪽이 작다
+    //    0    : 같다
+    // 플러스   : 오른쪽이 작다
+    public void Sort(System.Comparison<ItemSlot> Method)
     {
+        //배열 자체를 정렬할 수는 없다.
+        //비교를 했을때 내용만 바꿔준다!
+        //사다리 타기를 통해 버블정렬 당첨
+        int totalLength = slots.Length;
+        if (slots is null || totalLength <= 1) return;
+        int width =slots.GetLength(1);
 
+        int lastFinder = totalLength - 1;
+
+        while (lastFinder > 0)
+        {
+            int currentFinder = -1;
+            for (int i = 0; i < lastFinder; i++)
+            {
+                ItemSlot left = GetSlot(i, width);
+                ItemSlot right = GetSlot(i + 1, width);
+                int comparisonResult = Method(left, right);
+
+                if (comparisonResult < 0)
+                {
+                    currentFinder = i;
+                    left.ExchangeItem(right);
+                }
+            }
+
+            lastFinder = currentFinder;
+        }
+
+        foreach (ItemSlot currentSlot in GetAllslot())
+        {
+            currentSlot?.NoticeChanged();
+        }
     }
+    //실실
+    //아백
+    //아하
+    //메그7136811
+    int ItemTypeComparison(ItemSlot left, ItemSlot right)
+    {
+        int result;
+        if (ItemExistComparison(left, right, out result)) return result;
+
+        ItemContainer leftItem = left.GetItem();
+        ItemContainer rightItem = right.GetItem();
+
+        // - : 왼쪽이 작음
+        // 0 : 같음
+        // + : 왼쪽이 
+        result = leftItem.CompareByType(rightItem);
+        if (result != 0) return result;
+        result = left.GetStack() - right.GetStack();
+        return result;
+
+        //return leftItem.type - rightItem.type;
+    }
+
+    int? ItemExistComparison(ItemSlot left, ItemSlot right)
+    {
+        if (left is null)
+        {
+            if (right is null) return 0;
+            else return -1;
+        }
+        if (right is null) return 1;
+        ItemContainer leftItem = left.GetItem();
+        ItemContainer rightItem = right.GetItem();
+        if (!leftItem)
+        {
+            if (!rightItem) return 0;
+            else return -1;
+        }
+        if (!rightItem) return 1;
+
+        return null;
+    }    
+
+    bool ItemExistComparison(ItemSlot left, ItemSlot right, out int result)
+    {
+        int? calculated = ItemExistComparison(left, right); // 원래 함수 실행
+        result = calculated ?? 0; // 결과를 저장하는데 결과가 없으면 0
+        return calculated.HasValue; // 값이 나왔는지 여부를 반환
+    }
+
+    public void SortByType() => Sort(ItemTypeComparison);
 
     public void AutoQuickInsert(Inventory other)
     {
@@ -84,10 +173,34 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public int CountItem(ItemContainer wantItem)
+    {
+        if (!wantItem) return 0;
+
+        int result = 0;
+
+        foreach (ItemSlot currentSlot in FindFirstItem(wantItem))
+        {
+            result += currentSlot.GetStack();
+        }
+
+        return result;
+    }
     public int CountItem(ItemContainer wantItem, out List<ItemSlot> returnSlots)
     {
-        returnSlots = default;
-        return default;
+        returnSlots = new();
+        if (!wantItem) return 0;
+        
+        int result = 0;
+
+        foreach (ItemSlot currentSlot in FindFirstItem(wantItem))
+        {
+            returnSlots.Add(currentSlot);
+
+            result += currentSlot.GetStack();
+        }
+
+        return result;
     }
 
     //반복기 => 
@@ -106,6 +219,18 @@ public class Inventory : MonoBehaviour
                 yield return slots[row, column];
             }
         }
+    }
+
+    public ItemSlot GetSlot(int index, int width) => slots[index / width, index % width];
+    public ItemSlot GetSlot(int index)
+    {
+        if (slots is null || index < 0 || slots.Length == 0 || slots.Length <= index) return null;
+        int width = slots.GetLength(1);
+        return slots[index / width, index % width];
+        //1차원 배열
+        //return slots[index];
+        //2차원 배열이면?
+        //
     }
 
     public IEnumerable<ItemSlot> GetAllslot(System.Predicate<ItemSlot> pred)
@@ -325,6 +450,22 @@ public class Inventory : MonoBehaviour
     {
 
     }
+
+    public void MergeItem(ItemContainer wantItem)
+    {
+        if (!wantItem) return;
+        if (wantItem.maxStack <= 1) return;
+
+        int totalCount = CountItem(wantItem, out List<ItemSlot> containSlots);
+        if (containSlots is null || containSlots.Count <= 1) return;
+
+        for (int i = 0; i < containSlots.Count; i++)
+        {
+            ItemSlot currentSlot = containSlots[i];
+            if (currentSlot.GetIsMax()) continue;
+        }
+    }
+
     public void ExchangeItem(int startRow, int startColumn, int targetRow, int targetColumn)
     {
         ExchangeItem(startRow, startColumn, this, targetRow, targetColumn);

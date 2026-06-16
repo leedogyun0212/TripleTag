@@ -15,5 +15,6 @@ MonoBehaviour:
   icon: {fileID: -4596343571774408315, guid: 110a922aab000164f9e945fbd77315ac, type: 3}
   displayName: Outwear_02
   explain: "\uC0C1\uC758"
-  type: 1
+  id: 0
+  type: 500
   maxStack: 99
