@@ -58,6 +58,8 @@ public class Inventory : MonoBehaviour
     // 플러스   : 오른쪽이 작다
     public void Sort(System.Comparison<ItemSlot> Method)
     {
+        MergeAll();
+
         //배열 자체를 정렬할 수는 없다.
         //비교를 했을때 내용만 바꿔준다!
         //사다리 타기를 통해 버블정렬 당첨
@@ -91,10 +93,7 @@ public class Inventory : MonoBehaviour
             currentSlot?.NoticeChanged();
         }
     }
-    //실실
-    //아백
-    //아하
-    //메그7136811
+
     int ItemTypeComparison(ItemSlot left, ItemSlot right)
     {
         int result;
@@ -284,6 +283,45 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public IEnumerable<ItemContainer> GetAllItem()
+    {
+        //어떻게 나는 모든 아이템을 다 뽑아줄 수 있을까?
+        //이미 merge한 아이템을 체크할 필요 x
+        //중복 없이 모든 아이템을 내보내줘야 할텐데
+        //내 인벤토리에 있는 모든 "아이템 종류"를 하나씩
+        HashSet<ItemContainer> usedItem = new();
+
+        foreach (ItemSlot currentSlot in GetAllslot())
+        {
+            ItemContainer currentItem = currentSlot.GetItem();
+            if(!currentItem) continue;
+            if (!usedItem.Add(currentItem)) continue;
+            
+            yield return currentItem;
+        }
+    }
+
+    public Dictionary<ItemContainer, List<ItemSlot>> GetAllItemList()
+    {
+        Dictionary<ItemContainer, List<ItemSlot>> result = new();
+
+        foreach(ItemSlot currentSlot in GetAllslot())
+        {
+            ItemContainer currentItem = currentSlot.GetItem();
+            if (!currentItem) continue;
+            if (result.TryGetValue(currentItem, out List<ItemSlot>  currentList))
+            {
+                currentList.Add(currentSlot);
+            }
+            else
+            {
+                result.Add(currentItem, new() { currentSlot });
+            }
+        }
+
+        return result;
+    }
+
     public ItemSlot FindItem(ItemContainer target)
     {
         return default;
@@ -451,21 +489,46 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void MergeItem(ItemContainer wantItem)
+    public void MergeAll()
     {
-        if (!wantItem) return;
-        if (wantItem.maxStack <= 1) return;
-
-        int totalCount = CountItem(wantItem, out List<ItemSlot> containSlots);
-        if (containSlots is null || containSlots.Count <= 1) return;
-
-        for (int i = 0; i < containSlots.Count; i++)
+        foreach(ItemContainer currentItem in GetAllItem())
         {
-            ItemSlot currentSlot = containSlots[i];
-            if (currentSlot.GetIsMax()) continue;
+            MergeItem(currentItem);
         }
     }
 
+    public void MergeItem(ItemContainer wantItem)
+    {
+        if (!wantItem) return;//아이템이 없다
+        int maxStack = wantItem.maxStack;
+        if (maxStack <= 1) return;//이거.. 못 합치는데?
+        //총합 개수!
+        int totalCount = CountItem(wantItem, out List<ItemSlot> containSlots);
+        if (totalCount <= 1) return; // 아이템 하나 밖에 없는데?
+        //들어있는 슬롯이 없거나      
+        if (containSlots is null) return;
+        int slotCount = containSlots.Count; // 슬롯 개수
+        // 총개수가 슬롯에 담을수있는 개수를 넘음   슬롯이 다해서 1개밖에 없거나
+        if (totalCount >= slotCount * maxStack || slotCount <= 1) return;
+
+        int finalSlot = slotCount - 1;
+        //모든 슬롯을 돌아주면서
+        for (int i = 0; i < finalSlot; i++)
+        {
+            ItemSlot currentSlot = containSlots[i];
+            for (int j = finalSlot; j > i; j--)
+            {
+                if (currentSlot.GetIsMax()) break;//꽉 찬 슬롯은 병합할 필요가 없으니까 패스!
+                ItemSlot targetSlot = containSlots[j];
+                targetSlot.GiveItem(currentSlot);
+                if (targetSlot.GetIsEmpty()) finalSlot--;
+            }
+        }
+    }
+    //실실
+    //고백
+    //선바
+    //아메7137810555
     public void ExchangeItem(int startRow, int startColumn, int targetRow, int targetColumn)
     {
         ExchangeItem(startRow, startColumn, this, targetRow, targetColumn);
