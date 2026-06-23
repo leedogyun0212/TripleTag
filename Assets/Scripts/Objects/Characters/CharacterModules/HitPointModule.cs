@@ -9,6 +9,8 @@ public class HitPointModule : CharacterModule
 
     public float time = 5.0f;
 
+    float realTime;
+
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
 
     public override void OnRegistration(CharacterBase newOwner)
@@ -32,11 +34,10 @@ public class HitPointModule : CharacterModule
         oldOwner.OnDamage -= OnDamageReceived;
     }
 
-    //public float IncreaseHP(float value);
     /// <summary> 맞았을때 내려가는 체력  </summary>
     public float DecreaseHP(float value)
     {
-        if (Owner.CharType is CharacterType.Chaser) return 0;
+        if (Owner.CharType is CharacterType.Chaser || _hp <= 0) return 0;
         if(value > 4) value = 4;
         return _hp -= value;
     }
@@ -52,14 +53,15 @@ public class HitPointModule : CharacterModule
     //일정 시간이 지난후 체력 초기화
     public void UpdateHP(float deltaTime)
     {
-        if (time < deltaTime)
+        realTime += deltaTime; //도망자일때만 발동?
+        if (time < realTime)
         {
-            time += deltaTime;
-            Heal();
+            Debug.Log($"{realTime} + {HP}");
+            realTime = 0.0f;
+            if(_hp < 4) Heal();
         }
     }
 
-    //public float Damage();
     /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary>
     public float Heal()
     {
@@ -92,8 +94,9 @@ public class HitPointModule : CharacterModule
         if (newHp <= 0f)
         {
             bool isStunned = OutCheck(instigator);
-            // 추가 동작(사망 처리, 이펙트 등)은 여기에 연결 가능
-            // 예: if (!isStunned) { /* 사망 처리 */ }
+            //추가 동작(사망 처리, 이펙트 등)은 여기에 연결 가능
+            //
+            //예: if (!isStunned) { /* 사망 처리 */ }
         }
     }
 

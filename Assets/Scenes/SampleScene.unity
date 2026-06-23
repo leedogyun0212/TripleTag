@@ -7569,6 +7569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovableCharacter
   onStun: 0
   Head: {fileID: 0}
+  Body: {fileID: 0}
 --- !u!4 &466064721
 Transform:
   m_ObjectHideFlags: 0
