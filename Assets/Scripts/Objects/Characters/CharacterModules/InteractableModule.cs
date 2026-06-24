@@ -65,7 +65,7 @@ public class InteractableModule : CharacterModule
         return dir;
     }
 
-    public void MeshSetting()
+    public void MeshSetting2()
     {
         fovMeshFilter  = GetComponentInChildren<MeshFilter>();
         fovMeshRenderer = GetComponentInChildren<MeshRenderer>();
@@ -98,6 +98,7 @@ public class InteractableModule : CharacterModule
 
     public void Vision(float deltaTime)
     {
+        UpdateCloseVision();
         UpdateVision();
     }
 
@@ -113,7 +114,7 @@ public class InteractableModule : CharacterModule
         int[] triangles = new int[(stepCount) * 3];
 
         vertices[0] = Vector3.zero;
-
+        
         int triIndex = 0;
         int vertIndex = 1;
 
@@ -136,7 +137,6 @@ public class InteractableModule : CharacterModule
                 point = transform.InverseTransformPoint(worldOrigin + worldDir * viewDistance);
 
             }
-
             vertices[vertIndex] = point;
             uv[vertIndex] = new Vector2((float)vertIndex / vertices.Length, 0);
 
@@ -157,5 +157,110 @@ public class InteractableModule : CharacterModule
         fovMesh.uv = uv; // UV 배열 설정 (텍스처 매핑용, 필요에 따라 조정)
         fovMesh.triangles = triangles; // 삼각형 연결
         fovMesh.RecalculateNormals();
+    }
+
+    [Header("근거리 시야")]
+    public float closeVisionRadius = 1f;
+    public int closeVisionResolution = 24;
+
+    MeshFilter closeMeshFilter;
+    MeshRenderer closeMeshRenderer;
+    Mesh closeMesh;
+
+    public void MeshSetting()
+    {
+        fovMeshFilter = GetComponentInChildren<MeshFilter>();
+        fovMeshRenderer = GetComponentInChildren<MeshRenderer>();
+
+        if (fovMeshFilter == null)
+        {
+            GameObject fov = new GameObject("FOV_Mesh");
+            fov.transform.SetParent(transform, false);
+            fov.layer = LayerMask.NameToLayer("Vision");
+
+            fovMeshFilter = fov.AddComponent<MeshFilter>();
+            fovMeshRenderer = fov.AddComponent<MeshRenderer>();
+            fovMeshRenderer.material = fovStencilMaterial;
+            fovMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            fovMeshRenderer.receiveShadows = false;
+        }
+
+        if (fovMeshFilter.sharedMesh == null)
+        {
+            fovMesh = new Mesh();
+            fovMesh.name = "FOV_Mesh_Generated";
+            fovMeshFilter.sharedMesh = fovMesh;
+        }
+        else
+        {
+            fovMesh = fovMeshFilter.sharedMesh;
+            fovMesh.Clear();
+        }
+
+        GameObject closeVision = new GameObject("CloseVision_Mesh");
+        closeVision.transform.SetParent(transform, false);
+        closeVision.layer = LayerMask.NameToLayer("Vision");
+
+        closeMeshFilter = closeVision.AddComponent<MeshFilter>();
+        closeMeshRenderer = closeVision.AddComponent<MeshRenderer>();
+
+        closeMeshRenderer.material = fovStencilMaterial;
+        closeMeshRenderer.shadowCastingMode =
+            UnityEngine.Rendering.ShadowCastingMode.Off;
+        closeMeshRenderer.receiveShadows = false;
+
+        closeMesh = new Mesh();
+        closeMesh.name = "CloseVision_Mesh_Generated";
+
+        closeMeshFilter.sharedMesh = closeMesh;
+    }
+
+    void UpdateCloseVision()
+    {
+        if (closeMesh == null) return;
+
+        int segments = Mathf.Max(8, closeVisionResolution);
+
+        Vector3[] vertices = new Vector3[segments + 1];
+        Vector2[] uv = new Vector2[segments + 1];
+        int[] triangles = new int[segments * 3];
+
+        vertices[0] = Vector3.zero;
+        uv[0] = new Vector2(0.5f, 0.5f);
+
+        for (int i = 0; i < segments; i++)
+        {
+            float angle = (float)i / segments * Mathf.PI * 2f;
+
+            float x = Mathf.Cos(angle) * closeVisionRadius;
+            float z = Mathf.Sin(angle) * closeVisionRadius;
+
+            vertices[i + 1] = new Vector3(x, 0, z);
+
+            uv[i + 1] = new Vector2(
+                (x / closeVisionRadius + 1f) * 0.5f,
+                (z / closeVisionRadius + 1f) * 0.5f
+            );
+        }
+
+        int triIndex = 0;
+
+        for (int i = 0; i < segments; i++)
+        {
+            int current = i + 1;
+            int next = (i + 1) % segments + 1;
+
+            triangles[triIndex++] = 0;
+            triangles[triIndex++] = next;
+            triangles[triIndex++] = current;
+        }
+
+        closeMesh.Clear();
+
+        closeMesh.vertices = vertices;
+        closeMesh.uv = uv;
+        closeMesh.triangles = triangles;
+
+        closeMesh.RecalculateNormals();
     }
 }

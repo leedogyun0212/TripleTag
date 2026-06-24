@@ -24223,6 +24223,8 @@ MonoBehaviour:
     m_Bits: 0
   autoUpdate: 1
   fovStencilMaterial: {fileID: 2100000, guid: 149ec48daead08d40a83b862f3cac760, type: 2}
+  closeVisionRadius: 1
+  closeVisionResolution: 24
 --- !u!1 &1467737283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f9de2aefc3dbd74fbc4ab8f7c7646c2, type: 3}
