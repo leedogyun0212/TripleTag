@@ -57,6 +57,14 @@ public class InteractableModule : CharacterModule
     Mesh fovMesh;
     [SerializeField] Material fovStencilMaterial;
 
+    [Header("근거리 시야")]
+    public float closeVisionRadius = 1f;
+    public int closeVisionResolution = 24;
+
+    MeshFilter closeMeshFilter;
+    MeshRenderer closeMeshRenderer;
+    Mesh closeMesh;
+
     Vector3 DirFromAngle(float angleInDegrees, bool isLocal)
     {
         float angleRad = angleInDegrees * Mathf.Deg2Rad;
@@ -64,38 +72,7 @@ public class InteractableModule : CharacterModule
         Vector3 dir = new Vector3(Mathf.Sin(angleRad), 0, Mathf.Cos(angleRad));
         return dir;
     }
-
-    public void MeshSetting2()
-    {
-        fovMeshFilter  = GetComponentInChildren<MeshFilter>();
-        fovMeshRenderer = GetComponentInChildren<MeshRenderer>();
-
-        if (fovMeshFilter == null)
-        {
-            GameObject fov = new GameObject("FOV_Mesh");
-            fov.transform.SetParent(transform, false);
-            fov.layer = LayerMask.NameToLayer("Vision");
-
-            fovMeshFilter = fov.AddComponent<MeshFilter>();
-            fovMeshRenderer = fov.AddComponent<MeshRenderer>();
-            fovMeshRenderer.material = fovStencilMaterial;
-            fovMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-            fovMeshRenderer.receiveShadows = false;
-        }
-
-        if(fovMeshFilter.sharedMesh == null)
-        {
-            fovMesh = new Mesh();
-            fovMesh.name = "FOV_Mesh_Generated";
-            fovMeshFilter.sharedMesh = fovMesh;
-        }
-        else
-        {
-            fovMesh = fovMeshFilter.sharedMesh;
-            fovMesh.Clear();
-        }
-    }
-
+    
     public void Vision(float deltaTime)
     {
         UpdateCloseVision();
@@ -158,14 +135,6 @@ public class InteractableModule : CharacterModule
         fovMesh.triangles = triangles; // 삼각형 연결
         fovMesh.RecalculateNormals();
     }
-
-    [Header("근거리 시야")]
-    public float closeVisionRadius = 1f;
-    public int closeVisionResolution = 24;
-
-    MeshFilter closeMeshFilter;
-    MeshRenderer closeMeshRenderer;
-    Mesh closeMesh;
 
     public void MeshSetting()
     {
@@ -242,7 +211,7 @@ public class InteractableModule : CharacterModule
                 (z / closeVisionRadius + 1f) * 0.5f
             );
         }
-
+        //
         int triIndex = 0;
 
         for (int i = 0; i < segments; i++)

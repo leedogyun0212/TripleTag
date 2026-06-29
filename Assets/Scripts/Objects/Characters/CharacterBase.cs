@@ -96,7 +96,7 @@ public class CharacterBase : MonoBehaviour
     public ControllerBase Possessed(ControllerBase from)
     {
         //빙의를 하려고 했는데 원래 영혼이 들어있었어요
-        //있더라도 빙의 가능
+        //있더라도 빙의 가능 
         //있으면 튕겨냄
         if (Controller) Unpossessed();
         _controller = from;

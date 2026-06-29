@@ -27,7 +27,7 @@ public class VisionModule : MonoBehaviour
     void UpdateFog(float deltaTime)
     {
         if (playerTransform == null || fogMaterial == null) return;
-
+        //123456815
         // 1. 플레이어 위치 및 정면 방향 전달
         fogMaterial.SetVector("_PlayerPos", playerTransform.position);
         fogMaterial.SetVector("_PlayerDir", playerTransform.forward);

@@ -56,7 +56,6 @@ public class HitPointModule : CharacterModule
         realTime += deltaTime; //도망자일때만 발동?
         if (time < realTime)
         {
-            Debug.Log($"{realTime} + {HP}");
             realTime = 0.0f;
             if(_hp < 4) Heal();
         }

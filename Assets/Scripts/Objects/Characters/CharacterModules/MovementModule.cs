@@ -105,7 +105,7 @@ public class MovementModule : CharacterModule, IRunnable
 
         float currentMoveSpeed = GetMoveSpeed(deltaTime);
         Translate(currentMoveSpeed * targetDirection.Value);
-        GameManager.Instance.Camera.CameraMove(GetMoveSpeed(deltaTime) * targetDirection.Value, Owner.Head.position);
+        GameManager.Camera.CameraMove(GetMoveSpeed(deltaTime) * targetDirection.Value, Owner.Head.position);
     }
     public void UpdateToDestination(float deltaTime)
     {

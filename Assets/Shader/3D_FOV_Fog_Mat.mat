@@ -58,7 +58,7 @@ Material:
     - _QueueOffset: 0
     - _XRMotionVectorsPass: 1
     m_Colors:
-    - _FogColor: {r: 0, g: 0, b: 0, a: 0.27058825}
+    - _FogColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     - _PlayerDir: {r: 0.00011081957, g: 0, b: 1, a: 0}
     - _PlayerPos: {r: -0.98817, g: 0.060801744, b: -13.686176, a: 0}
   m_BuildTextureStacks: []

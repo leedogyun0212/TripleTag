@@ -88,7 +88,6 @@ public class AttackModule : CharacterModule
 
         if (target == null) return;
         isAttack = false;
-        Debug.Log("공격 모듈이 감지됨");
         AttackTarget(target.gameObject, damage);
     }
 

@@ -114,7 +114,7 @@ public class InputManager : ManagerBase
     void RefreshGameObjectUnderCursor(Vector2 screenPosition)
     {
         cursorHitList.Clear();
-        GameManager.Instance.Camera.GetRaycastResult(screenPosition, cursorHitList);
+        GameManager.Camera.GetRaycastResult(screenPosition, cursorHitList);
         
         //마우스의 화면상 실제 픽셀 위치
         //화면상 x축으로 1픽셀 움직이면

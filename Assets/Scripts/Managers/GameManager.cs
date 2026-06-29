@@ -16,31 +16,34 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance => _instance;
 
     UIManager        _ui;
-    public UIManager        UI =>_ui;
-    
+    public UIManager        UI => _ui;
+
+    DBManager _db;
+    public static DBManager DB => _instance?._db;
+
     DataManager      _data;
-    public DataManager      Data => _data;
+    public static DataManager      Data =>_instance?._data;
 
     ObjectManager    _objectM;
-    public ObjectManager    ObjectM => _objectM;
+    public static ObjectManager    ObjectM => _instance?._objectM;
 
     SaveManager      _save;
-    public SaveManager      Save => _save;
+    public static SaveManager      Save => _instance?._save;
     
     SettingManager   _setting;
-    public SettingManager   Setting => _setting;
+    public static SettingManager   Setting => _instance?._setting;
     
     LanguageManager  _language;
-    public LanguageManager  Language => _language;
+    public static LanguageManager  Language => _instance?._language;
     
     AudioManager     _audio;
-    public AudioManager     Audio => _audio;
+    public static AudioManager     Audio => _instance?._audio;
     
     CameraManager    _camera;
-    public CameraManager    Camera => _camera;
+    public static CameraManager    Camera => _instance?._camera;
     
     InputManager     _input;
-    public InputManager     Input=> _input;
+    public static InputManager     Input=> _instance?._input;
 
     IEnumerator initializing;// 초기화 중 코루틴
 
@@ -158,6 +161,7 @@ public class GameManager : MonoBehaviour
         //몇 개가 필요한지 집계를 받을 때 => 필요한 것! 적어둘 공간이 필요해요!
         int totalLoadCount = 0;
         totalLoadCount += CreateManager(ref _ui).LoadCount;
+        totalLoadCount += CreateManager(ref _db).LoadCount;
         totalLoadCount += CreateManager(ref _data).LoadCount;
         totalLoadCount += CreateManager(ref _objectM).LoadCount;
         totalLoadCount += CreateManager(ref _save).LoadCount;
@@ -174,6 +178,8 @@ public class GameManager : MonoBehaviour
         IProgress<int> loadingprogress = loadingUI as IProgress<int>;
 
         loadingprogress?.Set(0, totalLoadCount);
+        yield return DB.Connect(this);
+        loadingprogress?.AddCurrent(1);
         yield return Data.Connect(this);
         loadingprogress?.AddCurrent(1);
         yield return ObjectM.Connect(this);
@@ -218,6 +224,7 @@ public class GameManager : MonoBehaviour
         UI.Disconnect();
         //데이터파일 DataManager
         Data?.Disconnect();
+        DB?.Disconnect();
     }
 
     //달라지는 것이 "자료형"뿐이라면
