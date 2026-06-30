@@ -50,7 +50,7 @@ public class UI_Matchmaking : OpenableUIBase
         currentTime = Time.time - startTime;
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
-        Debug.Log($"{seconds:00}" + matchOn);
+        
         if (seconds > MatchTimeLimit && !matchOn)
         {
             matchOn = true;
