@@ -2906,6 +2906,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3229713233737767189}
     m_Modifications:
+    - target: {fileID: -2831285836621242247, guid: 929e7c327aabfed4490e17448fe5b9f9, type: 3}
+      propertyPath: MatchTimeLimit
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3993273219321144780, guid: 929e7c327aabfed4490e17448fe5b9f9, type: 3}
       propertyPath: m_Name
       value: INgameTime

@@ -393,8 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1193dbfe4c0de4996a2fbe36f6f758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_IngameTimeWimdow
-  matchTime: {fileID: 0}
-  MatchTimeLimit: 10
+  matchTime: {fileID: 7834023834348215757}
+  MatchTimeLimit: 3
 --- !u!1 &6573281538448026394
 GameObject:
   m_ObjectHideFlags: 0
