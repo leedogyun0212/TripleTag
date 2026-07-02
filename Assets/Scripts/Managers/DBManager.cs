@@ -9,12 +9,20 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using static DBManager;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class DBManager : ManagerBase
 {
     FirebaseAuth authentication;
     private FirebaseUser user;
     private DatabaseReference rootDB;
+
+    public UserNormalData CurrentUserNormalData { get; private set; }
+    public UserPlayerData CurrentUserPlayerData { get; private set; }
+
+    public DateTime AssignDate { get; private set; }
+
 
     protected override IEnumerator OnConnected(GameManager newManager)
     {
@@ -57,6 +65,11 @@ public class DBManager : ManagerBase
     {
         WriteData(MakeNewUserData(nickNameInput.text), "users", "userData", user.UserId);
     }
+    public void MakenewUserData()
+    {
+        WriteData(MakeNewUserNormalData(nickNameInput.text), "users",user.UserId , "UserNormalData");
+        WriteData(MakeNewUserPlayerData(10000), "users",user.UserId , "UserPlayData");
+    }
 
     public async void GuestLogin()
     {
@@ -66,14 +79,20 @@ public class DBManager : ManagerBase
         if(user is not null)
         {
             Debug.LogError($"Login Failed : Already Has Login Data ({user.IsValid()}, {user.UserId})");
-            UserData resultData = await ReadDataAsync<UserData>("users", "userData", user.UserId);
-            if(resultData is not null)
+            CurrentUserNormalData = await ReadDataAsync<UserNormalData>("users", user.UserId, "UserNormalData");
+            CurrentUserPlayerData = await ReadDataAsync<UserPlayerData>("users", user.UserId, "UserPlayData");
+            AssignDate = DateTimeOffset.FromUnixTimeSeconds(CurrentUserNormalData.joinDate).LocalDateTime;
+            CurrentUserPlayerData.lastLoginDate = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            if (CurrentUserNormalData is not null && CurrentUserPlayerData is not null)
             {
-                Debug.Log(resultData.nickName);
+                Debug.Log($"닉네임 : {CurrentUserNormalData.nickName}");
+                Debug.Log($"가입일 : {AssignDate.ToString("yyyy-MM-dd")}");
+                Debug.Log($"돈 : {CurrentUserPlayerData.money}");
+                Debug.Log($"승리횟수 : {CurrentUserPlayerData.winCount}");
             }
             else
             {
-                WriteData(MakeNewUserData("NoNamed"), "users", "userData", user.UserId);
+                WriteData(MakeNewUserData("???"), "users", "userData", user.UserId);
             }
             return;
         }
@@ -89,7 +108,7 @@ public class DBManager : ManagerBase
         }
 
         user = task.Result.User;
-        WriteData(MakeNewUserData("LDG"), "users", "userData");
+        WriteData(MakeNewUserData("???"), "users", "userData");
         Debug.Log($"Login Succeed : {user.UserId}");
     }
 
@@ -98,18 +117,62 @@ public class DBManager : ManagerBase
     {
         public string nickName;
         public DateTime assignDate;
+        public long joinDate;
         public int userLevel;
         public int money;
         public int attendtime;
     }
+    public class UserNormalData
+    {
+        public string nickName;
+        public long joinDate;
+    }
+
+    public class UserPlayerData
+    {
+        public int money;
+        public long lastLoginDate;
+        public int rating;
+        public int winCount;
+        public int LoseCount;
+        public int mvpCount;
+    }
     public UserData MakeNewUserData(string wantNickname) => new()
     {
         nickName    = wantNickname,
-        assignDate  = DateTime.Now,
+        joinDate = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
         userLevel   = 1,
         money       = 100000,
         attendtime  = 0
     };
+    public UserNormalData MakeNewUserNormalData(string wantNickname) => new()
+    {
+        nickName    = wantNickname,
+        joinDate = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+    };
+    public UserPlayerData MakeNewUserPlayerData(int wantMoney) => new()
+    {
+        money       = wantMoney,
+        rating     = 0,
+        winCount    = 0,   
+        LoseCount   = 0,
+        mvpCount    = 0,
+        lastLoginDate = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+    };
+
+
+    public void nameChange(string changeName)
+    {
+        if (CurrentUserNormalData is null) return;
+
+        Dictionary<string, object> changes = new()
+        {
+            { "nickName", changeName }
+        };
+
+        WriteData(changes, "users", user.UserId, "UserNormalData");
+        CurrentUserNormalData.nickName = changeName;
+    }
 
     public DatabaseReference GetFinalDirectory(DatabaseReference root, params string[] directory)
     {

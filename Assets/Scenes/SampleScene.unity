@@ -6734,7 +6734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "<u>\uBC88</u>\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8cc9afb6d6679f4b8eae61a913f1cae, type: 2}
   m_sharedMaterial: {fileID: -6506298351887234612, guid: b8cc9afb6d6679f4b8eae61a913f1cae, type: 2}
@@ -18091,7 +18091,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054747350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -31797,7 +31797,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1092082703}
         m_TargetAssemblyTypeName: DBManager, Assembly-CSharp
-        m_MethodName: MakeUserData
+        m_MethodName: MakenewUserData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
