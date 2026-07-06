@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class UI_IngameTimeWindow : OpenableUIBase
     [SerializeField] TMPro.TextMeshProUGUI roundTime;
 
     [SerializeField] int roundTimeLimit = 3;
+
+    int currentRound = 0;
 
     float startTime;
     float currentTime;
@@ -19,10 +22,9 @@ public class UI_IngameTimeWindow : OpenableUIBase
         GameManager.OnUpdateObject += TimeUpdate;
     }
 
-
-
     public void OnDisable()
     {
+        currentRound++;
         GameManager.OnUpdateObject -= TimeUpdate;
     }
 
@@ -33,8 +35,7 @@ public class UI_IngameTimeWindow : OpenableUIBase
         currentTime = Time.time - startTime;
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
-        Debug.Log($"{seconds:00}" + roundEnd);
-        if (minutes > roundTimeLimit && !roundEnd)
+        if (seconds > roundTimeLimit && !roundEnd)
         {
             roundEnd = true;
         }
@@ -42,14 +43,29 @@ public class UI_IngameTimeWindow : OpenableUIBase
             TimeSet(minutes, seconds);
         else
         {
-            
+            RoundEnd();
         }
-
-
+        // 
     }
 
     public void TimeSet(int min, int sec)
     {
         roundTime.SetText($"{min}:{sec:00}");
+    }
+
+    private void RoundEnd()
+    {
+        if (currentRound < 3)
+        {
+            UIManager.ClaimOpenScreen(UIType.ChooseChaser);
+        }
+        else
+        {
+            UIManager.ClaimOpenScreen(UIType.InGameEnd, ScreenChangeType.SlideChanger);
+            currentRound = 0;
+        }
+        Debug.Log($"라운드 {currentRound}");
+        roundEnd = false;
+        UIManager.ClaimCloseUI(UIType.Matchmaking);
     }
 }

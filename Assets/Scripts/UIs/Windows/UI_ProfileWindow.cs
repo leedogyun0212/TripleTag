@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class UI_ProfileWindow : OpenableUIBase
@@ -12,7 +13,6 @@ public class UI_ProfileWindow : OpenableUIBase
     public override void Registration(UIManager manager)
     {
         base.Registration(manager);
-        MyProfile();
     }
 
     public override void Unregistration(UIManager manager)
@@ -20,8 +20,19 @@ public class UI_ProfileWindow : OpenableUIBase
         base.Unregistration(manager);
     }
 
+    private void OnEnable()
+    {
+        MyProfile();
+    }
+
+    private void OnDisable()
+    {
+        
+    }
+
     private void MyProfile()
     {
+        if (GameManager.DB.CurrentUserNormalData is null || GameManager.DB.CurrentUserPlayerData is null) return;
         Nickname.SetText($"닉네임 : { GameManager.DB.CurrentUserNormalData.nickName}");
         joinDate.SetText($"가입일 : {GameManager.DB.AssignDate.ToString("yyyy-MM-dd")}");
         WinCount.SetText($"승리횟수 : { GameManager.DB.CurrentUserPlayerData.winCount}");
