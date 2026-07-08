@@ -15,3 +15,16 @@ public enum MoveType
     walk, Run, Jump,
     Length
 }
+public enum PlayerSet
+{
+    None,
+    Alive, Dead, Stun,
+    Length
+}
+
+public enum PlayerGroup
+{
+    None,
+    Group1, Group2, Group3,
+    Length
+}

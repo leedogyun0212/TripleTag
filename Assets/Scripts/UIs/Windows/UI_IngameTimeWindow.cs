@@ -43,9 +43,10 @@ public class UI_IngameTimeWindow : OpenableUIBase
             TimeSet(minutes, seconds);
         else
         {
+            if (currentRound == 0) return;
             RoundEnd();
         }
-        // 
+        //
     }
 
     public void TimeSet(int min, int sec)
@@ -55,9 +56,9 @@ public class UI_IngameTimeWindow : OpenableUIBase
 
     private void RoundEnd()
     {
-        if (currentRound < 3)
+        if (currentRound < 3 && currentRound >0)
         {
-            UIManager.ClaimOpenScreen(UIType.ChooseChaser);
+            UIManager.ClaimOpenScreen(UIType.ChooseChaser, ScreenChangeType.ScreenChanger);
         }
         else
         {
@@ -66,6 +67,8 @@ public class UI_IngameTimeWindow : OpenableUIBase
         }
         Debug.Log($"라운드 {currentRound}");
         roundEnd = false;
-        UIManager.ClaimCloseUI(UIType.Matchmaking);
+        //캐릭터의 움직임,공격,공격시 데미지 입는다,시야,라운드당 시간,
+        //부활,트랩,플레이어별 점수 상승,멀티플레이,다듬기
+        //     7월                    /  8월     / 9월
     }
 }

@@ -21,8 +21,11 @@ public class CharacterBase : MonoBehaviour
     /// <summary> 현재 역할</summary>
     CharacterType _charType = CharacterType.Runner;
     public CharacterType CharType => _charType;
+
     /// <summary> 기절 </summary>
-    public bool onStun;
+    public PlayerSet PlayerSet = PlayerSet.Alive;
+
+    public PlayerGroup PlayerGroup = PlayerGroup.None;
 
     public Transform Head;
 

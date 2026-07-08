@@ -64,22 +64,22 @@ public class HitPointModule : CharacterModule
     /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary>
     public float Heal()
     {
-        if (_hp < 0 && !Owner.onStun) return 0;
+        if (_hp < 0 && Owner.PlayerSet == PlayerSet.Stun) return 0;
         _hp = _maxhp;
         return _hp;
     }
 
     /// <summary> 술래가 때린게 아니면 기절을 한다. 술래면 그대로 사망한다  </summary>
-    public bool OutCheck(ControllerBase instigator)
+    public PlayerSet OutCheck(ControllerBase instigator)
     {
         if (instigator.Character.CharType is not CharacterType.Runner)
         {
-            Owner.onStun = true;
+            Owner.PlayerSet = PlayerSet.Stun;
         }
-        
-        Owner.onStun = false;
 
-        return Owner.onStun;
+        Owner.PlayerSet = PlayerSet.Dead;
+
+        return Owner.PlayerSet;
     }
 
     void OnDamageReceived(GameObject damageCauser, ControllerBase instigator, float damage)
@@ -92,7 +92,7 @@ public class HitPointModule : CharacterModule
         // HP가 0 이하이면 기절/사망 판정 수행
         if (newHp <= 0f)
         {
-            bool isStunned = OutCheck(instigator);
+            bool isStunned = OutCheck(instigator) == PlayerSet.Stun;
             //추가 동작(사망 처리, 이펙트 등)은 여기에 연결 가능
             //
             //예: if (!isStunned) { /* 사망 처리 */ }

@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,18 +22,49 @@ public class InteractableModule : CharacterModule
         GameManager.OnUpdateCharacter -= Vision;
     }
 
-    /// <summary> 줍기 </summary>
-    //부활 표식 줍기
-    public void PickUp()
+    /// <summary> 부활 </summary>
+    // 죽은 팀원을 5초동안 접촉하면 살린다
+    // 죽어야한다(PlayerSet->Dead)
+    // 5초동안 접촉한다 
+    // 같은 팀원(PlayerGroup->나와 같음)이어야한다
+    // 살린다 -> 죽은 시간동안 얻을 포인트의 절반을 얻는다ㅒ
+    // CharacterBase target 얘를 언제 받냐?
+    // 접촉이면  OnTrigger나 OnCollision을 쓸건데 그러면 GameObject는 쉽게 얻을수 있어도 CharacterBase는???
+    // 그렇다고 접촉할때마다 CharacterBase얻을려고 겟컴포넌트는 좀.. 
+    // 그래서 방법중 하나가 yield를 이용하는것이라 생각
+    // 
+    public void Respawn(CharacterBase target)
     {
+        if(target.PlayerGroup == Owner.PlayerGroup)
+        {
+            if (target.PlayerSet is not PlayerSet.Dead) return;
 
+            //부활기능
+
+        }
+        else
+        {
+            return;
+        }
     }
 
-    /// <summary> 부활 </summary>
-    // 주운 부활 표식으로 부활장소로 이동하면 활성화 하는 기능
-    public void Respawn()
+    public IEnumerator Respawn(GameObject target)
     {
+        if(target is null) yield return null;
 
+        CharacterBase targetChar = target.GetComponentInParent<CharacterBase>();
+
+        if (targetChar.PlayerSet is PlayerSet.Dead)
+        {
+            if (targetChar.PlayerGroup != Owner.PlayerGroup) yield return null;
+            
+            //부활기능
+
+        }
+        else
+        {
+            yield return null;
+        }
     }
 
     /// <summary> 시야 </summary>
