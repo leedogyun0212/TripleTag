@@ -64,6 +64,20 @@ public class AnimationModule : CharacterModule
             myattack.isAttack = true;
         }
     }
+
+    //죽거나 기절하면 발동
+    //기절하고 일정시간이 지나거나 부활하면 다시 넘어감
+    //죽거나 기절을 관여하는것은 HP 부활은 InteractableModule
+    //그러면 애니메이션자체는 여기서 발동 조작은 HP 부활시에는 HP에서 애니메이션 조작하는것을 실행하는것으로 사용
+
+    public void AnimationByDying(float value)
+    {
+        if (!anim) return;
+
+        //anim.SetTrigger("Dying");
+        anim.SetFloat("Die", value);
+    }
+
     public void AnimAttackOff()
     {
         if (myattack)

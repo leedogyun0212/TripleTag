@@ -8,9 +8,14 @@ public class InteractableModule : CharacterModule
 
     public sealed override System.Type RegistrationType => typeof(InteractableModule);
 
+    CharacterBase targetCharTest;
+
+    HitPointModule hitPointModule;
+
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
+        hitPointModule  = GetComponent<HitPointModule>();
         MeshSetting();
         GameManager.OnUpdateCharacter -= Vision;
         GameManager.OnUpdateCharacter += Vision;
@@ -33,20 +38,6 @@ public class InteractableModule : CharacterModule
     // 그렇다고 접촉할때마다 CharacterBase얻을려고 겟컴포넌트는 좀.. 
     // 그래서 방법중 하나가 yield를 이용하는것이라 생각
     // 
-    public void Respawn(CharacterBase target)
-    {
-        if(target.PlayerGroup == Owner.PlayerGroup)
-        {
-            if (target.PlayerSet is not PlayerSet.Dead) return;
-
-            //부활기능
-
-        }
-        else
-        {
-            return;
-        }
-    }
 
     public IEnumerator Respawn(GameObject target)
     {

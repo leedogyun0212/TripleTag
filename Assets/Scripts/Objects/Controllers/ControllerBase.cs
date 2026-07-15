@@ -50,27 +50,44 @@ public class ControllerBase : MonoBehaviour, IFunctionable
     {
         if (Character && Character.GetModule<MovementModule>() is IRunnable target)
         {
+            if (Character.PlayerSet != PlayerSet.Alive) return;
             target.MoveToDirection(direction);
         }
     }
     public void CommandMoveToDestination(Vector3 direction, float tolerance)
     {
-        if(Character && Character.GetModule<MovementModule>() is IRunnable target) target.MoveToDestination(direction, tolerance);
+        if (Character && Character.GetModule<MovementModule>() is IRunnable target)
+        {
+            if (Character.PlayerSet != PlayerSet.Alive) return;
+
+            target.MoveToDestination(direction, tolerance);
+        }
     }
     public void CommandChangeMoveType(MoveType wantType)
     {
-        if (Character && Character.GetModule<MovementModule>() is MovementModule target) target.ChangeMoveType(wantType);
+        if (Character && Character.GetModule<MovementModule>() is MovementModule target)
+        {
+            if (Character.PlayerSet != PlayerSet.Alive) return;
+
+            target.ChangeMoveType(wantType); 
+        }
     }
 
     public void CommandStop()
     {
-        if(Character && Character.GetModule<MovementModule>() is IRunnable target) target.StopMovement();
+        if (Character && Character.GetModule<MovementModule>() is IRunnable target)
+        {
+
+            target.StopMovement();
+        }
     }
 
     public void CommandAttackTry(bool value)
     {
         if (Character && Character.GetModule<AnimationModule>() is AnimationModule target)
         {
+            if (Character.PlayerSet != PlayerSet.Alive) return;
+
             target.AnimationByAttack(value);
             target.AnimAttackOn();
         }

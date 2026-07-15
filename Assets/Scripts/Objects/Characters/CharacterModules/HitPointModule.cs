@@ -11,11 +11,14 @@ public class HitPointModule : CharacterModule
 
     float realTime;
 
+    AnimationModule animModule;
+
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
 
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
+        animModule = gameObject.GetComponentInChildren<AnimationModule>();
         SetHP(4.0f);
         GameManager.OnUpdateCharacter -= UpdateHP;
         GameManager.OnUpdateCharacter += UpdateHP;
@@ -70,16 +73,28 @@ public class HitPointModule : CharacterModule
     }
 
     /// <summary> 술래가 때린게 아니면 기절을 한다. 술래면 그대로 사망한다  </summary>
+    //스턴과 기절을 나눠서 애니메이션을 실행-> float 0,1,2로나뉘어 죽으면 0스턴은2 그 무엇도 아니면 1을 애니메이션 모듈로 실행
     public PlayerSet OutCheck(ControllerBase instigator)
     {
         if (instigator.Character.CharType is not CharacterType.Runner)
         {
             Owner.PlayerSet = PlayerSet.Stun;
+            Owner.dyingSwitch = 2.0f;
+            AnimationOn();
         }
 
         Owner.PlayerSet = PlayerSet.Dead;
+        Owner.dyingSwitch = 0.0f;
+        AnimationOn();
 
         return Owner.PlayerSet;
+    }
+
+    public void AnimationOn()
+    {
+        if (Owner.dyingSwitch != 0.0f || Owner.dyingSwitch != 1.0f || Owner.dyingSwitch != 2.0f) return;
+
+        animModule.AnimationByDying(Owner.dyingSwitch);
     }
 
     void OnDamageReceived(GameObject damageCauser, ControllerBase instigator, float damage)

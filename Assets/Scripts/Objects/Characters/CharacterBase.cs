@@ -20,11 +20,13 @@ public class CharacterBase : MonoBehaviour
 
     /// <summary> 현재 역할</summary>
     CharacterType _charType = CharacterType.Runner;
+    /// <summary> 현재 역할</summary>
     public CharacterType CharType => _charType;
 
-    /// <summary> 기절 </summary>
+    /// <summary> 캐릭터 상태(살아있다, 죽어있다, 기절했다) </summary>
     public PlayerSet PlayerSet = PlayerSet.Alive;
 
+    /// <summary> 캐릭터의 현재 그룹 </summary>
     public PlayerGroup PlayerGroup = PlayerGroup.None;
 
     public Transform Head;
@@ -40,6 +42,8 @@ public class CharacterBase : MonoBehaviour
     public Vector3 LookRotation => _lookRotation;
 
     public virtual string DisplayName => "character";
+
+    public float dyingSwitch = 0.0f;
 
     //묘듈을 저장해놓기!
     //List : 추가/제거가 쉽다 <-> 메모리 효율이 낮고, 전체 순환이 느리다
