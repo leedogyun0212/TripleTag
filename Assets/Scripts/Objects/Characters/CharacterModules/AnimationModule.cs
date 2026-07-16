@@ -70,11 +70,12 @@ public class AnimationModule : CharacterModule
     //죽거나 기절을 관여하는것은 HP 부활은 InteractableModule
     //그러면 애니메이션자체는 여기서 발동 조작은 HP 부활시에는 HP에서 애니메이션 조작하는것을 실행하는것으로 사용
 
-    public void AnimationByDying(float value)
+    public void AnimationByDying(float value, bool dying)
     {
         if (!anim) return;
 
         //anim.SetTrigger("Dying");
+        anim.SetBool("Dying", dying);
         anim.SetFloat("Die", value);
     }
 

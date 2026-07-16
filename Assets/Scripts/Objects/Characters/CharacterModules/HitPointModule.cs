@@ -11,6 +11,8 @@ public class HitPointModule : CharacterModule
 
     float realTime;
 
+    bool isDead = false;
+
     AnimationModule animModule;
 
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
@@ -79,7 +81,7 @@ public class HitPointModule : CharacterModule
         if (instigator.Character.CharType is not CharacterType.Runner)
         {
             Owner.PlayerSet = PlayerSet.Stun;
-            Owner.dyingSwitch = 2.0f;
+            Owner.dyingSwitch = 1.0f;
             AnimationOn();
         }
 
@@ -94,7 +96,8 @@ public class HitPointModule : CharacterModule
     {
         if (Owner.dyingSwitch != 0.0f || Owner.dyingSwitch != 1.0f || Owner.dyingSwitch != 2.0f) return;
 
-        animModule.AnimationByDying(Owner.dyingSwitch);
+        isDead = true;
+        animModule.AnimationByDying(Owner.dyingSwitch, isDead);
     }
 
     void OnDamageReceived(GameObject damageCauser, ControllerBase instigator, float damage)
@@ -115,3 +118,15 @@ public class HitPointModule : CharacterModule
     }
 
 }
+
+//1.죽었을때죽는 애니메이션으로 바꿔야한다
+//2.부활하거나 다음라운드에서는 다시 부활하니 일반 숨쉬는 모션으로 바꿔야한다
+
+//그러면 무엇으로전환하냐       > 일단 bool을 생각중이지만 좀더 고민중
+//어느 타이밍에 바꾸냐            > 기절인지 스턴인지 결정후에 애니메이션으로 전환되야한다  
+//애니메이션은 어디서 실행하냐 > 일단 HitPointModule을 생각중 HitPointModule에서 너 언제 죽는 애니메이션 실행하는지 알려줘야 행동이 편하다
+
+//--------
+
+//부활기능을 HitPointModule로 이전...
+//
