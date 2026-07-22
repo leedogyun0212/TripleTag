@@ -270,7 +270,7 @@
                 {
                     "name": "",
                     "id": "0151e34c-25ec-4fa1-9858-5fdc5f3441fa",
-                    "path": "<Keyboard>/f1",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -479,7 +479,7 @@
                 {
                     "name": "",
                     "id": "146d4fb6-2611-48fa-bb53-5fa28dbfd140",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/f4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

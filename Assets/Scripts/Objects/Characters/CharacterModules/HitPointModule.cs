@@ -65,8 +65,7 @@ public class HitPointModule : CharacterModule
             if(_hp < 4) Heal();
         }
     }
-
-    /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary>
+    /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary> 샤미드 
     public float Heal()
     {
         if (_hp < 0 && Owner.PlayerSet == PlayerSet.Stun) return 0;
@@ -91,7 +90,7 @@ public class HitPointModule : CharacterModule
 
         return Owner.PlayerSet;
     }
-
+    
     public void AnimationOn()
     {
         if (Owner.dyingSwitch != 0.0f || Owner.dyingSwitch != 1.0f || Owner.dyingSwitch != 2.0f) return;

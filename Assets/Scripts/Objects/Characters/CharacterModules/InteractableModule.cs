@@ -12,6 +12,8 @@ public class InteractableModule : CharacterModule
 
     HitPointModule hitPointModule;
 
+    bool isRespawn = false;
+
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
@@ -39,15 +41,15 @@ public class InteractableModule : CharacterModule
     // 그래서 방법중 하나가 yield를 이용하는것이라 생각
     // 
 
-    public IEnumerator Respawn(GameObject target)
+    public IEnumerator Respawn(CharacterBase target)
     {
         if(target is null) yield return null;
 
-        CharacterBase targetChar = target.GetComponentInParent<CharacterBase>();
+        InteractableModule targetChar = target.GetComponentInParent<InteractableModule>();
 
-        if (targetChar.PlayerSet is PlayerSet.Dead)
+        if (target.PlayerSet is PlayerSet.Dead)
         {
-            if (targetChar.PlayerGroup != Owner.PlayerGroup) yield return null;
+            if (target.PlayerGroup != Owner.PlayerGroup) yield return null;
             
             //부활기능
 
@@ -58,6 +60,19 @@ public class InteractableModule : CharacterModule
         }
     }
 
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!isRespawn) return;
+
+        CharacterBase target = other.GetComponent<CharacterBase>();
+
+        if (target is null) return;
+        isRespawn = false;
+
+        StartCoroutine(Respawn(target));
+    }
+
     /// <summary> 시야 </summary>
 
     // 간단한 FOV Mesh 생성기:
@@ -65,10 +80,10 @@ public class InteractableModule : CharacterModule
     // - meshResolution으로 분할 수를 정해 매끄럽게 만듭니다.
     // - mask 레이어에 충돌(장애물)이 있으면 해당 지점까지 시야를 줄입니다 (Raycast 사용).
     // 사용법:
-    //  - Inspector에서 fovAngle, viewDistance, mask, meshResolution을 조정.
-    //  - autoUpdate를 켜면 매 프레임 시야를 갱신합니다.
-    //  - 외부에서 수동 갱신하려면 Vision()을 호출하세요.
-    [Header("FOV 설정")]
+        //  - Inspector에서 fovAngle, viewDistance, mask, meshResolution을 조정.
+        //  - autoUpdate를 켜면 매 프레임 시야를 갱신합니다.
+        //  - 외부에서 수동 갱신하려면 Vision()을 호출하세요.
+        [Header("FOV 설정")]
     public float fovAngle = 90f; // 시야 각도(도)
     public float viewDistance = 5f; // 시야 거리
     public int meshResolution = 30; // 분할 수 (높을수록 부드러움)

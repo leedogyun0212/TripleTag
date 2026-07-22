@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_IngameTimeWimdow
   roundTime: {fileID: 7834023834348215757}
-  roundTimeLimit: 30
+  roundTimeLimit: 180
 --- !u!1 &6573281538448026394
 GameObject:
   m_ObjectHideFlags: 0

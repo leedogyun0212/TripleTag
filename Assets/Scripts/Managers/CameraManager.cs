@@ -40,6 +40,8 @@ public class CameraManager : ManagerBase
     public void CameraMove(Vector3 Position, Vector3 Head)
     {
         Head.y += 8.0f;
+        //Head.z -= 8.0f;
+        //Head.x -= 8.0f;
         MainCamera.transform.position = Head;
         //MainCamera.transform.position += Position;
     }
