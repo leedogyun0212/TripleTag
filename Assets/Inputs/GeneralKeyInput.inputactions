@@ -70,6 +70,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "RespawnButton",
+                    "type": "Button",
+                    "id": "3900cd9c-7cae-4838-a68d-761dbd3477bb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "JumpButton",
                     "type": "Button",
                     "id": "ea2b7d3c-d0af-4453-a0a9-670e4a666b34",
@@ -264,6 +273,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "AttackButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f43ad885-2420-41fe-ae45-78fdfd6078dc",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RespawnButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

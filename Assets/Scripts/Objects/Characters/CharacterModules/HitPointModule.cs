@@ -65,10 +65,11 @@ public class HitPointModule : CharacterModule
             if(_hp < 4) Heal();
         }
     }
-    /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary> 샤미드 
+    /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary> 샤미드 이상해꽃 찌리배리 대도각참 망나뇽 따라큐 
     public float Heal()
     {
         if (_hp < 0 && Owner.PlayerSet == PlayerSet.Stun) return 0;
+        
         _hp = _maxhp;
         return _hp;
     }
@@ -91,6 +92,14 @@ public class HitPointModule : CharacterModule
         return Owner.PlayerSet;
     }
     
+    public float Respawn()
+    {
+        if(Owner.PlayerSet != PlayerSet.Dead) return 0;
+        Owner.PlayerSet = PlayerSet.Alive;
+        _hp = _maxhp;
+        return _hp;
+    }
+
     public void AnimationOn()
     {
         if (Owner.dyingSwitch != 0.0f || Owner.dyingSwitch != 1.0f || Owner.dyingSwitch != 2.0f) return;

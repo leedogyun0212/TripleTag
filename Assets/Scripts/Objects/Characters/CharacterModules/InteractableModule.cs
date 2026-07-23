@@ -39,20 +39,22 @@ public class InteractableModule : CharacterModule
     // 접촉이면  OnTrigger나 OnCollision을 쓸건데 그러면 GameObject는 쉽게 얻을수 있어도 CharacterBase는???
     // 그렇다고 접촉할때마다 CharacterBase얻을려고 겟컴포넌트는 좀.. 
     // 그래서 방법중 하나가 yield를 이용하는것이라 생각
-    // 
+
 
     public IEnumerator Respawn(CharacterBase target)
     {
         if(target is null) yield return null;
 
-        InteractableModule targetChar = target.GetComponentInParent<InteractableModule>();
+        yield return new WaitForSecondsRealtime(5.0f);
+
+        HitPointModule targetChar = target.GetComponentInParent<HitPointModule>();
 
         if (target.PlayerSet is PlayerSet.Dead)
         {
             if (target.PlayerGroup != Owner.PlayerGroup) yield return null;
-            
-            //부활기능
 
+            //부활기능
+            targetChar.Respawn(); 
         }
         else
         {
@@ -60,8 +62,7 @@ public class InteractableModule : CharacterModule
         }
     }
 
-
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!isRespawn) return;
 
