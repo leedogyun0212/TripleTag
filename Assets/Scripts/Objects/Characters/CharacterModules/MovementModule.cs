@@ -23,6 +23,7 @@ public class MovementModule : CharacterModule, IRunnable
     [SerializeField] float cooldown = 8.0f;
 
     [SerializeField] Transform FootLeftTrans;
+
     protected float SaveYDir;
 
     bool _inputJumpPressed = false;
@@ -105,6 +106,7 @@ public class MovementModule : CharacterModule, IRunnable
 
         float currentMoveSpeed = GetMoveSpeed(deltaTime);
         Translate(currentMoveSpeed * targetDirection.Value);
+        //포톤에서 이동 관련 문제(적합성??) => 포톤에 접속을 하면 렉걸린 것 처럼 움직임
         GameManager.Camera.CameraMove(GetMoveSpeed(deltaTime) * targetDirection.Value, Owner.Head.position);
     }
     public void UpdateToDestination(float deltaTime)
@@ -113,6 +115,7 @@ public class MovementModule : CharacterModule, IRunnable
         if (targetDestination is null) return;
 
         //여길 넘어서면 목적지가 있는 상태
+        //
 
         //해당 위치로 조금씩 가는 법!
         //목적지 - 출발지
