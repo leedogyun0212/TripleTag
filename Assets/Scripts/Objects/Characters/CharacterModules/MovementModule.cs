@@ -41,6 +41,7 @@ public class MovementModule : CharacterModule, IRunnable
         GameManager.OnPhysicCharacter += MovementUpdate;
     }
 
+
     public override void OnUnregistration(CharacterBase oldOwner)
     {
         base.OnUnregistration(oldOwner);
