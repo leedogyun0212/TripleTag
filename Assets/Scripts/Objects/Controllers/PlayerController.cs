@@ -5,6 +5,8 @@ public class PlayerController : ControllerBase
 {
     [SerializeField] MoveType runType = MoveType.Run;
 
+    bool isPossessed = false;
+
     //빙의가 되면 내 캐릭터 생긴 거니까 키 입력
     //시작!
     protected override void OnPossess(CharacterBase newCharacter)
@@ -18,6 +20,7 @@ public class PlayerController : ControllerBase
         InputManager.OnRun  += MoveToRunning;
         InputManager.OnAttack -= Attack;
         InputManager.OnAttack += Attack;
+        isPossessed = true;
     }
 
     //해제가 되면 내 캐릭터 뺏긴 거니까 키 입력 받을 필요가 없음!
@@ -27,6 +30,29 @@ public class PlayerController : ControllerBase
         InputManager.OnMouseRightButton -= MoveToMousePosition;
         InputManager.OnMove -= MoveToDirection;
         InputManager.OnRun  -= MoveToRunning;
+        InputManager.OnAttack -= Attack;
+    }
+
+    public override void OnEnable()
+    {
+        if (isPossessed) return;
+        base.OnEnable();
+        InputManager.OnMouseRightButton -= MoveToMousePosition;
+        InputManager.OnMouseRightButton += MoveToMousePosition;
+        InputManager.OnMove -= MoveToDirection;
+        InputManager.OnMove += MoveToDirection;
+        InputManager.OnRun -= MoveToRunning;
+        InputManager.OnRun += MoveToRunning;
+        InputManager.OnAttack -= Attack;
+        InputManager.OnAttack += Attack;
+    }
+
+    public override void OnDisable()
+    {
+        base.OnDisable();
+        InputManager.OnMouseRightButton -= MoveToMousePosition;
+        InputManager.OnMove -= MoveToDirection;
+        InputManager.OnRun -= MoveToRunning;
         InputManager.OnAttack -= Attack;
     }
 
