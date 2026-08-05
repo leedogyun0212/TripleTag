@@ -22,6 +22,8 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
     //    Runner.Spawn(playerPrefab, spawnRandom[spawnRandomNum], Quaternion.identity);
     //}
 
+    
+
     public void PlayerJoined(PlayerRef player)
     {
         if (Runner.IsServer)

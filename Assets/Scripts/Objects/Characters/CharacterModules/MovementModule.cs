@@ -34,11 +34,13 @@ public class MovementModule : CharacterModule, IRunnable
     //자식에서 더 이상 못 바꾸게!
     public sealed override System.Type RegistrationType => typeof(MovementModule);
 
+    public Vector3 LastMoveDelta { get; private set; }
+
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
-        GameManager.OnPhysicCharacter -= MovementUpdate;
-        GameManager.OnPhysicCharacter += MovementUpdate;
+        //GameManager.OnPhysicCharacter -= MovementUpdate;
+        //GameManager.OnPhysicCharacter += MovementUpdate;
     }
 
 
@@ -51,14 +53,14 @@ public class MovementModule : CharacterModule, IRunnable
     public void MovementUpdate(float deltaTime)
     {
         Vector3 originPosition = transform.position;                 //이동하기전에 제 위치를 저장
-        
+        //Debug.Log($"{Owner}+오너 머리{Owner.Head.position}");
         PhysicUpdate(deltaTime);                                     //물리 업데이트
-        Vector3 positionDelta = transform.position - originPosition; //이동한 위치의 차이를 계산
+        LastMoveDelta = transform.position - originPosition; //이동한 위치의 차이를 계산
         if (targetDirection.HasValue && targetDirection.Value != Vector3.zero)
         {
-            UpdateToRotation(positionDelta, deltaTime);
+            UpdateToRotation(LastMoveDelta, deltaTime);
         }
-        Owner.MovementNotify(positionDelta);                              //이동한 양에 따라서 애니메이션을 업데이트
+        //Owner.MovementNotify(positionDelta);                              //이동한 양에 따라서 애니메이션을 업데이트
         
     }
 
@@ -89,7 +91,7 @@ public class MovementModule : CharacterModule, IRunnable
     public void PhysicUpdate(float deltaTime)
     {
         UpdateToDirection(deltaTime);
-        UpdateToDestination(deltaTime);
+        //UpdateToDestination(deltaTime);
     }
 
     public virtual float GetMoveSpeed() => Speed;
@@ -108,7 +110,7 @@ public class MovementModule : CharacterModule, IRunnable
         float currentMoveSpeed = GetMoveSpeed(deltaTime);
         Translate(currentMoveSpeed * targetDirection.Value);
         //포톤에서 이동 관련 문제(적합성??) => 포톤에 접속을 하면 렉걸린 것 처럼 움직임
-        GameManager.Camera.CameraMove(GetMoveSpeed(deltaTime) * targetDirection.Value, Owner.Head.position);
+        //GameManager.Camera.CameraMove(GetMoveSpeed(deltaTime) * targetDirection.Value, Owner.Head.position);
     }
     public void UpdateToDestination(float deltaTime)
     {
@@ -149,6 +151,7 @@ public class MovementModule : CharacterModule, IRunnable
 
     public void MoveToDirection(Vector3 direction)
     {
+        //Debug.Log($"{Owner}+MoveToDirection//오너 머리{Owner.Head.position}");
 
         targetDestination = null; //목적지를 제거한다
         targetDirection = direction.normalized;
@@ -225,6 +228,14 @@ public class MovementModule : CharacterModule, IRunnable
             targetDirection = temp;
             _inputJumpPressed = false;
             isJump = true;
+        }
+    }
+
+    public Vector3 InputDirection
+    {
+        get
+        {
+            return targetDirection ?? Vector3.zero;
         }
     }
 }

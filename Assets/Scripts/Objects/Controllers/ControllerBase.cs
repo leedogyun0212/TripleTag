@@ -1,3 +1,4 @@
+using Fusion;
 using UnityEngine;
 
 public class ControllerBase : MonoBehaviour, IFunctionable
@@ -13,6 +14,16 @@ public class ControllerBase : MonoBehaviour, IFunctionable
     public virtual void UnregistrationFunctions()
     {
         Unpossess();
+    }
+
+    public virtual void OnEnable()
+    {
+        Possess(GetComponent<CharacterBase>());
+    }
+
+    public virtual void OnDisable()
+    {
+        Unpossess(); 
     }
 
     protected virtual void OnPossess(CharacterBase newCharacter) { }
@@ -48,11 +59,10 @@ public class ControllerBase : MonoBehaviour, IFunctionable
 
     public void CommandMoveToDirection(Vector3 direction)
     {
-        if (Character && Character.GetModule<MovementModule>() is IRunnable target)
-        {
-            if (Character.PlayerSet != PlayerSet.Alive) return;
-            target.MoveToDirection(direction);
-        }
+        if (!GetComponent<NetworkObject>().HasInputAuthority) return;
+        if (Character.PlayerSet != PlayerSet.Alive) return;
+
+        PlayerInputHandler.Instance.SetMoveDirection(direction);
     }
     public void CommandMoveToDestination(Vector3 direction, float tolerance)
     {
