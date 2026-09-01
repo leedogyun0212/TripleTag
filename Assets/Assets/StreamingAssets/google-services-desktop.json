@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "427285912989",
+    "firebase_url" : "https://tripletag-8ef3c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "tripletag-8ef3c",
+    "storage_bucket": "tripletag-8ef3c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427285912989:android:4284835892e6c09df46374",
+        "android_client_info": {
+          "package_name": "com.TagCompany.TripleTag"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkfQ3tRJIG9f13kxyh36r_K3FYTM3Lu20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
