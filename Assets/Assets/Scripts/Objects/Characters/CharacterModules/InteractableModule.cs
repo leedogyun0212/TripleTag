@@ -111,7 +111,7 @@ public class InteractableModule : CharacterModule
         Vector3 dir = new Vector3(Mathf.Sin(angleRad), 0, Mathf.Cos(angleRad));
         return dir;
     }
-    
+    //
     public void Vision(float deltaTime)
     {
         UpdateCloseVision();
