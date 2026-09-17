@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|c:\\ldg\\tripletag\\tripletagserver\\tripletagserver\\tripletagserver\\hubs\\matchhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|solutionrelative:tripletagserver\\hubs\\matchhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|c:\\ldg\\tripletag\\tripletagserver\\tripletagserver\\tripletagserver\\matchmaking\\matchmakingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|solutionrelative:tripletagserver\\matchmaking\\matchmakingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|c:\\ldg\\tripletag\\tripletagserver\\tripletagserver\\tripletagserver\\players\\playerconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|solutionrelative:tripletagserver\\players\\playerconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|c:\\ldg\\tripletag\\tripletagserver\\tripletagserver\\tripletagserver\\matchmaking\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|solutionrelative:tripletagserver\\matchmaking\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|c:\\ldg\\tripletag\\tripletagserver\\tripletagserver\\tripletagserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|solutionrelative:tripletagserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|c:\\ldg\\tripletag\\tripletagserver\\tripletagserver\\tripletagserver\\players\\playerinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E25E67-E1CD-4C8D-BA89-90034356856B}|TripleTagServer\\TripleTagServer.csproj|solutionrelative:tripletagserver\\players\\playerinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerConnection.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Players\\PlayerConnection.cs",
+              "RelativeDocumentMoniker": "TripleTagServer\\Players\\PlayerConnection.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Players\\PlayerConnection.cs",
+              "RelativeToolTip": "TripleTagServer\\Players\\PlayerConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T02:16:16.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MatchmakingService.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Matchmaking\\MatchmakingService.cs",
+              "RelativeDocumentMoniker": "TripleTagServer\\Matchmaking\\MatchmakingService.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Matchmaking\\MatchmakingService.cs",
+              "RelativeToolTip": "TripleTagServer\\Matchmaking\\MatchmakingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T02:28:47.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Match.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Matchmaking\\Match.cs",
+              "RelativeDocumentMoniker": "TripleTagServer\\Matchmaking\\Match.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Matchmaking\\Match.cs",
+              "RelativeToolTip": "TripleTagServer\\Matchmaking\\Match.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T02:27:59.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerInfo.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Players\\PlayerInfo.cs",
+              "RelativeDocumentMoniker": "TripleTagServer\\Players\\PlayerInfo.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Players\\PlayerInfo.cs",
+              "RelativeToolTip": "TripleTagServer\\Players\\PlayerInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T02:27:09.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MatchHub.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Hubs\\MatchHub.cs",
+              "RelativeDocumentMoniker": "TripleTagServer\\Hubs\\MatchHub.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Hubs\\MatchHub.cs",
+              "RelativeToolTip": "TripleTagServer\\Hubs\\MatchHub.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T02:08:58.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Program.cs",
+              "RelativeDocumentMoniker": "TripleTagServer\\Program.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Program.cs",
+              "RelativeToolTip": "TripleTagServer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T02:28:00.803Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

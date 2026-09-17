@@ -1,2 +1,1 @@
-.bundle filter=lfs diff=lfs merge=lfs -text
-Assets/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-13_13_0.bundle filter=lfs diff=lfs merge=lfs -text
+TripleTagUnity/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-13_13_0.bundle filter=lfs diff=lfs merge=lfs -text

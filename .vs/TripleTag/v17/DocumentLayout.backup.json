@@ -1,0 +1,2284 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\LDG\\TripleTag\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|c:\\ldg\\tripletag\\assets\\assets\\scripts\\objects\\characters\\enumerators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\enumerators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|c:\\ldg\\tripletag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\interactablemodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\interactablemodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\runmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\runmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\objectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\objectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\cameramanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\cameramanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\generals\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\generals\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\languagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\languagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\settingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\settingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\managers\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\managers\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\movementmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\movementmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\photon\\playerinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\photon\\playerinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\controllers\\controllerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\controllers\\controllerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\characterbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\characterbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\animationmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\animationmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\hitpointmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\hitpointmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\photon\\playerspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\photon\\playerspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\managerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\managerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\characters\\charactermodules\\attackmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\characters\\charactermodules\\attackmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\camera\\cameratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\camera\\cameratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\objects\\camera\\lockcameray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\objects\\camera\\lockcameray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\DBManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\DBManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\InputManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\InputManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|C:\\LDG\\TripleTag\\assets\\assets\\scripts\\interfaces\\irunnable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93BC7DAA-A742-79BA-81B4-D01CDBAB58FC}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\scripts\\interfaces\\irunnable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\VisionModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\VisionModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\game\\Downloads\\google-services.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Temp\\Compiled-Shader Graphs-FOV_Mesh_Shader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Temp\\Compiled-Shader Graphs-FOV_Mesh_Shader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\UI\\Core\\RawImage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\UI\\Core\\RawImage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ButtonOpenUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_ButtonOpenUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\AddressablesPlayerBuildProcessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\AddressablesPlayerBuildProcessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Settings\\ProfileValueReference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Settings\\ProfileValueReference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\DataBuilders\\BuildScriptBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\DataBuilders\\BuildScriptBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ProfileWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_ProfileWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_LoadingScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_LoadingScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_MovableScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_MovableScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ScreenBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_ScreenBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\MouseFollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\MouseFollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_DraggableWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_DraggableWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_PullUpWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_PullUpWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_PopUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_PopUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_InGameUIScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_InGameUIScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\ithappy\\Creative_Characters_FREE\\Render_Pipeline_Convert\\Documentation.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\ithappy\\Creative_Characters_FREE\\Render_Pipeline_Convert\\Documentation.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\ScriptableObjects\\PoolRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ScriptableObjects\\PoolRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ButtonOpenScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UI_ButtonOpenScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\UI_ScreenChanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\UI_ScreenChanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ManagerBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\ManagerBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Sprites\\aTest\\FOV_Stencil_Writer.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Sprites\\aTest\\FOV_Stencil_Writer.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Sprites\\aTest\\FOV_Fog_Volume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Sprites\\aTest\\FOV_Fog_Volume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_MainScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_MainScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\LanguageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\LanguageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\SettingManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SettingManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\CameraManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\CameraManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ObjectManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\ObjectManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Photon\\PlayerSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Photon\\PlayerSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\Enumerators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\ModuleCheck.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ModuleCheck.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\CharacterModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\CharacterModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_InGameUIScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_InGameUIScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Slots\\Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Slots\\Inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_IngameTimeWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_IngameTimeWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\AIController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\AIController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\UIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\UIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_InGameEndScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_InGameEndScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\AIPlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\AIPlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ShopWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_ShopWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_TitleScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_TitleScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_InventoryWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_InventoryWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\DataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\DataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_Matchmaking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_Matchmaking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\MovableCharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Characters\\MovableCharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_GiveUpWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_GiveUpWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ManagerModule\\ObjectPoolModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\ManagerModule\\ObjectPoolModule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\AudioManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\AudioManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_GameStartWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_GameStartWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Generals\\Extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Generals\\Extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Firebase\\Plugins\\Firebase.Auth.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Firebase\\Plugins\\Firebase.Auth.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_OptionScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_OptionScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\MouseFollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MouseFollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Shader\\FOV_Fog_Volume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Shader\\FOV_Fog_Volume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\ItemContainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\ItemContainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_ChooseChaserScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_ChooseChaserScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Shader\\StudyHLSL.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Shader\\StudyHLSL.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Consumable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Consumable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\InfoContainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\InfoContainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\BoneChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\BoneChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Slots\\ItemSlot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Slots\\ItemSlot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_ScreenBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_ScreenBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemCursorSlotInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemCursorSlotInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemSlotInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemSlotInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\OpenableUIBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\OpenableUIBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_LoadingScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_LoadingScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_MovableScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Screens\\UI_MovableScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_TargetHoverInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_TargetHoverInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_OptionMusic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_OptionMusic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_DraggableWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_DraggableWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals.meta||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals.meta||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations.meta||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations.meta||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs.meta||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs.meta||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs.meta||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs.meta||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_PopUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_PopUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MessageWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_MessageWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonInGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Button\\UI_ButtonInGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_PullUpWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_PullUpWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_QuitConfirmWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_QuitConfirmWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_RankingWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Windows\\UI_RankingWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\SaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IRunnable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Interfaces\\IRunnable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IOpenable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Interfaces\\IOpenable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\BroadcastOnAnimationEnd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\BroadcastOnAnimationEnd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Common\\PooledObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Objects\\Common\\PooledObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IProgress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Interfaces\\IProgress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Interfaces\\IInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\ISystemMessagePossible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Interfaces\\ISystemMessagePossible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UIBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\UIs\\UIBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IConfirmable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Interfaces\\IConfirmable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LDG\\TripleTag\\Assets\\Scripts\\Generals\\SystemMessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Generals\\SystemMessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enumerators.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T01:16:15.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InteractableModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAowHEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T03:27:42.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NetworkManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\NetworkManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\NetworkManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\NetworkManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\NetworkManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T05:07:45.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\SaveManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\SaveManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\SaveManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:22:41.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\InputManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\InputManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\InputManager.cs",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:20:30.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\UIManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\UIManager.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:21:43.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LanguageManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:20:25.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\DataManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\DataManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\DataManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\DataManager.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAmwPQAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:19:44.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DBManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\DBManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\DBManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\DBManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\DBManager.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAIwFcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:19:32.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ObjectManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "ViewState": "AgIAAE4BAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T01:28:39.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\GameManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\GameManager.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T04:39:12.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SettingManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\SettingManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\SettingManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\SettingManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\SettingManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:22:42.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Generals\\Extensions.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Generals\\Extensions.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Generals\\Extensions.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Generals\\Extensions.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAiwCAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:38:54.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RunModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T03:35:42.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CameraManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\CameraManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Managers\\CameraManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Managers\\CameraManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Managers\\CameraManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T06:17:38.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CharacterBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:28:47.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AttackModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAkwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-11T04:15:06.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HitPointModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAhwGUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T01:23:01.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PlayerInputHandler.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Photon\\PlayerInputHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Photon\\PlayerInputHandler.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Photon\\PlayerInputHandler.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Photon\\PlayerInputHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T05:08:39.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MovementModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAQwIIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T06:00:43.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ControllerBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAnwEIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T01:50:32.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwEYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T01:50:51.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IRunnable.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T01:51:13.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlayerSpawner.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T05:14:50.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AnimationModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAowFIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T06:45:11.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ManagerBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:28:52.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CameraTest.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Camera\\CameraTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Camera\\CameraTest.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Camera\\CameraTest.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Camera\\CameraTest.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAADMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T04:16:19.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LockCameraY.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Camera\\LockCameraY.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Scripts\\Objects\\Camera\\LockCameraY.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Assets\\Scripts\\Objects\\Camera\\LockCameraY.cs",
+              "RelativeToolTip": "Assets\\Assets\\Scripts\\Objects\\Camera\\LockCameraY.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T05:36:11.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\GameManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\GameManager.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:34:49.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\InputManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\InputManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\InputManager.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T06:18:36.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DBManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\DBManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\DBManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\DBManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\DBManager.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T06:09:13.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\PlayerController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T04:04:19.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "UI_MainScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_MainScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_MainScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_MainScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_MainScreen.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T07:02:59.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "LanguageManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\LanguageManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:49.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "SettingManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\SettingManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\SettingManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:43:21.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "ManagerBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\ManagerBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T07:34:46.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "MovementModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\MovementModule.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T01:46:27.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CameraManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\CameraManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\CameraManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\CameraManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\CameraManager.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T01:36:51.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ObjectManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\ObjectManager.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAuwDcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T01:18:42.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "ControllerBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\ControllerBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T01:34:02.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "AttackModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AttackModule.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwFgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T01:14:36.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "PlayerSpawner.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Photon\\PlayerSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T06:39:04.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "Enumerators.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\Enumerators.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T07:13:38.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "RunModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\RunModule.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T02:26:35.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "ModuleCheck.txt",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\ModuleCheck.txt",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ModuleCheck.txt",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\ModuleCheck.txt",
+              "RelativeToolTip": "Assets\\Scripts\\ModuleCheck.txt",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAowFsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-29T01:03:16.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "HitPointModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\HitPointModule.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAUwGEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T01:26:01.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "CharacterBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T01:36:37.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "CharacterModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\CharacterModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\CharacterModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\CharacterModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\CharacterModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T01:22:00.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "InteractableModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\InteractableModule.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAIBZwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T07:14:18.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "UI_InGameUIScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_InGameUIScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_InGameUIScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_InGameUIScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_InGameUIScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T07:41:28.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "AnimationModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\AnimationModule.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAwwFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T01:19:38.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Slots\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Slots\\Inventory.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Slots\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Slots\\Inventory.cs",
+              "ViewState": "AgIAADQBAAAAAAAAAAAAADQBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T01:14:32.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "UI_IngameTimeWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_IngameTimeWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_IngameTimeWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_IngameTimeWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_IngameTimeWindow.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T04:33:52.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\AIController.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\AIController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\AIController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T01:27:55.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\UIManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\UIManager.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAA3wDgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:26:04.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "UI_InGameEndScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_InGameEndScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_InGameEndScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_InGameEndScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_InGameEndScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T01:21:23.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "AIPlayerController.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\AIPlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\AIPlayerController.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\AIPlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\AIPlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T05:39:58.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "UI_ShopWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ShopWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_ShopWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ShopWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_ShopWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T05:48:14.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "UI_TitleScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_TitleScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_TitleScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_TitleScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_TitleScreen.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T01:34:11.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "UI_InventoryWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_InventoryWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_InventoryWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_InventoryWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_InventoryWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T01:15:01.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "VisionModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\VisionModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\VisionModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\CharacterModules\\VisionModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\CharacterModules\\VisionModule.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T04:10:00.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "DataManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\DataManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\DataManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\DataManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\DataManager.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAYwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T02:03:01.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "UI_MenuWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T07:25:42.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "UI_Matchmaking.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_Matchmaking.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_Matchmaking.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_Matchmaking.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_Matchmaking.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA7wEoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T06:19:50.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "MovableCharacter.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\MovableCharacter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Characters\\MovableCharacter.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Characters\\MovableCharacter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Characters\\MovableCharacter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T05:21:43.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "UI_GiveUpWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_GiveUpWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_GiveUpWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_GiveUpWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_GiveUpWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T07:37:52.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "UI_ProfileWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCIAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T07:14:12.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "ObjectPoolModule.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ManagerModule\\ObjectPoolModule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ManagerModule\\ObjectPoolModule.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ManagerModule\\ObjectPoolModule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\ManagerModule\\ObjectPoolModule.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAApwIoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T01:19:22.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\AudioManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\AudioManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T02:08:12.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "UI_GameStartWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_GameStartWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_GameStartWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_GameStartWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_GameStartWindow.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:43:20.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "google-services.json",
+              "DocumentMoniker": "C:\\Users\\game\\Downloads\\google-services.json",
+              "RelativeDocumentMoniker": "..\\..\\Users\\game\\Downloads\\google-services.json",
+              "ToolTip": "C:\\Users\\game\\Downloads\\google-services.json",
+              "RelativeToolTip": "..\\..\\Users\\game\\Downloads\\google-services.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-29T04:42:00.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Generals\\Extensions.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Generals\\Extensions.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Generals\\Extensions.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Generals\\Extensions.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T06:13:42.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "Firebase.Auth.dll",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Firebase\\Plugins\\Firebase.Auth.dll",
+              "RelativeDocumentMoniker": "Assets\\Firebase\\Plugins\\Firebase.Auth.dll",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Firebase\\Plugins\\Firebase.Auth.dll",
+              "RelativeToolTip": "Assets\\Firebase\\Plugins\\Firebase.Auth.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2026-06-29T06:21:51.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "UI_OptionScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_OptionScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_OptionScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_OptionScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_OptionScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T01:33:50.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "MouseFollower.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\MouseFollower.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MouseFollower.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\MouseFollower.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MouseFollower.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T04:28:11.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "FOV_Fog_Volume.shader",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Shader\\FOV_Fog_Volume.shader",
+              "RelativeDocumentMoniker": "Assets\\Shader\\FOV_Fog_Volume.shader",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Shader\\FOV_Fog_Volume.shader",
+              "RelativeToolTip": "Assets\\Shader\\FOV_Fog_Volume.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2026-06-25T01:12:28.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "ItemContainer.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\ItemContainer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\ItemContainer.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\ItemContainer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\ItemContainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T01:28:05.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "UI_ChooseChaserScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_ChooseChaserScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_ChooseChaserScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_ChooseChaserScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_ChooseChaserScreen.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAA9wFkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T02:10:00.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "StudyHLSL.shader",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Shader\\StudyHLSL.shader",
+              "RelativeDocumentMoniker": "Assets\\Shader\\StudyHLSL.shader",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Shader\\StudyHLSL.shader",
+              "RelativeToolTip": "Assets\\Shader\\StudyHLSL.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2026-06-17T06:18:18.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "Item_Consumable.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Consumable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Consumable.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Consumable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Consumable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T01:22:44.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "InfoContainer.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\InfoContainer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\InfoContainer.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\InfoContainer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\InfoContainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T01:23:08.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
+              "Title": "Item_Equipment.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Equipment.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Equipment.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Equipment.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Controllers\\ScriptableObjects\\Item_Equipment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T01:21:01.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 106,
+              "Title": "BoneChange.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\BoneChange.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BoneChange.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\BoneChange.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BoneChange.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAIwEcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T01:42:20.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 107,
+              "Title": "ItemSlot.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Slots\\ItemSlot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Slots\\ItemSlot.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Slots\\ItemSlot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Slots\\ItemSlot.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwJwAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T02:05:27.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 108,
+              "Title": "UI_ScreenBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_ScreenBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_ScreenBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_ScreenBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_ScreenBase.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T06:46:21.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "UI_ItemCursorSlotInfo.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemCursorSlotInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemCursorSlotInfo.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemCursorSlotInfo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemCursorSlotInfo.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T04:17:19.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "UI_ItemSlotInfo.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemSlotInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemSlotInfo.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemSlotInfo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_ItemSlotInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T05:38:47.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Compiled-Shader Graphs-FOV_Mesh_Shader.shader",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Temp\\Compiled-Shader Graphs-FOV_Mesh_Shader.shader",
+              "RelativeDocumentMoniker": "Temp\\Compiled-Shader Graphs-FOV_Mesh_Shader.shader",
+              "ToolTip": "C:\\LDG\\TripleTag\\Temp\\Compiled-Shader Graphs-FOV_Mesh_Shader.shader",
+              "RelativeToolTip": "Temp\\Compiled-Shader Graphs-FOV_Mesh_Shader.shader",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2026-06-09T06:42:57.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "FOV_Stencil_Writer.shader",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Sprites\\aTest\\FOV_Stencil_Writer.shader",
+              "RelativeDocumentMoniker": "Assets\\Sprites\\aTest\\FOV_Stencil_Writer.shader",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Sprites\\aTest\\FOV_Stencil_Writer.shader",
+              "RelativeToolTip": "Assets\\Sprites\\aTest\\FOV_Stencil_Writer.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2026-06-09T07:07:20.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "FOV_Fog_Volume.shader",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Sprites\\aTest\\FOV_Fog_Volume.shader",
+              "RelativeDocumentMoniker": "Assets\\Sprites\\aTest\\FOV_Fog_Volume.shader",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Sprites\\aTest\\FOV_Fog_Volume.shader",
+              "RelativeToolTip": "Assets\\Sprites\\aTest\\FOV_Fog_Volume.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2026-06-09T07:09:58.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RawImage.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\UI\\Core\\RawImage.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\UI\\Core\\RawImage.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\UI\\Core\\RawImage.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\UI\\Core\\RawImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T02:22:02.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 111,
+              "Title": "OpenableUIBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\OpenableUIBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\OpenableUIBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\OpenableUIBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\OpenableUIBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T04:14:07.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 112,
+              "Title": "UI_LoadingScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_LoadingScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_LoadingScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_LoadingScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_LoadingScreen.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T07:25:10.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 113,
+              "Title": "UI_Version.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T06:46:40.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 114,
+              "Title": "UI_MovableScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_MovableScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Screens\\UI_MovableScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Screens\\UI_MovableScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Screens\\UI_MovableScreen.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwA8AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T06:38:38.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 115,
+              "Title": "UI_TargetHoverInfo.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_TargetHoverInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_TargetHoverInfo.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_TargetHoverInfo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_TargetHoverInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T06:46:40.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 116,
+              "Title": "UI_OptionMusic.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_OptionMusic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_OptionMusic.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_OptionMusic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_OptionMusic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T05:12:05.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 117,
+              "Title": "UI_DraggableWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_DraggableWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_DraggableWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_DraggableWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_DraggableWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T04:08:28.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 118,
+              "Title": "Generals.meta",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals.meta",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals.meta",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals.meta",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals.meta",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-20T06:46:39.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 119,
+              "Title": "Informations.meta",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations.meta",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations.meta",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations.meta",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations.meta",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-20T06:46:40.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 120,
+              "Title": "UI_Version.cs.meta",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs.meta",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs.meta",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs.meta",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Informations\\UI_Version.cs.meta",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-20T06:46:40.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 121,
+              "Title": "UI_ScreenChanger.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T06:46:40.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 122,
+              "Title": "UI_ScreenChanger.cs.meta",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs.meta",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs.meta",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs.meta",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\functions\\Generals\\UI_ScreenChanger.cs.meta",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-20T06:46:40.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 123,
+              "Title": "UI_PopUp.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_PopUp.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_PopUp.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_PopUp.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_PopUp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T07:16:48.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 124,
+              "Title": "UI_MessageWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MessageWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_MessageWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MessageWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_MessageWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T01:31:43.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 125,
+              "Title": "UI_ButtonInGame.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonInGame.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Button\\UI_ButtonInGame.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonInGame.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Button\\UI_ButtonInGame.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T02:17:16.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 126,
+              "Title": "UI_PullUpWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_PullUpWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_PullUpWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_PullUpWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_PullUpWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T06:37:29.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 127,
+              "Title": "UI_QuitConfirmWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_QuitConfirmWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_QuitConfirmWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_QuitConfirmWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_QuitConfirmWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T04:13:14.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 128,
+              "Title": "UI_RankingWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_RankingWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_RankingWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_RankingWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_RankingWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T01:23:07.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 129,
+              "Title": "UI_ButtonOpenScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T07:01:13.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 130,
+              "Title": "UI_ButtonOpenUI.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenUI.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Button\\UI_ButtonOpenUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:33:44.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ManagerBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ManagerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ManagerBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\ManagerBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\ManagerBase.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T02:03:56.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 131,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SaveManager.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Managers\\SaveManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SaveManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T02:31:41.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "UI_ButtonOpenUI.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ButtonOpenUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_ButtonOpenUI.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ButtonOpenUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_ButtonOpenUI.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T02:18:52.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 132,
+              "Title": "IRunnable.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interfaces\\IRunnable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T04:34:17.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 133,
+              "Title": "IOpenable.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IOpenable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interfaces\\IOpenable.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IOpenable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interfaces\\IOpenable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:40:06.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Documentation.txt",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\ithappy\\Creative_Characters_FREE\\Render_Pipeline_Convert\\Documentation.txt",
+              "RelativeDocumentMoniker": "Assets\\ithappy\\Creative_Characters_FREE\\Render_Pipeline_Convert\\Documentation.txt",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\ithappy\\Creative_Characters_FREE\\Render_Pipeline_Convert\\Documentation.txt",
+              "RelativeToolTip": "Assets\\ithappy\\Creative_Characters_FREE\\Render_Pipeline_Convert\\Documentation.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-23T02:40:50.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 134,
+              "Title": "BroadcastOnAnimationEnd.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\BroadcastOnAnimationEnd.cs",
+              "RelativeDocumentMoniker": "Assets\\BroadcastOnAnimationEnd.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\BroadcastOnAnimationEnd.cs",
+              "RelativeToolTip": "Assets\\BroadcastOnAnimationEnd.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T02:36:50.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 135,
+              "Title": "PooledObject.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Common\\PooledObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Objects\\Common\\PooledObject.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Objects\\Common\\PooledObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Objects\\Common\\PooledObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T06:01:28.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 136,
+              "Title": "IProgress.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IProgress.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interfaces\\IProgress.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IProgress.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interfaces\\IProgress.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T01:46:00.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 137,
+              "Title": "IInteractable.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IInteractable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interfaces\\IInteractable.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IInteractable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interfaces\\IInteractable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T05:05:49.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "AddressablesPlayerBuildProcessor.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\AddressablesPlayerBuildProcessor.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\AddressablesPlayerBuildProcessor.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\AddressablesPlayerBuildProcessor.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\AddressablesPlayerBuildProcessor.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvy4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T04:30:57.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "PoolRequest.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\ScriptableObjects\\PoolRequest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScriptableObjects\\PoolRequest.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\ScriptableObjects\\PoolRequest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScriptableObjects\\PoolRequest.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T01:19:19.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "UI_ButtonOpenScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ButtonOpenScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_ButtonOpenScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ButtonOpenScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_ButtonOpenScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T05:07:36.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "UI_MovableScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_MovableScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_MovableScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_MovableScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_MovableScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T02:36:06.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "UI_ProfileWindow1.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow1.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_ProfileWindow1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T04:45:01.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ProfileValueReference.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Settings\\ProfileValueReference.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Settings\\ProfileValueReference.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Settings\\ProfileValueReference.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Settings\\ProfileValueReference.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowF8AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T00:31:57.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UI_MenuWindow1.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow1.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_MenuWindow1.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T05:32:02.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "UI_InGameUIScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_InGameUIScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Windows\\UI_InGameUIScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Windows\\UI_InGameUIScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Windows\\UI_InGameUIScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T07:31:39.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "BuildScriptBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\DataBuilders\\BuildScriptBase.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\DataBuilders\\BuildScriptBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\DataBuilders\\BuildScriptBase.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.addressables@2dc42e61a5f5\\Editor\\Build\\DataBuilders\\BuildScriptBase.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAowHAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T00:29:25.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UI_DraggableWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_DraggableWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_DraggableWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_DraggableWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_DraggableWindow.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAcwCUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T06:17:28.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MouseFollower.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\MouseFollower.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\MouseFollower.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\MouseFollower.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\MouseFollower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T05:10:22.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UI_LoadingScreen.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_LoadingScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_LoadingScreen.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_LoadingScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_LoadingScreen.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:42:29.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UI_ProfileWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ProfileWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_ProfileWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ProfileWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_ProfileWindow.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T06:06:33.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "UI_ScreenBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ScreenBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_ScreenBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_ScreenBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_ScreenBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T06:16:17.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "UI_PullUpWindow.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_PullUpWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_PullUpWindow.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_PullUpWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_PullUpWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T02:38:18.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "UI_PopUp.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_PopUp.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UI_PopUp.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UI_PopUp.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UI_PopUp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T04:43:20.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 138,
+              "Title": "ISystemMessagePossible.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\ISystemMessagePossible.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interfaces\\ISystemMessagePossible.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\ISystemMessagePossible.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interfaces\\ISystemMessagePossible.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T06:07:25.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "UI_ScreenChanger.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\UI_ScreenChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\Functions\\Generals\\UI_ScreenChanger.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\Functions\\Generals\\UI_ScreenChanger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\Functions\\Generals\\UI_ScreenChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:27:58.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 139,
+              "Title": "UIBase.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UIBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIs\\UIBase.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\UIs\\UIBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIs\\UIBase.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:31:50.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 140,
+              "Title": "IConfirmable.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IConfirmable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interfaces\\IConfirmable.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Interfaces\\IConfirmable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interfaces\\IConfirmable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T05:40:36.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 141,
+              "Title": "SystemMessage.cs",
+              "DocumentMoniker": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Generals\\SystemMessage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Generals\\SystemMessage.cs",
+              "ToolTip": "C:\\LDG\\TripleTag\\Assets\\Scripts\\Generals\\SystemMessage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Generals\\SystemMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T05:46:38.686Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
