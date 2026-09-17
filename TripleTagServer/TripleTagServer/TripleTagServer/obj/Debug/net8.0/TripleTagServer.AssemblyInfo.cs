@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TripleTagServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a89954e13976150af28386a401b2591e77e870f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4860470cd33bdc633ab02586a1d27d2696103e90")]
 [assembly: System.Reflection.AssemblyProductAttribute("TripleTagServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TripleTagServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

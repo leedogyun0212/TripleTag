@@ -11,6 +11,7 @@ namespace TripleTagServer
 
             builder.Services.AddSignalR();
 
+            builder.Services.AddSingleton<MatchStore>();
             builder.Services.AddSingleton<MatchmakingService>();
 
             var app = builder.Build();
