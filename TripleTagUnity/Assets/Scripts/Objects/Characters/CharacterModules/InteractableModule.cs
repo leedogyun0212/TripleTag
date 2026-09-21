@@ -19,14 +19,14 @@ public class InteractableModule : CharacterModule
         base.OnRegistration(newOwner);
         hitPointModule  = GetComponent<HitPointModule>();
         MeshSetting();
-        GameManager.OnUpdateCharacter -= Vision;
-        GameManager.OnUpdateCharacter += Vision;
+        //GameManager.OnUpdateCharacter -= Vision;
+        //GameManager.OnUpdateCharacter += Vision;
     }
 
     public override void OnUnregistration(CharacterBase oldOwner)
     {
         base.OnUnregistration(oldOwner);
-        GameManager.OnUpdateCharacter -= Vision;
+        //GameManager.OnUpdateCharacter -= Vision;
     }
 
     /// <summary> 부활 </summary>

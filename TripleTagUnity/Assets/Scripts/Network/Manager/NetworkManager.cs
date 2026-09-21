@@ -17,6 +17,8 @@ public class NetworkManager : NetworkBehaviour
 
     [SerializeField] Rigidbody rigid;
 
+    private InteractableModule interactableModule;
+
     public override void Spawned()
     {
         rigid.isKinematic = !Object.HasStateAuthority;
@@ -25,6 +27,8 @@ public class NetworkManager : NetworkBehaviour
             return;
 
         CameraSetting.Instance.SetTarget(transform);
+
+        interactableModule = GetComponent<InteractableModule>();
     }
 
     public override void FixedUpdateNetwork()
@@ -84,5 +88,7 @@ public class NetworkManager : NetworkBehaviour
 
             animModule.AnimationByAttack(true);
         }
+
+        interactableModule?.Vision(Runner.DeltaTime);
     }
 }

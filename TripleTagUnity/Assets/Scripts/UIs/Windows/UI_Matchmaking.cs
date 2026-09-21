@@ -7,6 +7,10 @@ public class UI_Matchmaking : OpenableUIBase
 
     [SerializeField] int MatchTimeLimit = 10;
 
+    [SerializeField] private GameObject matchServerPrefab;
+
+    private GameObject matchServerObject;
+
     float startTime;
     float currentTime;
 
@@ -18,6 +22,7 @@ public class UI_Matchmaking : OpenableUIBase
         startTime = Time.time;
         GameManager.OnUpdateObject -= TimeUpdate;
         GameManager.OnUpdateObject += TimeUpdate;
+
     }
 
     public override void Unregistration(UIManager manager)
@@ -31,8 +36,15 @@ public class UI_Matchmaking : OpenableUIBase
         startTime = Time.time;
         GameManager.OnUpdateObject -= TimeUpdate;
         GameManager.OnUpdateObject += TimeUpdate;
+
         InputManager.OnCancel -= MatchExit;
         InputManager.OnCancel += MatchExit;
+
+        matchServerObject = Instantiate(matchServerPrefab);
+
+        MatchServer.OnMatchFound -= MatchFound;
+        MatchServer.OnMatchFound += MatchFound;
+
     }
 
     
@@ -41,6 +53,7 @@ public class UI_Matchmaking : OpenableUIBase
     {
         GameManager.OnUpdateObject -= TimeUpdate;
         InputManager.OnCancel -= MatchExit;
+
     }
 
     public void TimeUpdate(float deltaTime)
@@ -50,19 +63,8 @@ public class UI_Matchmaking : OpenableUIBase
         currentTime = Time.time - startTime;
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
-        
-        if (seconds > MatchTimeLimit && !matchOn)
-        {
-            matchOn = true;
-        }
-        if (!matchOn)
-            TimeSet(minutes, seconds);
-        else
-        {
-            GameStart();
-        }
 
-        
+        TimeSet(minutes, seconds);
     }
 
     public void TimeSet(int min, int sec)
@@ -70,15 +72,23 @@ public class UI_Matchmaking : OpenableUIBase
         matchTime.SetText($"{min}:{sec:00}");
     }
 
-    public void GameStart()
+    public void MatchFound()
     {
+        Debug.Log("[UI_Matchmaking] GameStart 호출!");
+
         UIManager.ClaimOpenScreen(UIType.ChooseChaser, ScreenChangeType.SlideChanger);
+
+        Debug.Log("[UI_Matchmaking] ChooseChaser Open 요청 완료!");
+        
         matchOn = false;
         UIManager.ClaimCloseUI(UIType.Matchmaking);
+        
+        Debug.Log("[UI_Matchmaking] Matchmaking Close 요청 완료!");
     }
     
     private void MatchExit(bool value)
     {
         UIManager.ClaimCloseUI(UIType.Matchmaking);
+        Destroy(matchServerObject);
     }
 }

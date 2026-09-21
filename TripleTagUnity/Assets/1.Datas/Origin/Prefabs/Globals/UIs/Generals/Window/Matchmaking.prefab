@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI_Matchmaking
   matchTime: {fileID: 7834023834348215757}
   MatchTimeLimit: 1
+  matchServerPrefab: {fileID: 5478233988561193765, guid: 7ccd95a7adba49d4fabaf5b4823ae037, type: 3}
 --- !u!1 &6573281538448026394
 GameObject:
   m_ObjectHideFlags: 0
