@@ -74,7 +74,11 @@ public class DBManager : ManagerBase
     public async void GuestLogin()
     {
         //인증기가 존재하지 않으면     ?? 
-        if (authentication is null) return;
+        if (authentication is null)
+        {
+            Debug.Log(authentication);
+            return;
+        }
         //이미 로그인 되었는지 확인하기
         if(user is not null)
         {
@@ -260,4 +264,5 @@ public class DBManager : ManagerBase
 //"rules": {
 //    ".read": "now < 1785250800000",  // 2026-7-29
 //    ".write": "now < 1785250800000",  // 2026-7-29
+//
 //  }

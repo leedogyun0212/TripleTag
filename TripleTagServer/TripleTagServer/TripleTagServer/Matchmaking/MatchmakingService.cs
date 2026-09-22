@@ -26,6 +26,7 @@ public class MatchmakingService
     {
         if (_queue.Any(x => x.PlayerId == playerId))
         {
+            Console.WriteLine($"{_queue.Any(x => x.PlayerId == playerId)} == {playerId}???");
             return null;
         }
 

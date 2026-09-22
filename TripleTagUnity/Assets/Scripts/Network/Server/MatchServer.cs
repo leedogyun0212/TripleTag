@@ -26,7 +26,7 @@ public class MatchServer : MonoBehaviour
     {
         _playerId = System.Guid.NewGuid().ToString();
 
-        _connection = new HubConnectionBuilder().WithUrl("https://localhost:7055/match").WithAutomaticReconnect().Build();
+        _connection = new HubConnectionBuilder().WithUrl("http://192.168.0.44:5125/match").WithAutomaticReconnect().Build();
 
         _connection.On("ReadySuccess", () =>
         {
