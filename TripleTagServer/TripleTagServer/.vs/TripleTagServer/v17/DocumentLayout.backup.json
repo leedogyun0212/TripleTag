@@ -54,8 +54,7 @@
               "RelativeToolTip": "TripleTagServer\\Players\\PlayerConnection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T02:16:16.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T02:16:16.52Z"
             },
             {
               "$type": "Document",
@@ -65,7 +64,7 @@
               "RelativeDocumentMoniker": "TripleTagServer\\Matchmaking\\MatchmakingService.cs",
               "ToolTip": "C:\\LDG\\TripleTag\\TripleTagServer\\TripleTagServer\\TripleTagServer\\Matchmaking\\MatchmakingService.cs",
               "RelativeToolTip": "TripleTagServer\\Matchmaking\\MatchmakingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-14T02:28:47.67Z",
               "EditorCaption": ""
@@ -128,8 +127,7 @@
               "RelativeToolTip": "TripleTagServer\\Hubs\\MatchHub.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-14T02:08:58.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-14T02:08:58.059Z"
             },
             {
               "$type": "Document",
@@ -141,8 +139,7 @@
               "RelativeToolTip": "TripleTagServer\\Matchmaking\\MatchStore.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T02:39:52.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-17T02:39:52.666Z"
             }
           ]
         }

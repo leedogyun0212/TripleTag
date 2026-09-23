@@ -96,7 +96,7 @@ public class MatchServer : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.LogError($"[SignalR] 연결 실패 : {e}");
-        }
+        } 
 
 
         GameManager.OnUpdateManager -= UpdateManager;

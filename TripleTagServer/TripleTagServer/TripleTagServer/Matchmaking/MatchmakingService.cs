@@ -30,9 +30,7 @@ public class MatchmakingService
             return null;
         }
 
-        PlayerConnection player = new PlayerConnection(
-            playerId,
-            connectionId);
+        PlayerConnection player = new PlayerConnection(playerId, connectionId);
 
         _queue.Add(player);
 
@@ -79,7 +77,7 @@ public class MatchmakingService
         if (player == null)
         {
             return false;
-        }
+        } 
 
         _queue.Remove(player);
 
@@ -100,8 +98,7 @@ public class MatchmakingService
 
         _queue.Remove(player);
 
-        Console.WriteLine(
-            $"[Queue] Player {player.PlayerId} disconnected. " + $"({connectionId}) " + $"({_queue.Count}/{MaxPlayers})");
+        Console.WriteLine($"[Queue] Player {player.PlayerId} disconnected. " + $"({connectionId}) " + $"({_queue.Count}/{MaxPlayers})");
 
         return true;
     }
