@@ -27,7 +27,7 @@ public class CharacterBase : MonoBehaviour
     public PlayerSet PlayerSet = PlayerSet.Alive;
 
     /// <summary> 캐릭터의 현재 그룹 </summary>
-    public PlayerGroup PlayerGroup = PlayerGroup.None;
+
 
     public Transform Head;
 

@@ -5,8 +5,6 @@ public class UI_Matchmaking : OpenableUIBase
 {
     [SerializeField] TMPro.TextMeshProUGUI matchTime;
 
-    [SerializeField] int MatchTimeLimit = 10;
-
     [SerializeField] private GameObject matchServerPrefab;
 
     private GameObject matchServerObject;

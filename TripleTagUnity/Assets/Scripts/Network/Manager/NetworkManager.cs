@@ -9,6 +9,8 @@ public class NetworkManager : NetworkBehaviour
 
     [Networked] private int AttackSequence { get; set; }
 
+    [Networked] public TeamType Team { get; set; }
+
     private int _lastAttackSequence;
 
     [SerializeField] MovementModule movement;

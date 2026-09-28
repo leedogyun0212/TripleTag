@@ -51,7 +51,7 @@ public class InteractableModule : CharacterModule
 
         if (target.PlayerSet is PlayerSet.Dead)
         {
-            if (target.PlayerGroup != Owner.PlayerGroup) yield return null;
+            //if (target.myTeam != Owner.myTeam) yield return null;
 
             //부활기능
             targetChar.Respawn(); 

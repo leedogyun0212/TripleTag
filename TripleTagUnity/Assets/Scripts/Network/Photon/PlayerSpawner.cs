@@ -9,19 +9,41 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Vector3[] spawnRandom;
     private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
+    TeamType team;
+
+    [SerializeField] Vector3[] teamASpawnPositions;
+    [SerializeField] Vector3[] teamBSpawnPositions;
 
     public void PlayerJoined(PlayerRef player)
     {
-        if (Runner.IsServer)
+        if (!Runner.IsServer)
+            return;
+
+        // 팀 배정
+        TeamType team = AssignTeam();
+
+        // 팀에 따른 Spawn 위치 결정
+        Vector3 spawnPosition = GetSpawnPosition(team);
+
+        // 캐릭터 생성
+        NetworkObject networkPlayerObject = Runner.Spawn(playerPrefab, spawnPosition, Quaternion.identity, player);
+
+        // 플레이어의 Team 정보 설정
+        NetworkManager playerManager = networkPlayerObject.GetComponent<NetworkManager>();
+
+        if (playerManager != null)
         {
-            int spawnRandomNum = Random.Range(0, spawnRandom.Length);
+            playerManager.Team = team;
 
-            // 캐릭터 생성 시 player를 넘겨 Input Authority 부여
-            NetworkObject networkPlayerObject = Runner.Spawn(playerPrefab, spawnRandom[spawnRandomNum], Quaternion.identity, player);
-
-            // 딕셔너리에 저장하여 나중에 누가 나갔는지 식별 가능하게 함
-            _spawnedCharacters.Add(player, networkPlayerObject);
+            Debug.Log($"[Team] Player {player.PlayerId} → {team}");
         }
+        else
+        {
+            Debug.LogError("[Team] PlayerPrefab에서 NetworkManager를 찾을 수 없습니다.");
+        }
+
+        // 딕셔너리에 저장
+        _spawnedCharacters.Add(player, networkPlayerObject);
     }
 
     public void PlayerLeft(PlayerRef player)
@@ -42,4 +64,61 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
             }
         }
     }
+
+    private TeamType AssignTeam()
+    {
+        int teamACount = 0;
+        int teamBCount = 0;
+
+        foreach (NetworkObject playerObject in _spawnedCharacters.Values)
+        {
+            NetworkManager playerManager = playerObject.GetComponent<NetworkManager>();
+
+            if (playerManager == null)
+                continue;
+
+            if (playerManager.Team == TeamType.TeamA)
+            {
+                teamACount++;
+            }
+            else if (playerManager.Team == TeamType.TeamB)
+            {
+                teamBCount++;
+            }
+        }
+        //
+
+
+        if (teamACount <= teamBCount)
+        {
+            return TeamType.TeamA;
+        }
+
+        return TeamType.TeamB;
+    }
+
+    private Vector3 GetSpawnPosition(TeamType team)
+    {
+        Vector3[] spawnPositions;
+
+        if (team == TeamType.TeamA)
+        {
+            spawnPositions = teamASpawnPositions;
+        }
+        else
+        {
+            spawnPositions = teamBSpawnPositions;
+        }
+
+        if (spawnPositions == null || spawnPositions.Length == 0)
+        {
+            Debug.LogError($"[Team] {team} Spawn 위치가 설정되지 않았습니다.");
+
+            return Vector3.zero;
+        }
+
+        int randomIndex = Random.Range(0, spawnPositions.Length);
+
+        return spawnPositions[randomIndex];
+    }//
 }

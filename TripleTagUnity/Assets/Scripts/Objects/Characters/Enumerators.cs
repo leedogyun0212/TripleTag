@@ -22,9 +22,9 @@ public enum PlayerSet
     Length
 }
 
-public enum PlayerGroup
+public enum TeamType
 {
     None,
-    Group1, Group2, Group3,
-    Length
+    TeamA,
+    TeamB
 }
