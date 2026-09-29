@@ -54,28 +54,6 @@ public class NetworkManager : NetworkBehaviour
             }
         }
     }
-    //
-
-    //public override void FixedUpdateNetwork()
-    //{
-    //    if (GetInput(out NetworkInputData input))
-    //    {
-    //        movement.MoveToDirection(input.MoveDirection);
-    //        movement.JumpDirection(input.MoveDirection);
-
-    //        movement.MovementUpdate(Runner.DeltaTime);
-
-    //        if (Object.HasStateAuthority)
-    //        {
-    //            NetworkMoveDelta = movement.LastMoveDelta;
-
-    //            if (input.Attack)
-    //            {
-    //                AttackSequence++;
-    //            }
-    //        }
-    //    }
-    //}
 
     public override void Render()
     {
@@ -92,5 +70,15 @@ public class NetworkManager : NetworkBehaviour
         }
 
         interactableModule?.Vision(Runner.DeltaTime);
+    }
+
+    public bool IsSameTeam(NetworkManager target)
+    {
+        return Team == target.Team;
+    }
+
+    public bool IsEnemy(NetworkManager target)
+    {
+        return Team != target.Team;
     }
 }

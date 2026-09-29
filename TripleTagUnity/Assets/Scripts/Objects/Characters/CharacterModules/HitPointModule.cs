@@ -17,6 +17,8 @@ public class HitPointModule : CharacterModule
 
     [SerializeField] TMPro.TextMeshProUGUI _textMeshPro;
 
+    public NetworkManager _networkManager;
+
     public sealed override System.Type RegistrationType => typeof(HitPointModule);
 
     public override void OnRegistration(CharacterBase newOwner)
@@ -31,7 +33,7 @@ public class HitPointModule : CharacterModule
         newOwner.OnDamage -= OnDamageReceived;
         newOwner.OnDamage += OnDamageReceived;
     }
-
+    
     public override void OnUnregistration(CharacterBase oldOwner)
     {
         base.OnUnregistration(oldOwner);
@@ -72,7 +74,7 @@ public class HitPointModule : CharacterModule
     //일정 시간이 지난후 체력 초기화
     public void UpdateHP(float deltaTime)
     {
-        _textMeshPro.text = $"hp: {_hp}";
+        _textMeshPro.text = $"{_networkManager.Team} hp: {_hp}";
 
         realTime += deltaTime; //도망자일때만 발동?
         if (time < realTime)

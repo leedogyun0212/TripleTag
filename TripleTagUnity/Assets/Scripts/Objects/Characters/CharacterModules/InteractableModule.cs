@@ -12,12 +12,15 @@ public class InteractableModule : CharacterModule
 
     HitPointModule hitPointModule;
 
+    NetworkManager networkManager;
+
     bool isRespawn = false;
 
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
         hitPointModule  = GetComponent<HitPointModule>();
+        networkManager = GetComponentInParent<NetworkManager>();
         MeshSetting();
         //GameManager.OnUpdateCharacter -= Vision;
         //GameManager.OnUpdateCharacter += Vision;
@@ -40,40 +43,83 @@ public class InteractableModule : CharacterModule
     // 그렇다고 접촉할때마다 CharacterBase얻을려고 겟컴포넌트는 좀.. 
     // 그래서 방법중 하나가 yield를 이용하는것이라 생각
 
+    //public IEnumerator Respawn(CharacterBase target)
+    //{
+    //    if(target is null) yield break;
 
-    public IEnumerator Respawn(CharacterBase target)
-    {
-        if(target is null) yield return null;
+    //    NetworkManager targetNetworkManager = target.GetComponentInParent<NetworkManager>();
 
-        yield return new WaitForSecondsRealtime(5.0f);
+    //    NetworkManager myNetworkManager = GetComponentInParent<NetworkManager>();
 
-        HitPointModule targetChar = target.GetComponentInParent<HitPointModule>();
+    //    if (targetNetworkManager == null || myNetworkManager == null) yield break;
 
-        if (target.PlayerSet is PlayerSet.Dead)
-        {
-            //if (target.myTeam != Owner.myTeam) yield return null;
+    //    if (!myNetworkManager.IsSameTeam(targetNetworkManager)) yield break;
 
-            //부활기능
-            targetChar.Respawn(); 
-        }
-        else
-        {
-            yield return null;
-        }
-    }
+    //    yield return new WaitForSecondsRealtime(5.0f);
+
+    //    HitPointModule targetChar = target.GetComponentInParent<HitPointModule>();
+
+    //    if (target.PlayerSet is PlayerSet.Dead)
+    //    {
+    //        //부활기능
+    //        targetChar.Respawn(); 
+    //    }
+    //}
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (!isRespawn) return;
+
+    //    CharacterBase target = other.GetComponent<CharacterBase>();
+
+    //    if (target is null) return;
+    //    isRespawn = false;
+
+    //    StartCoroutine(Respawn(target));
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isRespawn) return;
+        if (!isRespawn)
+            return;
 
-        CharacterBase target = other.GetComponent<CharacterBase>();
+        CharacterBase target = other.GetComponentInParent<CharacterBase>();
 
-        if (target is null) return;
+        if (target == null)
+            return;
+
+        NetworkManager targetNetworkManager = target.GetComponentInParent<NetworkManager>();
+
+        if (targetNetworkManager == null)
+            return;
+
+        // 같은 팀인지 확인
+        if (!networkManager.IsSameTeam(targetNetworkManager))
+            return;
+
         isRespawn = false;
 
         StartCoroutine(Respawn(target));
     }
+    //
 
+    public IEnumerator Respawn(CharacterBase target)
+    {
+        if (target == null)
+            yield break;
+
+        yield return new WaitForSecondsRealtime(5.0f);
+
+        if (target.PlayerSet is PlayerSet.Dead)
+        {
+            HitPointModule targetChar = target.GetComponentInParent<HitPointModule>();
+
+            if (targetChar != null)
+            {
+                targetChar.Respawn();
+            }
+        }
+    }
     /// <summary> 시야 </summary>
 
     // 간단한 FOV Mesh 생성기:
@@ -81,10 +127,10 @@ public class InteractableModule : CharacterModule
     // - meshResolution으로 분할 수를 정해 매끄럽게 만듭니다.
     // - mask 레이어에 충돌(장애물)이 있으면 해당 지점까지 시야를 줄입니다 (Raycast 사용).
     // 사용법:
-        //  - Inspector에서 fovAngle, viewDistance, mask, meshResolution을 조정.
-        //  - autoUpdate를 켜면 매 프레임 시야를 갱신합니다.
-        //  - 외부에서 수동 갱신하려면 Vision()을 호출하세요.
-        [Header("FOV 설정")]
+    //  - Inspector에서 fovAngle, viewDistance, mask, meshResolution을 조정.
+    //  - autoUpdate를 켜면 매 프레임 시야를 갱신합니다.
+    //  - 외부에서 수동 갱신하려면 Vision()을 호출하세요.
+    [Header("FOV 설정")]
     public float fovAngle = 90f; // 시야 각도(도)
     public float viewDistance = 5f; // 시야 거리
     public int meshResolution = 30; // 분할 수 (높을수록 부드러움)

@@ -43,6 +43,7 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
         }
 
         // 딕셔너리에 저장
+        // 
         _spawnedCharacters.Add(player, networkPlayerObject);
     }
 

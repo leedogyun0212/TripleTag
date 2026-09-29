@@ -7884,7 +7884,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovableCharacter
   PlayerSet: 1
-  PlayerGroup: 0
   Head: {fileID: 0}
   Body: {fileID: 0}
   dyingSwitch: 0
@@ -32095,6 +32094,10 @@ MonoBehaviour:
   spawnRandom:
   - {x: -11, y: 1, z: -22}
   - {x: -4, y: 1, z: -28}
+  - {x: 5, y: 3, z: -26}
+  teamASpawnPositions:
+  - {x: -11, y: 1, z: -22}
+  teamBSpawnPositions:
   - {x: 5, y: 3, z: -26}
 --- !u!114 &1821605181
 MonoBehaviour:

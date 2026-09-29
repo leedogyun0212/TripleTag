@@ -704,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitPointModule
   time: 5
   _textMeshPro: {fileID: 597301779278739057}
+  _networkManager: {fileID: -1739790703356855903}
 --- !u!114 &7822395594417362105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkManager
   _NetworkMoveDelta: {x: 0, y: 0, z: 0}
+  _Team: 0
   movement: {fileID: 7822395594417362105}
   animModule: {fileID: 9127702005875752657}
   rigid: {fileID: 5986700743713875211}

@@ -6,7 +6,7 @@ public class MatchmakingService
 {
     private readonly List<PlayerConnection> _queue = new();
 
-    private const int MaxPlayers = 2;
+    private const int MaxPlayers = 3;
     
     public int QueueCount => _queue.Count;
 
