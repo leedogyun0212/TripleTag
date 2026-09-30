@@ -25,7 +25,10 @@ public class HitPointModule : CharacterModule
     {
         base.OnRegistration(newOwner);
         animModule = gameObject.GetComponentInChildren<AnimationModule>();
+        _networkManager = GetComponent<NetworkManager>();
+
         SetHP(4.0f);
+
         GameManager.OnUpdateCharacter -= UpdateHP;
         GameManager.OnUpdateCharacter += UpdateHP;
         
@@ -44,9 +47,9 @@ public class HitPointModule : CharacterModule
     }
 
     /// <summary> 맞았을때 내려가는 체력  </summary>
-    public float DecreaseHP(float value, CharacterBase instigator)
+    public float DecreaseHP(float value, CharacterBase instigator,NetworkManager networkManager)
     {
-        if (Owner.CharType is CharacterType.Chaser || _hp <= 0) return 0;
+        if (_networkManager.CharType is CharacterType.Chaser || _hp <= 0) return 0;
         if(value > 4) value = 4;
         realTime = 0.0f;
         _hp -= value;
@@ -54,7 +57,7 @@ public class HitPointModule : CharacterModule
         // HP가 0 이하이면 기절/사망 판정 수행
         if (_hp <= 0.0f)
         {
-            bool isStunned = OutCheck(instigator) == PlayerSet.Stun;
+            bool isStunned = OutCheck(instigator, networkManager) == PlayerSet.Stun;
             //추가 동작(사망 처리, 이펙트 등)은 여기에 연결 가능
             //
             //예: if (!isStunned) { /* 사망 처리 */ }
@@ -74,45 +77,57 @@ public class HitPointModule : CharacterModule
     //일정 시간이 지난후 체력 초기화
     public void UpdateHP(float deltaTime)
     {
-        _textMeshPro.text = $"{_networkManager.Team} hp: {_hp}";
+        _textMeshPro.text = $"{_networkManager.Team}{_networkManager.CharType} hp: {_hp}";
 
         realTime += deltaTime; //도망자일때만 발동?
+
         if (time < realTime)
         {
             realTime = 0.0f;
-            if (isDead) StunEnd();
-            if(_hp < 4) Heal();
+
+            if (Owner.PlayerSet == PlayerSet.Stun)
+            {
+                StunEnd();
+            }
+            else if (Owner.PlayerSet == PlayerSet.Alive && _hp < _maxhp)
+            {
+                Heal();
+            }
         }
     }
     /// <summary>  체력 회복(죽지만 않으면 일정 시간이 지난후 자동)  </summary> 샤미드 이상해꽃 찌리배리 대도각참 망나뇽 따라큐 
     public float Heal()
     {
-        if (_hp < 0 && Owner.PlayerSet == PlayerSet.Stun) return 0;
-        
+        if (Owner.PlayerSet != PlayerSet.Alive)
+            return 0;
+
         _hp = _maxhp;
         return _hp;
     }
 
     /// <summary> 술래가 때린게 아니면 기절을 한다. 술래면 그대로 사망한다  </summary>
     //스턴과 기절을 나눠서 애니메이션을 실행-> float 0,1,2로나뉘어 죽으면 0스턴은2 그 무엇도 아니면 1을 애니메이션 모듈로 실행
-    public PlayerSet OutCheck(CharacterBase instigator)
+    public PlayerSet OutCheck(CharacterBase instigator, NetworkManager networkManager)
     {
-        Debug.Log($"instigator {instigator.CharType}");
-        if (instigator.CharType is not CharacterType.Runner)
+        if (instigator == null)
+            return Owner.PlayerSet;
+
+        if (networkManager.CharType == CharacterType.Chaser)
         {
             Owner.PlayerSet = PlayerSet.Dead;
             Owner.dyingSwitch = 1.0f;
-            AnimationOn();
+        }
+        else
+        {
+            Owner.PlayerSet = PlayerSet.Stun;
+            Owner.dyingSwitch = 0.0f;
         }
 
-
-        Owner.PlayerSet = PlayerSet.Stun;
-        Owner.dyingSwitch = 0.0f;
         AnimationOn();
 
         return Owner.PlayerSet;
     }
-    
+
     public float Respawn()
     {
         if(Owner.PlayerSet != PlayerSet.Dead) return 0;
@@ -143,12 +158,12 @@ public class HitPointModule : CharacterModule
         }
     }
 
-    void OnDamageReceived(GameObject damageCauser, CharacterBase instigator, float damage)
+    void OnDamageReceived(GameObject damageCauser, CharacterBase instigator, NetworkManager networkManager, float damage)
     {
         // 안전 체크
         if (damage <= 0f) return;
 
-        DecreaseHP(damage, instigator);
+        DecreaseHP(damage, instigator, networkManager);
         
         
     }

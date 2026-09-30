@@ -101,7 +101,6 @@ public class InteractableModule : CharacterModule
 
         StartCoroutine(Respawn(target));
     }
-    //
 
     public IEnumerator Respawn(CharacterBase target)
     {

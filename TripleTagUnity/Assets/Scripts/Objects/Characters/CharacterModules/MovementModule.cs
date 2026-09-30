@@ -34,9 +34,12 @@ public class MovementModule : CharacterModule, IRunnable
 
     public Vector3 LastMoveDelta { get; private set; }
 
+    protected NetworkManager networkManager;
+
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
+        networkManager = GetComponent<NetworkManager>();
     }
 
 

@@ -14,6 +14,7 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
     [SerializeField] Vector3[] teamASpawnPositions;
     [SerializeField] Vector3[] teamBSpawnPositions;
 
+    [SerializeField] RoleManager roleManager;
     public void PlayerJoined(PlayerRef player)
     {
         if (!Runner.IsServer)
@@ -45,6 +46,11 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
         // 딕셔너리에 저장
         // 
         _spawnedCharacters.Add(player, networkPlayerObject);
+
+        if (_spawnedCharacters.Count == 3)
+        {
+            AssignRoles();
+        }
     }
 
     public void PlayerLeft(PlayerRef player)
@@ -122,4 +128,32 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
 
         return spawnPositions[randomIndex];
     }//
+
+    private void AssignRoles()
+    {
+        List<NetworkManager> teamA = new();
+        List<NetworkManager> teamB = new();
+
+        foreach (NetworkObject playerObject in _spawnedCharacters.Values)
+        {
+            NetworkManager playerManager =
+                playerObject.GetComponent<NetworkManager>();
+
+            if (playerManager == null)
+                continue;
+
+            if (playerManager.Team == TeamType.TeamA)
+            {
+                teamA.Add(playerManager);
+            }
+            else if (playerManager.Team == TeamType.TeamB)
+            {
+                teamB.Add(playerManager);
+            }
+        }
+
+        Debug.Log($"[Role] TeamA : {teamA.Count}, TeamB : {teamB.Count}");
+
+        roleManager.AssignRoles(teamA, teamB);
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public delegate void MovementEvent(Vector3 move);
 public delegate void LookAtEvent(Vector3 direction);
 //                              실제 데미지를 "제공"한 사물       데미지를 주라고 시킨 놈
-public delegate void DamageEvent(GameObject damageCauser, CharacterBase instigator, float damage);
+public delegate void DamageEvent(GameObject damageCauser, CharacterBase instigator, NetworkManager _networkManager, float damage);
 
 public class CharacterBase : MonoBehaviour
 {
@@ -15,19 +15,12 @@ public class CharacterBase : MonoBehaviour
     public void LookAtNotify(Vector3 direction) => OnLookAt?.Invoke(direction);
 
     public event DamageEvent OnDamage;
-    public void DamageNotify(GameObject damageCauser, CharacterBase instigator, float damage)
-        => OnDamage?.Invoke(damageCauser, instigator, damage);
+    public void DamageNotify(GameObject damageCauser, CharacterBase instigator, NetworkManager _networkManager, float damage)
+        => OnDamage?.Invoke(damageCauser, instigator, _networkManager, damage);
 
-    /// <summary> 현재 역할</summary>
-    CharacterType _charType = CharacterType.Runner;
-    /// <summary> 현재 역할</summary>
-    public CharacterType CharType => _charType;
 
     /// <summary> 캐릭터 상태(살아있다, 죽어있다, 기절했다) </summary>
     public PlayerSet PlayerSet = PlayerSet.Alive;
-
-    /// <summary> 캐릭터의 현재 그룹 </summary>
-
 
     public Transform Head;
 
@@ -127,10 +120,4 @@ public class CharacterBase : MonoBehaviour
         return true;
     }
 
-    //캐릭터에 공통적으로 들어갈 수 있는 기능들!
-
-    public void CharTypeChange(CharacterType wantType)
-    {
-        _charType = wantType;
-    }
 }

@@ -81,11 +81,10 @@ public class UI_ChooseChaserScreen : UI_ScreenBase
         UIManager.ClaimCloseUI(UIType.ChooseChaser);
     }
 
-    public void Chaser(CharacterBase target)
+    public void Chaser(NetworkManager target)
     {
         if (!target) return;
 
-        target.CharTypeChange(CharacterType.Chaser);
     }
 }
 

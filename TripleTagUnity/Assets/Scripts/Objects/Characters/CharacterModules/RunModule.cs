@@ -18,13 +18,13 @@ public class RunModule : MovementModule
             return RunSpeed;
         }
 
-        if (Owner.CharType is CharacterType.Runner && PlusSpeed)
+        if (networkManager.CharType is CharacterType.Runner && PlusSpeed)
         {
             PlusSpeed = false;
             SaveSpeed = RunSpeed;
             return RunSpeed *= 1.25f;
         }
-        else if (Owner.CharType is CharacterType.Chaser && PlusSpeed)
+        else if (networkManager.CharType is CharacterType.Chaser && PlusSpeed)
         {
             PlusSpeed = false;
             SaveSpeed = RunSpeed;

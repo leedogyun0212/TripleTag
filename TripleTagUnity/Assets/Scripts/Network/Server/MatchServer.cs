@@ -103,11 +103,6 @@ public class MatchServer : MonoBehaviour
         GameManager.OnUpdateManager += UpdateManager;
     }
 
-    private void OnDisable()
-    {
-        _startFusionRequested = true;
-    }
-
     private void UpdateManager(float deltaTime)
     {
         if (_matchReadyRequested)

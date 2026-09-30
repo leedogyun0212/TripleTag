@@ -40,7 +40,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         data.Attack = _attackPressed;
         _attackPressed = false;
-        Debug.Log($"OnInput 호출+{data.Attack}");
+        //Debug.Log($"OnInput 호출+{data.Attack}");
 
         input.Set(data);
     }

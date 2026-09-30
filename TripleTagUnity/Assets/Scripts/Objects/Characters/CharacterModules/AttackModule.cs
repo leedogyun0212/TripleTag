@@ -12,10 +12,13 @@ public class AttackModule : CharacterModule
 
     public sealed override System.Type RegistrationType => typeof(AttackModule);
 
+    private NetworkManager networkManager;
+
     public override void OnRegistration(CharacterBase newOwner)
     {
         base.OnRegistration(newOwner);
         hpModule = Owner.GetModule<HitPointModule>();
+        networkManager = GetComponent<NetworkManager>();
     }
 
     public override void OnUnregistration(CharacterBase oldOwner)
@@ -29,23 +32,31 @@ public class AttackModule : CharacterModule
         if (Owner is null || target is null) return;
 
         CharacterBase targetChar = target.GetComponentInParent<CharacterBase>();
+
         if (targetChar == null) return;
 
-        if (Owner.CharType == CharacterType.Chaser && targetChar.CharType == CharacterType.Chaser) return;
-        if (Owner.CharType == CharacterType.Runner && targetChar.CharType == CharacterType.Chaser) return;
+        NetworkManager targetNetworkManager = targetChar.GetComponentInParent<NetworkManager>();
+
+        if (targetNetworkManager == null || networkManager == null) return;
+
+        if (networkManager.IsSameTeam(targetNetworkManager)) return;
+
+        if (networkManager.CharType == CharacterType.Chaser && targetNetworkManager.CharType == CharacterType.Chaser) return;
+        if (networkManager.CharType == CharacterType.Runner && targetNetworkManager.CharType == CharacterType.Chaser) return;
 
         float finalDamage;
-        if (Owner.CharType == CharacterType.Chaser)
-            finalDamage = ChaserAttack(targetChar);
-        else
-            finalDamage = RunnerAttack(targetChar);
 
-        targetChar?.DamageNotify(Owner.gameObject, Owner, finalDamage);
+        if (networkManager.CharType == CharacterType.Chaser)
+            finalDamage = ChaserAttack(targetChar, targetNetworkManager);
+        else
+            finalDamage = RunnerAttack(targetChar, targetNetworkManager);
+
+        targetChar?.DamageNotify(Owner.gameObject, Owner, networkManager, finalDamage);
     }
 
     /// <summary> 술래의 공격 : 맞으면 죽는다 </summary>
     // instigator가 술래일때 나를 떄리면 발동한다 instigator가 나를 때리고 나는 데미지를 받는다
-    public float ChaserAttack(CharacterBase target)
+    public float ChaserAttack(CharacterBase target, NetworkManager targetNetworkManager)
     {
         if (target == null) return 0f;
         HitPointModule targetHp = target.GetModule<HitPointModule>();
@@ -53,9 +64,9 @@ public class AttackModule : CharacterModule
         return 4f;
     }
     ///<summary>생존자의 공격 : 술래에게는 통하지 않고 같은 생존자에게만 통한다</summary>
-    public float RunnerAttack(CharacterBase target)
+    public float RunnerAttack(CharacterBase target, NetworkManager targetNetworkManager)
     {
-        if (target.CharType != CharacterType.Runner) return 0f;
+        if (targetNetworkManager.CharType != CharacterType.Runner) return 0f;
         //if (target == Owner) return 0f;
         // 기본 데미지(조절 가능)
         return 1f;

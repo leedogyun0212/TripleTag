@@ -11,6 +11,8 @@ public class NetworkManager : NetworkBehaviour
 
     [Networked] public TeamType Team { get; set; }
 
+    [Networked] public CharacterType CharType { get; set; }
+
     private int _lastAttackSequence;
 
     [SerializeField] MovementModule movement;
@@ -24,6 +26,11 @@ public class NetworkManager : NetworkBehaviour
     public override void Spawned()
     {
         rigid.isKinematic = !Object.HasStateAuthority;
+
+        Debug.Log(
+        $"[Team] PlayerRef : {Object.InputAuthority}, " +
+        $"Team : {Team}, " +
+        $"StateAuthority : {Object.HasStateAuthority}");
 
         if (!Object.HasInputAuthority)
             return;
