@@ -13,7 +13,7 @@ public class RoleManager : NetworkBehaviour
         AssignTeamRole(teamA);
         AssignTeamRole(teamB);
     }
-
+    //
     private void AssignTeamRole(List<NetworkManager> team)
     {
         if (team.Count == 0)

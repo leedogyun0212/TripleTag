@@ -93,8 +93,6 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
                 teamBCount++;
             }
         }
-        //
-
 
         if (teamACount <= teamBCount)
         {
@@ -127,8 +125,8 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined, IPlayerLeft
         int randomIndex = Random.Range(0, spawnPositions.Length);
 
         return spawnPositions[randomIndex];
-    }//
-
+    }
+    //
     private void AssignRoles()
     {
         List<NetworkManager> teamA = new();
