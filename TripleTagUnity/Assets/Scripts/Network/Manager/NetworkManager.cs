@@ -27,10 +27,7 @@ public class NetworkManager : NetworkBehaviour
     {
         rigid.isKinematic = !Object.HasStateAuthority;
 
-        Debug.Log(
-        $"[Team] PlayerRef : {Object.InputAuthority}, " +
-        $"Team : {Team}, " +
-        $"StateAuthority : {Object.HasStateAuthority}");
+        Debug.Log($"[Team] PlayerRef : {Object.InputAuthority}, " + $"Team : {Team}, " + $"StateAuthority : {Object.HasStateAuthority}");
 
         if (!Object.HasInputAuthority)
             return;
@@ -61,7 +58,7 @@ public class NetworkManager : NetworkBehaviour
             }
         }
     }
-
+    //
     public override void Render()
     {
         //Debug.Log($"[Render] Object:{Object.Id} " + $"[Render] Tick:{Runner.Tick} " +$"Input:{Object.HasInputAuthority} " + $"State:{Object.HasStateAuthority} " + $"Pos:{transform.position}");
